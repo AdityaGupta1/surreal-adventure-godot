@@ -1,11 +1,15 @@
 extends KinematicBody
 
-var speed = 400;
-var jumpVelocity = 15;
+const e = 2.71828182846;
+
+var speed = 1000;
+var jump_velocity = 15;
 var gravity = -30;
 
 var direction = Vector3();
 var velocity = Vector3();
+
+var up = Vector3(0, 1, 0);
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -14,25 +18,22 @@ func _ready():
 
 func _physics_process(delta):
 	direction = Vector3();
-	
-	if Input.is_key_pressed(KEY_W):
-		direction.x += 1;
-	if Input.is_key_pressed(KEY_A):
-		direction.z -= 1;
-	if Input.is_key_pressed(KEY_S):
-		direction.x -= 1;
-	if Input.is_key_pressed(KEY_D):
-		direction.z += 1;
-		
+	direction.x += 1 if Input.is_key_pressed(KEY_W) else 0;
+	direction.z -= 1 if Input.is_key_pressed(KEY_A) else 0;
+	direction.x -= 1 if Input.is_key_pressed(KEY_S) else 0;
+	direction.z += 1 if Input.is_key_pressed(KEY_D) else 0;
 	direction = direction.normalized() * speed * delta;
 	
 	velocity.y += gravity * delta;
 	velocity.x = direction.x;
 	velocity.z = direction.z;
 	
-	velocity = move_and_slide(velocity, Vector3(0, 1, 0));
+	velocity = move_and_slide(velocity, up);
+	
+	var origin = transform.origin;
+	rotation.y = Vector2(origin.x, origin.z).angle_to_point(get_viewport().get_mouse_position());
 	
 	if is_on_floor() and Input.is_key_pressed(KEY_SPACE):
-		velocity.y += jumpVelocity;
-		
+		velocity.y += jump_velocity;
+	
 	pass
