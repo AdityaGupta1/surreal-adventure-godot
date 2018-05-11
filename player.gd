@@ -18,10 +18,10 @@ func _ready():
 
 func _physics_process(delta):
 	direction = Vector3();
-	direction.x += 1 if Input.is_key_pressed(KEY_W) else 0;
-	direction.z -= 1 if Input.is_key_pressed(KEY_A) else 0;
-	direction.x -= 1 if Input.is_key_pressed(KEY_S) else 0;
-	direction.z += 1 if Input.is_key_pressed(KEY_D) else 0;
+	direction.z -= 1 if Input.is_key_pressed(KEY_W) else 0;
+	direction.x -= 1 if Input.is_key_pressed(KEY_A) else 0;
+	direction.z += 1 if Input.is_key_pressed(KEY_S) else 0;
+	direction.x += 1 if Input.is_key_pressed(KEY_D) else 0;
 	direction = direction.normalized() * speed * delta;
 	
 	velocity.y += gravity * delta;
@@ -30,8 +30,8 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, up);
 	
-	var origin = transform.origin;
-	rotation.y = Vector2(origin.x, origin.z).angle_to_point(get_viewport().get_mouse_position());
+	# point toward mouse
+	rotation.y = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_mouse_position()) + 135;
 	
 	if is_on_floor() and Input.is_key_pressed(KEY_SPACE):
 		velocity.y += jump_velocity;
