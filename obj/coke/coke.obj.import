@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/coke.obj-c7a494d140313938775324b1d05cc139.mesh"
+
+[deps]
+
+files=[ "res://.import/coke.obj-c7a494d140313938775324b1d05cc139.mesh" ]
+
+source_file="res://obj/coke/coke.obj"
+source_md5="b09a6cd1efa3c3cb4ca77b4cb51f2fe6"
+
+dest_files=[ "res://.import/coke.obj-c7a494d140313938775324b1d05cc139.mesh", "res://.import/coke.obj-c7a494d140313938775324b1d05cc139.mesh" ]
+dest_md5="46bb9b01a7f85957c6d193fe32d389e5"
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

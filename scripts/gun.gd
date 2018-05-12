@@ -6,7 +6,7 @@ var a = 2.2475 / rotation_time;
 
 var total_time = rotation_time;
 
-var bullet = preload("res://scenes/bullet.tscn");
+var bullet = preload("res://scenes/player/bullet.tscn");
 
 func get_shoot_delay():
 	return shoot_delay;
