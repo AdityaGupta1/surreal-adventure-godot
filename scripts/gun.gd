@@ -17,6 +17,9 @@ func shoot():
 	new_bullet.rotation.y = get_tree().get_root().get_node("Main").get_node("Player").rotation.y;
 	get_tree().get_root().get_node("Main").add_child(new_bullet);
 	total_time = 0;
+	
+	get_node("sound").play(0);
+	
 	pass;
 
 func _get_rotation(x):
@@ -25,6 +28,8 @@ func _get_rotation(x):
 func _physics_process(delta):
 	if total_time < rotation_time: 
 		total_time += delta;
+	else:
+		get_node("sound").stop();
 	
 	rotation.z = deg2rad(_get_rotation(total_time));
 	

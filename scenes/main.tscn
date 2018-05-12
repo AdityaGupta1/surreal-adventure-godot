@@ -17,7 +17,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0
 
 [node name="Spatial" type="Spatial" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.343732, 20.9165, -0.188621 )
 
 [node name="Camera" type="Camera" parent="Spatial" index="0"]
 
