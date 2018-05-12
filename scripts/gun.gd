@@ -6,10 +6,16 @@ var a = 2.2475 / rotation_time;
 
 var total_time = rotation_time;
 
+var bullet = preload("res://scenes/bullet.tscn");
+
 func get_shoot_delay():
 	return shoot_delay;
 
 func shoot():
+	var new_bullet = bullet.instance();
+	new_bullet.transform.origin = get_node("barrel").global_transform.origin;
+	new_bullet.rotation.y = get_tree().get_root().get_node("Main").get_node("Player").rotation.y;
+	get_tree().get_root().get_node("Main").add_child(new_bullet);
 	total_time = 0;
 	pass;
 
