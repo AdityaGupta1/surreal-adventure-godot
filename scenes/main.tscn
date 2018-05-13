@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=4]
-[ext_resource path="res://scenes/enemies/conke.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/enemies/conke can.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/enemies/conke bottle.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Spatial" index="0"]
+[node name="Main" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -64,8 +65,12 @@ directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 
-[node name="Conke" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Conke Can" parent="." index="3" instance=ExtResource( 5 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4087, 0.492715, 0 )
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 11, 1, 0 )
+
+[node name="Conke Bottle" parent="." index="4" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0 )
 
 
