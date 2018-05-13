@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/enemies/conke can.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/enemies/conke bottle.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Spatial"]
+[node name="Main" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 

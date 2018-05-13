@@ -9,10 +9,10 @@ path="res://.import/coke bottle.obj-4f60d6557ad367ce6e4032b71499be66.mesh"
 files=[ "res://.import/coke bottle.obj-4f60d6557ad367ce6e4032b71499be66.mesh" ]
 
 source_file="res://obj/coke/coke bottle/coke bottle.obj"
-source_md5="d8235191b28b2031b81a1474abf13ea3"
+source_md5="441147d78e30d06a29f07e3b14be468a"
 
 dest_files=[ "res://.import/coke bottle.obj-4f60d6557ad367ce6e4032b71499be66.mesh", "res://.import/coke bottle.obj-4f60d6557ad367ce6e4032b71499be66.mesh" ]
-dest_md5="596b4fbbeb95fbf9407527688b555d1e"
+dest_md5="bf16d3ed64bff149c0bfa8750d9c36cd"
 
 [params]
 
