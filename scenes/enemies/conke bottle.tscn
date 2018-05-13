@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://obj/coke/coke bottle/coke bottle.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://obj/coke/coke bottle/bottle cap.jpg" type="Texture" id=2]
-[ext_resource path="res://obj/coke/coke bottle/label.jpg" type="Texture" id=3]
+[ext_resource path="res://scripts/enemy bullet.gd" type="Script" id=1]
+[ext_resource path="res://obj/coke/coke bottle/coke bottle.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://obj/coke/coke bottle/bottle cap.jpg" type="Texture" id=3]
+[ext_resource path="res://obj/coke/coke bottle/label.jpg" type="Texture" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -28,7 +29,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = ExtResource( 2 )
+albedo_texture = ExtResource( 3 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -133,7 +134,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = ExtResource( 3 )
+albedo_texture = ExtResource( 4 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -170,7 +171,7 @@ extents = Vector3( 1, 1, 1 )
 
 input_ray_pickable = true
 input_capture_on_drag = false
-collision_layer = 1
+collision_layer = 64
 collision_mask = 1
 axis_lock_linear_x = false
 axis_lock_linear_y = false
@@ -179,6 +180,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
@@ -192,7 +195,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 1 )
+mesh = ExtResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 1 )
 material/1 = null

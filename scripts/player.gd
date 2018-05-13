@@ -17,6 +17,18 @@ var shoot_delay;
 var last_shot = 0;
 var next_gun = 1;
 
+var max_health = 100;
+var health = max_health;
+var invulnerable = true;
+
+func damage(damage):
+	health -= damage;
+	
+	if health <= 0 and not invulnerable:
+		queue_free();
+		
+	pass;
+
 func _ready():
 	shoot_delay = get_node("Guns/Gun1").get_shoot_delay();
 	pass;
