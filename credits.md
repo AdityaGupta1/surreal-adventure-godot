@@ -23,3 +23,7 @@ Meme Man dialogue, sound effects, etc.
 ### Sketchfab (https://sketchfab.com/)
 
 [Meme Man](https://sketchfab.com/models/3d1f49bc7e6e446fb0d97e98cd40e749)
+
+### model+model (https://www.modelplusmodel.com/)
+
+[Coca-Cola bottle](https://www.modelplusmodel.com/accessories/food/935-coca-cola.html)
