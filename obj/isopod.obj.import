@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/isopod.obj-be230f4653ea00e68f5af080ed342904.mesh"
+
+[deps]
+
+files=[ "res://.import/isopod.obj-be230f4653ea00e68f5af080ed342904.mesh" ]
+
+source_file="res://obj/isopod.obj"
+source_md5="bd63bf24deb63e08109f8f567a9b0aea"
+
+dest_files=[ "res://.import/isopod.obj-be230f4653ea00e68f5af080ed342904.mesh", "res://.import/isopod.obj-be230f4653ea00e68f5af080ed342904.mesh" ]
+dest_md5="6834b6eeaaf334c831bf9260989bf5cf"
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

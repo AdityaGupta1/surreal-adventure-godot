@@ -1,8 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://obj/meme man.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/player/gun.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -160,7 +161,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=4]
 
 extents = Vector3( 1, 1, 1 )
 
@@ -225,7 +226,7 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 input_ray_pickable = true
@@ -264,7 +265,7 @@ _sections_unfolded = [ "material" ]
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
 transform = Transform( 1.13311, 0, 0, 0, 1, 1.97736e-08, 0, 1.97736e-08, 1.45237, 0.378892, -4.88875e-09, -0.411842 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="Guns" type="Spatial" parent="." index="2"]

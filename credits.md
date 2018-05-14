@@ -27,3 +27,7 @@ Meme Man dialogue, sound effects, etc.
 ### model+model (https://www.modelplusmodel.com/)
 
 [Coca-Cola bottle](https://www.modelplusmodel.com/accessories/food/935-coca-cola.html)
+
+### Thingiverse
+
+[isopod](https://www.thingiverse.com/thing:1810023)
