@@ -167,7 +167,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Conke Bottle" type="KinematicBody"]
+[node name="Conke Bottle" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

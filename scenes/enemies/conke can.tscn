@@ -217,7 +217,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Conke Can" type="KinematicBody" index="0"]
+[node name="Conke Can" type="KinematicBody"]
 
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0 )
 input_ray_pickable = true
