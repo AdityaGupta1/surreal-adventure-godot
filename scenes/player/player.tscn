@@ -1,8 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
-[ext_resource path="res://obj/meme man.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://scenes/player/player.gd" type="Script" id=1]
+[ext_resource path="res://models/meme man.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/player/gun.tscn" type="PackedScene" id=3]
+
+
 
 
 [sub_resource type="SpatialMaterial" id=1]

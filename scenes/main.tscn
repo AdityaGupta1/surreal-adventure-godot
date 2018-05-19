@@ -4,8 +4,8 @@
 [ext_resource path="res://scenes/floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=4]
-[ext_resource path="res://scenes/enemies/conke can.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/enemies/cube.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/enemies/conke can/conke can.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/enemies/cube/cube.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Spatial"]
 

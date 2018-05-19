@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/orang.obj-5fd1a584bd342f3042f922285f2a64a2.mesh"
+
+[deps]
+
+files=[ "res://.import/orang.obj-5fd1a584bd342f3042f922285f2a64a2.mesh" ]
+
+source_file="res://models/orang.obj"
+source_md5="74cd352967209bbab1faf2caf8ec60a8"
+
+dest_files=[ "res://.import/orang.obj-5fd1a584bd342f3042f922285f2a64a2.mesh", "res://.import/orang.obj-5fd1a584bd342f3042f922285f2a64a2.mesh" ]
+dest_md5="3d7070110f43b2200ddc5a8168753aa6"
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
