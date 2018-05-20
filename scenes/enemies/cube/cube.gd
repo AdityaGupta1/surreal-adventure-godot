@@ -9,6 +9,8 @@ func _ready():
 	shotgun_bullets = 4;
 	shotgun_angle = 15;
 	
+	monet = 3;
+	
 	._ready();
 	
 	pass;

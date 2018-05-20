@@ -4,9 +4,6 @@
 [ext_resource path="res://models/meme man.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/player/gun.tscn" type="PackedScene" id=3]
 
-
-
-
 [sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
@@ -228,7 +225,7 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 input_ray_pickable = true

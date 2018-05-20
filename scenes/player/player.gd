@@ -16,6 +16,8 @@ var up = Vector3(0, 1, 0);
 var last_shot = 0;
 var next_gun = 1;
 
+var monet = 0;
+
 func _ready():
 	max_health = 200;
 	invulnerable = true;
