@@ -1,0 +1,33 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/monet disc.png-5c433eb41b0084493017ea579c9ab6ea.s3tc.stex"
+path.etc2="res://.import/monet disc.png-5c433eb41b0084493017ea579c9ab6ea.etc2.stex"
+
+[deps]
+
+source_file="res://images/monet disc.png"
+source_md5="7b49bcf991a9bc8122376442103462ec"
+
+dest_files=[ "res://.import/monet disc.png-5c433eb41b0084493017ea579c9ab6ea.s3tc.stex", "res://.import/monet disc.png-5c433eb41b0084493017ea579c9ab6ea.etc2.stex" ]
+dest_md5="bbb62fec9afde891460a74940a5c4c7a"
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/floor.tscn" type="PackedScene" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://scripts/camera.gd" type="Script" id=4]
 [ext_resource path="res://scenes/enemies/conke can/conke can.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/enemies/cube/cube.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/monet disc.tscn" type="PackedScene" id=7]
 
-[node name="Main" type="Spatial"]
+[node name="Main" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -72,5 +73,9 @@ transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 11, 0.206212, 0 )
 [node name="Cube" parent="." index="4" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89801, 6.05406 )
+
+[node name="Monet Disc" parent="." index="5" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00841141, 1.19931, -0.0119343 )
 
 
