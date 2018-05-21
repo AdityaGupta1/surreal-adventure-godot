@@ -7,6 +7,7 @@ var shotgun_bullets = 1;
 var shotgun_angle = 0;
 
 var monet = 0;
+const monet_disc = preload("res://scenes/monet disc.tscn");
 
 func _ready():
 	add_to_group("Enemies");
@@ -39,7 +40,7 @@ func _physics_process(delta):
 func _random_vector(bound):
 	return Vector3(rand_range(-bound, bound), rand_range(-bound, bound), rand_range(-bound, bound));
 
-func die():
+func _die():
 	for i in range(monet):
 		var new_monet_disc = monet_disc.instance();
 		
@@ -49,12 +50,12 @@ func die():
 		position.z += rand_range(0, 1);
 		new_monet_disc.transform.origin = position;
 		
-		new_monet_disc.apply_impulse(position + _random_vector(0.4), _random_vector(0.1));
+		new_monet_disc.apply_impulse(position + _random_vector(0.1), _random_vector(0.1));
 		
 		new_monet_disc.rotation.x = rand_range(0, 2 * PI);
 		new_monet_disc.rotation.y = rand_range(0, 2 * PI);
 		new_monet_disc.rotation.z = rand_range(0, 2 * PI);
 		
 		get_tree().get_root().get_node("Main").add_child(new_monet_disc);
-		
-	.die();
+	
+	queue_free();

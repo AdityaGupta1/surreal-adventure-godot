@@ -160,9 +160,10 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="CapsuleShape" id=7]
 
-extents = Vector3( 1, 1, 1 )
+radius = 1.0
+height = 0.25
 
 [sub_resource type="SpatialMaterial" id=5]
 
@@ -225,7 +226,7 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 input_ray_pickable = true
@@ -263,9 +264,10 @@ _sections_unfolded = [ "material" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 1.13311, 0, 0, 0, 1, 1.97736e-08, 0, 1.97736e-08, 1.45237, 0.378892, -4.88875e-09, -0.411842 )
-shape = SubResource( 4 )
+transform = Transform( 1.16461, 0, 0, 0, 1, -2.87186e-08, 0, 1.97736e-08, 1.45237, 0.399665, -0.0275242, -0.444348 )
+shape = SubResource( 7 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
 [node name="Guns" type="Spatial" parent="." index="2"]
 

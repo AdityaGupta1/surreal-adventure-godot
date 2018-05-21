@@ -1,15 +1,15 @@
 extends RigidBody
 
 func _ready():
-	contact_monitor = true;
-	contacts_reported = 100;
+	set_contact_monitor(true);
+	set_max_contacts_reported(100);
+	can_sleep = false;
 
 	pass;
 
-func _process(delta):
-	for body in get_colliding_bodies():
-		if body.get_name() == "Player":
-			queue_free();
-			get_tree().get_root().get_node("Main").get_node("Player").monet += 1;
-		
+func _physics_process(delta):
+	if get_tree().get_root().get_node("Main").get_node("Player") in get_colliding_bodies():
+		get_tree().get_root().get_node("Main").get_node("Player").monet += 1;
+		queue_free();
+
 	pass;

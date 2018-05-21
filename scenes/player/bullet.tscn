@@ -3,9 +3,6 @@
 [ext_resource path="res://scenes/player/player bullet.gd" type="Script" id=1]
 [ext_resource path="res://models/torus.obj" type="ArrayMesh" id=2]
 
-
-
-
 [sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
@@ -166,7 +163,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Bullet" type="KinematicBody" index="0"]
+[node name="Bullet" type="KinematicBody"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0 )
 input_ray_pickable = true

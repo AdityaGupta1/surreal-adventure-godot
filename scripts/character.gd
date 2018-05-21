@@ -6,8 +6,6 @@ var invulnerable = false;
 
 var shoot_delay = 0;
 
-const monet_disc = preload("res://scenes/monet disc.tscn");
-
 func _ready():
 	health = max_health;
 
@@ -15,9 +13,9 @@ func damage(damage):
 	health -= damage;
 	
 	if health <= 0:
-		die();
+		_die();
 		
 	pass;
 
-func die():
+func _die():
 	queue_free();
