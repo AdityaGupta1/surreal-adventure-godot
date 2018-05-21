@@ -28,8 +28,6 @@ func _get_rotation(x):
 func _physics_process(delta):
 	if time < rotation_time: 
 		time += delta;
-	else:
-		get_node("sound").stop();
 	
 	rotation.z = deg2rad(_get_rotation(time));
 	

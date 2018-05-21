@@ -128,7 +128,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Metallic" ]
 
-[node name="Monet Disc" type="RigidBody" index="0"]
+[node name="Monet Disc" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

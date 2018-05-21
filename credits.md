@@ -8,7 +8,8 @@ nobody except me yet xd
 
 ### freesound (https://sketchfab.com/)
 
-[blaster noise](https://freesound.org/people/tutarap/sounds/341956/)
+[blaster sound](https://freesound.org/people/tutarap/sounds/341956/)
+[monet disc collection sound](https://freesound.org/people/fins/sounds/146723/)
 
 ### text2speech.org (https://www.text2speech.org/)
 

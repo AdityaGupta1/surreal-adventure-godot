@@ -18,11 +18,21 @@ var next_gun = 1;
 
 var monet = 0;
 
+onready var sounds = get_node("sounds");
+
 func _ready():
 	max_health = 200;
 	invulnerable = true;
-	shoot_delay = get_node("Guns/Gun1").get_shoot_delay();
+	shoot_delay = get_node("guns/gun 1").get_shoot_delay();
 	._ready();
+	
+	pass;
+	
+func damage(damage):
+	var hurt_sounds = sounds.get_node("hurt");
+	hurt_sounds.get_children()[randi() % hurt_sounds.get_child_count()].play();
+	
+	.damage(damage);
 	
 	pass;
 
@@ -50,8 +60,14 @@ func _physics_process(delta):
 	
 	if current_time - last_shot > shoot_delay and Input.is_mouse_button_pressed(1):
 		last_shot = current_time;
-		get_node("Guns/Gun" + str(next_gun)).shoot();
+		get_node("guns/gun " + str(next_gun)).shoot();
 		next_gun = 2 if next_gun == 1 else 1;
-		shoot_delay = get_node("Guns/Gun" + str(next_gun)).get_shoot_delay();
+		shoot_delay = get_node("guns/gun " + str(next_gun)).get_shoot_delay();
 	
 	pass;
+	
+func add_monet(new_monet):
+	monet += new_monet;
+	sounds.get_node("collect monet disc").play();
+	get_tree().get_root().get_node("Main").get_node("monet label").update();
+	
