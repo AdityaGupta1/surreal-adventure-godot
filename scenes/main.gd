@@ -7,16 +7,18 @@ func _ready():
 	
 	for half in ["Right", "Left"]:
 		for side in ["Top", "Right", "Bottom", "Left"]:
-			for event in ["retract", "extend"]:
-				connect(event, get_node("Arena/" + half + "/" + side + "/Platform"), event);
+				connect("retract", get_node("Arena/" + half + "/" + side + "/Platform"), "retract");
+				
+	randomize();
 	
 	pass;
 	
 var awaiting_player_centered = false;
 
 func _process(delta):
-#	if Input.is_action_just_pressed("ui_accept"):
-#		get_tree().reload_current_scene();
+	# for debug purposes only
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().reload_current_scene();
 
 	if awaiting_player_centered:
 		for body in get_node("Arena/Center").get_overlapping_bodies():

@@ -1,13 +1,21 @@
 extends Spatial
 
 var moving = false;
-var time = 1;
+# randomized to either -1 or 1 each time
+var direction = 0;
+var time = 3;
 var previous_time_remaining = 0;
 var time_remaining = 0;
 
-func rotate():
+const e = 2.71828;
+
+func rotate_90():
 	moving = true;
+	direction = [-1, 1][randi() % 2];
 	time_remaining = time;
+
+func get_move(t):
+	return ((-0.5) * cos(PI * t)) + (0.5);
 
 func _physics_process(delta):
 	if not moving:
@@ -16,7 +24,7 @@ func _physics_process(delta):
 	previous_time_remaining = time_remaining;
 	time_remaining = max(0, time_remaining - delta);
 	
-	rotation.z += ((previous_time_remaining - time_remaining) / time) * PI/2;
+	rotation.z += direction * (get_move(time_remaining / time) - get_move(previous_time_remaining / time)) * PI/2;
 	
 	if time_remaining == 0:
 		moving = false;

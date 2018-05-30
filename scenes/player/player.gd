@@ -39,12 +39,12 @@ func damage(damage):
 func _physics_process(delta):
 	current_time += delta;
 	
-	if is_on_floor():
-		direction = Vector3();
-		direction.z += (1 if Input.is_key_pressed(KEY_W) else 0) - (1 if Input.is_key_pressed(KEY_S) else 0);
-		direction.x += (1 if Input.is_key_pressed(KEY_A) else 0) - (1 if Input.is_key_pressed(KEY_D) else 0);
+	direction = Vector3();
+	direction.z += (1 if Input.is_key_pressed(KEY_W) else 0) - (1 if Input.is_key_pressed(KEY_S) else 0);
+	direction.x += (1 if Input.is_key_pressed(KEY_A) else 0) - (1 if Input.is_key_pressed(KEY_D) else 0);
 		
 	direction = direction.normalized() * speed * delta;
+	direction *= 1 if is_on_floor() else 0.8;
 	
 	velocity.y += gravity * delta;
 	velocity.x = direction.x;

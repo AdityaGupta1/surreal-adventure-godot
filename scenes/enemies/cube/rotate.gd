@@ -1,4 +1,4 @@
-extends MeshInstance
+extends CollisionShape
 
 # class member variables go here, for example:
 # var a = 2
@@ -18,6 +18,6 @@ func _physics_process(delta):
 	rotate_y(sin(time) * delta);
 	rotate_z(delta);
 	
-	get_surface_material(0).albedo_color = _get_color();
+	get_node("MeshInstance").get_surface_material(0).albedo_color = _get_color();
 	
 	pass;
