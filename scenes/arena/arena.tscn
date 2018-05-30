@@ -130,7 +130,7 @@ subdivide_depth = 0
 
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[node name="Arena" type="Spatial"]
+[node name="Arena" type="Spatial" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -154,6 +154,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance" index="0"]
 
+editor/display_folded = true
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1048575
@@ -181,7 +182,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12 )
 
 [node name="Vertical" type="MeshInstance" parent="Cross" index="0"]
 
-editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 20.4, 0, 0, 0, 4, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -201,10 +201,10 @@ _sections_unfolded = [ "Transform" ]
 
 input_ray_pickable = true
 input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 1048575
+collision_mask = 1048575
 friction = 1.0
-bounce = 0.0
+bounce = 0.25
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
@@ -215,7 +215,6 @@ disabled = false
 
 [node name="Horizontal" type="MeshInstance" parent="Cross" index="1"]
 
-editor/display_folded = true
 transform = Transform( -1.74846e-07, -20.4, 3.49691e-07, -4, 8.91712e-07, -1.52855e-14, 0, -1.78342e-06, -4, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -235,15 +234,45 @@ _sections_unfolded = [ "Transform" ]
 
 input_ray_pickable = true
 input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 1048575
+collision_mask = 1048575
 friction = 1.0
-bounce = 0.0
+bounce = 0.25
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cross/Horizontal/StaticBody" index="0"]
 
+shape = SubResource( 6 )
+disabled = false
+
+[node name="Center" type="Area" parent="." index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40.5, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Center" index="0"]
+
+transform = Transform( 4, 0, 0, 0, 20.4, 0, 0, 0, 4, 0, 0, 0 )
 shape = SubResource( 6 )
 disabled = false
 

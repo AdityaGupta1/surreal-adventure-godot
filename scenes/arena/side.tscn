@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/arena/platform.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -64,11 +66,16 @@ subdivide_depth = 0
 
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[node name="Side" type="Spatial" index="0"]
+[node name="Side" type="Spatial"]
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="Face" type="MeshInstance" parent="." index="0"]
+[node name="Main" type="Spatial" parent="." index="0"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Face" type="MeshInstance" parent="Main" index="0"]
 
 transform = Transform( 20, 0, 0, 0, 0.4, 0, 0, 0, 8, 0, 0, 0 )
 layers = 1048575
@@ -85,7 +92,7 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="Face" index="0"]
+[node name="StaticBody" type="StaticBody" parent="Main/Face" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -97,13 +104,48 @@ constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="Face/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Main/Face/StaticBody" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="Corner" type="MeshInstance" parent="Main" index="1"]
+
+transform = Transform( 0.2, -0.2, 0, 0.2, 0.2, 0, 0, 0, 8, -20, 0, 0 )
+layers = 1048575
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody" type="StaticBody" parent="Main/Corner" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1048575
+collision_mask = 1048575
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Main/Corner/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false
 
 [node name="Platform" type="Spatial" parent="." index="1"]
 
+editor/display_folded = true
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Face" type="MeshInstance" parent="Platform" index="0"]
@@ -169,39 +211,6 @@ constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Platform/Corner/StaticBody" index="0"]
-
-shape = SubResource( 3 )
-disabled = false
-
-[node name="Corner" type="MeshInstance" parent="." index="2"]
-
-transform = Transform( 0.2, -0.2, 0, 0.2, 0.2, 0, 0, 0, 8, -20, 0, 0 )
-layers = 1048575
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform" ]
-
-[node name="StaticBody" type="StaticBody" parent="Corner" index="0"]
-
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1048575
-collision_mask = 1048575
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Corner/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false
