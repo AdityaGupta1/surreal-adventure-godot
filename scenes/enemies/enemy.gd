@@ -25,6 +25,9 @@ func _ready():
 	pass;
 
 func _shoot():
+	if bullet == null:
+		return;
+	
 	var center_angle = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_camera().unproject_position(main.get_node("Player").transform.origin));
 	var initial_angle = center_angle - (((float(shotgun_bullets) / 2) - 0.5) * deg2rad(shotgun_angle));
 	
