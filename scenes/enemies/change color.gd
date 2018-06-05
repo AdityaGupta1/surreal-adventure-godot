@@ -11,5 +11,3 @@ func _get_color():
 func _physics_process(delta):
 	time += delta;
 	get_surface_material(0).albedo_color = _get_color();
-	
-	pass;

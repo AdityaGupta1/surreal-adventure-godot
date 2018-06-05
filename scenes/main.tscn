@@ -2,22 +2,34 @@
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=3]
-[ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://scenes/monet label.gd" type="Script" id=5]
-[ext_resource path="res://fonts/images/monet disc.png" type="Texture" id=6]
-[ext_resource path="res://scenes/enemies/conke can/conke can.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/enemies/cube/cube.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/arena/arena.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/enemies/crab/crab.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/health bar.gd" type="Script" id=11]
+[ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/monet label.gd" type="Script" id=4]
+[ext_resource path="res://fonts/images/monet disc.png" type="Texture" id=5]
+[ext_resource path="res://scenes/enemies/conke can/conke can.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/enemies/cube/cube.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/arena/arena.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/enemies/crab/crab.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/health bar.gd" type="Script" id=10]
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Camera
+
+var initial_rotation;
+
+#func _ready():
+#	initial_rotation = rotation;
+#
+#func _process(delta):
+#	rotation = initial_rotation;
+"
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 24
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Resource", "Settings" ]
 
 [node name="Main" type="Spatial"]
@@ -48,7 +60,7 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
-script = ExtResource( 3 )
+script = SubResource( 2 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Spatial" index="1"]
@@ -99,7 +111,7 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="monet image" type="TextureRect" parent="." index="3"]
@@ -119,21 +131,21 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility" ]
 
-[node name="Conke Can" parent="." index="4" instance=ExtResource( 7 )]
+[node name="Conke Can" parent="." index="4" instance=ExtResource( 6 )]
 
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 12.2894, 20.3965, 3.25554 )
 
-[node name="Cube" parent="." index="5" instance=ExtResource( 8 )]
+[node name="Cube" parent="." index="5" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5636, 9.73147 )
 
-[node name="Arena" parent="." index="6" instance=ExtResource( 9 )]
+[node name="Arena" parent="." index="6" instance=ExtResource( 8 )]
 
-[node name="Crab" parent="." index="7" instance=ExtResource( 10 )]
+[node name="Crab" parent="." index="7" instance=ExtResource( 9 )]
 
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 20.971, -10.6531 )
 
@@ -189,7 +201,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.54902, 0.0980392, 0.0980392, 1 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
 
 

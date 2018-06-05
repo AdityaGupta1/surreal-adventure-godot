@@ -31,5 +31,3 @@ func _physics_process(delta):
 		
 		for side in ["Top", "Right", "Bottom", "Left"]:
 			get_node(side).get_node("Platform").extend();
-	
-	pass;

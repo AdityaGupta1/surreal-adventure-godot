@@ -2,7 +2,6 @@
 
 [ext_resource path="res://models/isopod.obj" type="ArrayMesh" id=1]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
@@ -59,7 +58,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Isopod" type="KinematicBody"]
+[node name="Isopod" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

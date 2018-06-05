@@ -28,8 +28,6 @@ func _ready():
 	shoot_delay = get_node("guns/gun 1").get_shoot_delay();
 	._ready();
 	
-	pass;
-	
 func damage(damage):
 	if vulnerable > current_time:
 		return;
@@ -40,8 +38,6 @@ func damage(damage):
 	.damage(damage);
 	
 	vulnerable = current_time + 0.5;
-	
-	pass;
 
 func _physics_process(delta):
 	current_time += delta;
@@ -70,8 +66,6 @@ func _physics_process(delta):
 		get_node("guns/gun " + str(next_gun)).shoot();
 		next_gun = 2 if next_gun == 1 else 1;
 		shoot_delay = get_node("guns/gun " + str(next_gun)).get_shoot_delay();
-	
-	pass;
 	
 func add_monet(new_monet):
 	monet += new_monet;

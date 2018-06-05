@@ -21,8 +21,6 @@ func _ready():
 	
 	add_to_group("enemies");
 	._ready();
-	
-	pass;
 
 func _shoot():
 	if bullet == null:
@@ -38,16 +36,12 @@ func _shoot():
 		main.add_child(new_bullet);
 		
 	time = 0;
-	
-	pass;
 
 func _physics_process(delta):
 	if time < shoot_delay: 
 		time += delta;
 	else:
 		_shoot();
-	
-	pass;
 	
 func _random_vector(bound):
 	return Vector3(rand_range(-bound, bound), rand_range(-bound, bound), rand_range(-bound, bound));
@@ -73,5 +67,3 @@ func _die():
 	emit_signal("enemy_died");
 	
 	queue_free();
-	
-	pass;

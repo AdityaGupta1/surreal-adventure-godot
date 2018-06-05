@@ -11,8 +11,6 @@ func _ready():
 				
 	randomize();
 	
-	pass;
-	
 var awaiting_player_centered = false;
 
 func _process(delta):
@@ -26,10 +24,6 @@ func _process(delta):
 					emit_signal("retract");
 					awaiting_player_centered = false;
 
-	pass;
-
 func enemy_died():
 	if get_tree().get_nodes_in_group("enemies").size() == 1:
 		awaiting_player_centered = true;
-			
-	pass;

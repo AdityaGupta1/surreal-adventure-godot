@@ -12,5 +12,3 @@ func _ready():
 	monet = 3;
 	
 	._ready();
-	
-	pass;

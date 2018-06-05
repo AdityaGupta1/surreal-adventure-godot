@@ -8,5 +8,3 @@ func _ready():
 	monet = 4;
 	
 	._ready();
-	
-	pass;

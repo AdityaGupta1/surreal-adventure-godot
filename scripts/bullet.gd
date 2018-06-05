@@ -19,8 +19,6 @@ func _physics_process(delta):
 			hit.damage(damage);
 			if lifespan != -1:
 				queue_free();
-		
-	pass
 
 func should_collide(hit):
 	pass;

@@ -19,5 +19,3 @@ func _physics_process(delta):
 	rotate_z(delta);
 	
 	get_node("MeshInstance").get_surface_material(0).albedo_color = _get_color();
-	
-	pass;

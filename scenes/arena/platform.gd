@@ -10,12 +10,10 @@ onready var timer = get_node("Timer");
 func retract():
 	direction = -1;
 	time_remaining = time;
-	pass;
 	
 func extend():
 	direction = 1;
 	time_remaining = time;
-	pass;
 
 func _physics_process(delta):
 	if direction == 0:
@@ -31,5 +29,3 @@ func _physics_process(delta):
 			get_parent().get_parent().rotate_90();
 
 		direction = 0;
-	
-	pass;
