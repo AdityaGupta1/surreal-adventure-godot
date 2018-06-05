@@ -18,6 +18,8 @@ var next_gun = 1;
 
 var monet = 0;
 
+var vulnerable = 0;
+
 onready var sounds = get_node("sounds");
 
 func _ready():
@@ -29,10 +31,15 @@ func _ready():
 	pass;
 	
 func damage(damage):
+	if vulnerable > current_time:
+		return;
+	
 	var hurt_sounds = sounds.get_node("hurt");
 	hurt_sounds.get_children()[randi() % hurt_sounds.get_child_count()].play();
 	
 	.damage(damage);
+	
+	vulnerable = current_time + 0.5;
 	
 	pass;
 
