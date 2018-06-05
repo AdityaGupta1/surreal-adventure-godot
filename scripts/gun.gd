@@ -19,8 +19,6 @@ func shoot():
 	time = 0;
 	
 	get_node("sound").play(0);
-	
-	pass;
 
 func _get_rotation(x):
 	return max((50 / 2.1564) * (-pow((a * x) - pow(3, 1/4), 4) + 3 - (a * x)), 0);
@@ -29,6 +27,4 @@ func _physics_process(delta):
 	if time < rotation_time: 
 		time += delta;
 	
-	rotation.z = deg2rad(_get_rotation(time));
-	
-	pass;
+	rotation.z = deg2rad(_get_rotation(time)); 

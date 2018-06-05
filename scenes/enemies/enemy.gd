@@ -56,7 +56,7 @@ func _die():
 		position.z += rand_range(0, 1);
 		new_monet_disc.transform.origin = position;
 		
-		new_monet_disc.apply_impulse(position + _random_vector(0.1), _random_vector(0.1));
+		new_monet_disc.apply_impulse(position + _random_vector(0.1), _random_vector(0.05));
 		
 		new_monet_disc.rotation.x = rand_range(0, 2 * PI);
 		new_monet_disc.rotation.y = rand_range(0, 2 * PI);
