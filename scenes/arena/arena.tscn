@@ -66,17 +66,13 @@ subdivide_depth = 0
 
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[node name="Arena" type="Spatial" index="0"]
+[node name="Arena" type="Spatial"]
 
 _sections_unfolded = [ "Transform" ]
 
 [node name="Left" parent="." index="0" instance=ExtResource( 1 )]
 
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 12 )
-
-[node name="Top" parent="Left" index="0"]
-
-editor/display_folded = true
 
 [node name="Right" parent="." index="1" instance=ExtResource( 1 )]
 

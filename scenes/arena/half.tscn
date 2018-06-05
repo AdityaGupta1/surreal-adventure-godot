@@ -69,7 +69,6 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 
 [node name="Half" type="Spatial"]
 
-editor/display_folded = true
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
