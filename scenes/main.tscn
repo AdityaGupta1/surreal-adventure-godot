@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/enemies/cube/cube.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/arena/arena.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/enemies/crab/crab.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/health bar.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -19,7 +20,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Resource", "Settings" ]
 
-[node name="Main" type="Spatial"]
+[node name="Main" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -135,5 +136,60 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5636, 9.73147 )
 [node name="Crab" parent="." index="7" instance=ExtResource( 10 )]
 
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 20.971, -10.6531 )
+
+[node name="health bar" type="Control" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1014.0
+margin_top = 500.0
+margin_right = 1014.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="back" type="ColorRect" parent="health bar" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 25.0
+margin_bottom = 400.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+_sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
+
+[node name="front" type="ColorRect" parent="health bar" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 25.0
+margin_bottom = 400.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.54902, 0.0980392, 0.0980392, 1 )
+script = ExtResource( 11 )
+_sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
 
 
