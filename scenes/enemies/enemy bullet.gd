@@ -1,4 +1,8 @@
 extends "res://scripts/bullet.gd"
 
-func should_collide(hit):
-	return hit.get_name() == "Player";
+func _get_collider():
+	for body in area.get_overlapping_bodies():
+		if body.get_name() == "Player":
+			return body;
+			
+	return null;

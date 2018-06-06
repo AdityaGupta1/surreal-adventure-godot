@@ -1,9 +1,11 @@
-extends KinematicBody
+extends Spatial
 
 var time_existed = 0;
 var lifespan;
 var speed;
 var damage;
+
+onready var area = get_node("Area");
 
 func _physics_process(delta):
 	time_existed += delta;
@@ -11,14 +13,15 @@ func _physics_process(delta):
 	if time_existed > lifespan and lifespan != -1:
 		queue_free();
 		
-	var collision = move_and_collide(Vector3(cos(rotation.y), 0, -sin(rotation.y)) * speed / 1000);
+	var multiplier = speed * delta / 20;
+	transform.origin.x += cos(rotation.y) * multiplier;
+	transform.origin.z += -sin(rotation.y) * multiplier;
 	
-	if collision:
-		var hit = collision.get_collider();
-		if should_collide(hit):
-			hit.damage(damage);
-			if lifespan != -1:
-				queue_free();
-
-func should_collide(hit):
-	pass; 
+	var collider = _get_collider();
+	if collider != null:
+		collider.damage(damage);
+		if lifespan != -1:
+			queue_free();
+				
+func _get_collider():
+	pass;

@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/enemies/crab/crab.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/health bar.gd" type="Script" id=10]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Camera
 
@@ -24,7 +24,7 @@ var initial_rotation;
 #	rotation = initial_rotation;
 "
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 size = 24
 use_mipmaps = false
@@ -40,12 +40,12 @@ script = ExtResource( 1 )
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13, 21.8502, 0 )
 
-[node name="Spatial" type="Spatial" parent="." index="1"]
+[node name="camrea and light" type="Spatial" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Camera" type="Camera" parent="Spatial" index="0"]
+[node name="camera" type="Camera" parent="camrea and light" index="0"]
 
 transform = Transform( -1, 8.74228e-08, 6.13504e-15, -8.74228e-08, -1, -1.74845e-07, -7.64274e-15, -1.74845e-07, 1, 0, 0, 0 )
 keep_aspect = 1
@@ -60,10 +60,10 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
-script = SubResource( 2 )
+script = SubResource( 1 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="Spatial" index="1"]
+[node name="light" type="DirectionalLight" parent="camrea and light" index="1"]
 
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
@@ -105,7 +105,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 1
 percent_visible = 1.0

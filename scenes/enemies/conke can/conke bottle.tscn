@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/enemies/conke can/conke bottle.gd" type="Script" id=1]
-[ext_resource path="res://models/coke/coke bottle/coke bottle.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://models/coke/coke bottle/bottle cap.jpg" type="Texture" id=3]
-[ext_resource path="res://models/coke/coke bottle/label.jpg" type="Texture" id=4]
+[ext_resource path="res://models/coke/coke bottle/coke bottle.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://models/coke/coke bottle/bottle cap.jpg" type="Texture" id=2]
+[ext_resource path="res://models/coke/coke bottle/label.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/enemies/conke can/conke bottle.gd" type="Script" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -29,7 +29,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = ExtResource( 3 )
+albedo_texture = ExtResource( 2 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -134,7 +134,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = ExtResource( 4 )
+albedo_texture = ExtResource( 3 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -167,23 +167,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Conke Bottle" type="KinematicBody"]
-
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 64
-collision_mask = 1
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-collision/safe_margin = 0.001
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
-
-[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
+[node name="Conke Bottle" type="MeshInstance" index="0"]
 
 transform = Transform( -2.18557e-10, 0.005, 0, -0.005, -2.18557e-10, 0, 0, 0, 0.005, -0.000249863, -2.98023e-08, -0.000237525 )
 layers = 1
@@ -195,18 +179,43 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 2 )
+mesh = ExtResource( 1 )
 skeleton = NodePath("..")
 material/0 = SubResource( 1 )
 material/1 = null
 material/2 = SubResource( 2 )
 material/3 = SubResource( 3 )
 material/4 = null
+script = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+[node name="Area" type="Area" parent="." index="0"]
 
-transform = Transform( 0.5, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.477703, 0.00157499, -0.00231212 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 64
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+
+transform = Transform( 33, 1.46833e-05, 0, -4.84414e-06, 100.028, 0, 0, 0, 33, -4.11571e-06, 94.1564, 0 )
 shape = SubResource( 4 )
 disabled = false
 _sections_unfolded = [ "Transform" ]

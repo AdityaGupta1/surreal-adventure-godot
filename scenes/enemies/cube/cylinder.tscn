@@ -120,21 +120,9 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Cylinder" type="KinematicBody"]
+[node name="Cylinder" type="Spatial"]
 
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 64
-collision_mask = 1
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-collision/safe_margin = 0.001
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
@@ -154,9 +142,34 @@ material/0 = SubResource( 3 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+[node name="Area" type="Area" parent="." index="1"]
 
-transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.5, 0, 0 )
+transform = Transform( -4.37114e-09, -0.5, 0, 0.1, -2.18557e-08, 0, 0, 0, 0.1, 0.503383, -2.98023e-08, -0.000237525 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 64
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+
+transform = Transform( -2.18557e-07, 1, 0, -1, -8.74228e-09, 0, 0, 0, 1, 2.99502e-07, 0.00676596, 0.00237525 )
 shape = SubResource( 4 )
 disabled = false
 _sections_unfolded = [ "Transform" ]

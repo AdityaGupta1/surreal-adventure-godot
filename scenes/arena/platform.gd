@@ -4,8 +4,6 @@ extends Spatial
 var direction = 0;
 var time = 1.5;
 var time_remaining = 0;
-
-onready var timer = get_node("Timer");
 	
 func retract():
 	direction = -1;
