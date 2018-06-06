@@ -5,5 +5,9 @@ func _ready():
 	speed = 400;
 	damage = 1000;
 
-func should_collide(hit):
-	return hit.is_in_group("enemies");
+func _get_collider():
+	for body in area.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			return body;
+			
+	return null;
