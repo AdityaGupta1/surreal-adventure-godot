@@ -128,13 +128,13 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Metallic" ]
 
-[node name="Monet Disc" type="RigidBody"]
+[node name="Monet Disc" type="RigidBody" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000744283, -0.000608847, 5.87106e-05 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 0
-collision_mask = 33
+collision_mask = 32
 mode = 0
 mass = 1.0
 friction = 0.5
@@ -231,7 +231,7 @@ angular_damp = 1.0
 priority = 0.0
 monitoring = true
 monitorable = true
-collision_layer = 1
+collision_layer = 0
 collision_mask = 1
 audio_bus_override = false
 audio_bus_name = "Master"
@@ -239,6 +239,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Audio Bus", "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
 
