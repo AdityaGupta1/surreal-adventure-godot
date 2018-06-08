@@ -1,12 +1,13 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=1]
-[ext_resource path="res://models/meme man.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://models/player/meme man.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/player/gun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sounds/player/collect monet disc.wav" type="AudioStream" id=4]
 [ext_resource path="res://sounds/player/hurt1.wav" type="AudioStream" id=5]
 [ext_resource path="res://sounds/player/hurt2.wav" type="AudioStream" id=6]
 [ext_resource path="res://sounds/player/hurt3.wav" type="AudioStream" id=7]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 

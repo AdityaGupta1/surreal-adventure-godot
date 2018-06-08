@@ -24,7 +24,8 @@ func _physics_process(delta):
 	previous_time_remaining = time_remaining;
 	time_remaining = max(0, time_remaining - delta);
 	
-	rotation.z += direction * (get_move(time_remaining / time) - get_move(previous_time_remaining / time)) * PI/2;
+#	rotation.z += direction * (get_move(time_remaining / time) - get_move(previous_time_remaining / time)) * PI/2;
+	rotate_z(direction * (get_move(time_remaining / time) - get_move(previous_time_remaining / time)) * PI/2);
 	
 	if time_remaining == 0:
 		moving = false;

@@ -1,9 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/enemies/crab/crab.gd" type="Script" id=1]
-[ext_resource path="res://models/crab.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://models/crab/crab.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/enemies/crab/space.jpg" type="Texture" id=3]
 [ext_resource path="res://scenes/enemies/crab/bullet.gd" type="Script" id=4]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 
