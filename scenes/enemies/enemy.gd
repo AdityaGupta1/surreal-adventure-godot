@@ -4,15 +4,23 @@ signal enemy_died;
 var added_signal = false;
 
 onready var main = get_tree().get_root().get_node("Main");
+onready var player = main.get_node("Player");
+
+var total_time = 0;
 
 var bullet;
-var time = shoot_delay;
+var last_shot = 0;
 
 var shotgun_bullets = 1;
 var shotgun_angle = 0;
 
 var monet = 0;
 const monet_disc = preload("res://scenes/monet disc.tscn");
+
+var gravity = -30;
+var levitates = false;
+
+onready var origin = transform.origin;
 
 func _ready():
 	if not added_signal:
@@ -21,12 +29,15 @@ func _ready():
 	
 	add_to_group("enemies");
 	._ready();
+	
+func _move(delta):
+	pass;
 
 func _shoot():
 	if bullet == null:
 		return;
 	
-	var center_angle = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_camera().unproject_position(main.get_node("Player").transform.origin));
+	var center_angle = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_camera().unproject_position(player.transform.origin));
 	var initial_angle = center_angle - (((float(shotgun_bullets) / 2) - 0.5) * deg2rad(shotgun_angle));
 	
 	for i in range(0, shotgun_bullets):
@@ -35,12 +46,17 @@ func _shoot():
 		new_bullet.rotation.y = initial_angle + (i * deg2rad(shotgun_angle));
 		main.add_child(new_bullet);
 		
-	time = 0;
+	last_shot = total_time;
 
 func _physics_process(delta):
-	if time < shoot_delay: 
-		time += delta;
-	else:
+	_move(delta);
+	
+	if not levitates:
+		move_and_collide(Vector3(0, gravity * delta, 0));
+	
+	total_time += delta;
+	
+	if total_time - last_shot >= shoot_delay: 
 		_shoot();
 	
 func _random_vector(bound):

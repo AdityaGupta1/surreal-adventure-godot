@@ -2,7 +2,7 @@ extends "res://scripts/character.gd"
 
 const e = 2.71828182846;
 
-var current_time = 0;
+var total_time = 0;
 
 var speed = 600;
 var jump_velocity = 15;
@@ -29,7 +29,7 @@ func _ready():
 	._ready();
 	
 func damage(damage):
-	if vulnerable > current_time:
+	if vulnerable > total_time:
 		return;
 	
 	var hurt_sounds = sounds.get_node("hurt");
@@ -37,10 +37,10 @@ func damage(damage):
 	
 	.damage(damage);
 	
-	vulnerable = current_time + 0.5;
+	vulnerable = total_time + 0.5;
 
 func _physics_process(delta):
-	current_time += delta;
+	total_time += delta;
 	
 	direction = Vector3();
 	direction.z += (1 if Input.is_key_pressed(KEY_W) else 0) - (1 if Input.is_key_pressed(KEY_S) else 0);
@@ -61,8 +61,8 @@ func _physics_process(delta):
 	if is_on_floor() and Input.is_key_pressed(KEY_SPACE):
 		velocity.y += jump_velocity;
 	
-	if current_time - last_shot > shoot_delay and Input.is_mouse_button_pressed(1):
-		last_shot = current_time;
+	if total_time - last_shot >= shoot_delay and Input.is_mouse_button_pressed(1):
+		last_shot = total_time;
 		get_node("guns/gun " + str(next_gun)).shoot();
 		next_gun = 2 if next_gun == 1 else 1;
 		shoot_delay = get_node("guns/gun " + str(next_gun)).get_shoot_delay();

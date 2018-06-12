@@ -12,3 +12,6 @@ func _ready():
 	monet = 2;
 	
 	._ready();
+	
+func _move(delta):
+	transform.origin = origin + 2 * Vector3((1 + cos(4 * total_time)) * cos(total_time), 0, (1 + cos(4 * total_time)) * sin(total_time));

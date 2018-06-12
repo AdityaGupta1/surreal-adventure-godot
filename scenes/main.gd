@@ -2,14 +2,14 @@ extends Spatial
 
 signal retract;
 
-func _ready():
+func _ready():			
+	randomize();
+	
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 20);
 	
 	for half in ["Right", "Left"]:
 		for side in ["Top", "Right", "Bottom", "Left"]:
 				connect("retract", get_node("Arena/" + half + "/" + side + "/Platform"), "retract");
-				
-	randomize();
 	
 var awaiting_player_centered = false;
 
