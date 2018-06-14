@@ -6,6 +6,7 @@ var total_time = 0;
 
 var speed = 600;
 var jump_velocity = 15;
+var can_move = true;
 var gravity = -30;
 
 var direction = Vector3();
@@ -53,13 +54,17 @@ func _physics_process(delta):
 	velocity.x = direction.x;
 	velocity.z = direction.z;
 	
+	if is_on_floor() and Input.is_key_pressed(KEY_SPACE) and can_move:
+		velocity.y += jump_velocity;
+		
+	if not can_move:
+		velocity.x = 0;
+		velocity.z = 0;
+	
 	velocity = move_and_slide(velocity, up);
 	
 	# point toward mouse
 	rotation.y = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_mouse_position());
-	
-	if is_on_floor() and Input.is_key_pressed(KEY_SPACE):
-		velocity.y += jump_velocity;
 	
 	if total_time - last_shot >= shoot_delay and Input.is_mouse_button_pressed(1):
 		last_shot = total_time;
@@ -71,4 +76,10 @@ func add_monet(new_monet):
 	monet += new_monet;
 	sounds.get_node("collect monet disc").play();
 	get_tree().get_root().get_node("Main").get_node("monet label").update();
+	
+func lock_movement():
+	can_move = false;
+	
+func unlock_movement():
+	can_move = true;
 	

@@ -23,6 +23,7 @@ func _process(delta):
 				if body.get_name() == "Player":
 					emit_signal("retract");
 					awaiting_player_centered = false;
+					body.lock_movement();
 
 func enemy_died():
 	if get_tree().get_nodes_in_group("enemies").size() == 1:

@@ -66,7 +66,7 @@ subdivide_depth = 0
 
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[node name="Arena" type="Spatial"]
+[node name="Arena" type="Spatial" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -150,7 +150,6 @@ disabled = false
 
 [node name="Center" type="Area" parent="." index="3"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40.5, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -175,9 +174,10 @@ reverb_bus_uniformity = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Center" index="0"]
 
-transform = Transform( 4, 0, 0, 0, 20.4, 0, 0, 0, 4, 0, 0, 0 )
+transform = Transform( 0.2, 0, 0, 0, 20.4, 0, 0, 0, 0.2, 0, 0, 0 )
 shape = SubResource( 3 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
 
 [editable path="Left"]

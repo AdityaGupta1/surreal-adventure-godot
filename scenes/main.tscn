@@ -32,7 +32,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Resource", "Settings" ]
 
-[node name="Main" type="Spatial" index="0"]
+[node name="Main" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -142,6 +142,7 @@ transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 12.2894, 20.3965, 3.2555
 [node name="Cube" parent="." index="5" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5636, 13.7501 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Arena" parent="." index="6" instance=ExtResource( 8 )]
 
@@ -182,7 +183,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.196078, 0.196078, 0.196078, 1 )
+color = Color( 0.254902, 0.254902, 0.254902, 1 )
 _sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
 
 [node name="front" type="ColorRect" parent="health bar" index="1"]

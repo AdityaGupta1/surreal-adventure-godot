@@ -39,7 +39,3 @@ Meme Man dialogue, sound effects, etc.
 ### Thingiverse (https://www.thingiverse.com/)
 
 [isopod](https://www.thingiverse.com/thing:1810023)
-
-### 3D Warehouse (https://3dwarehouse.sketchup.com/)
-
-[cuboctahedron](https://3dwarehouse.sketchup.com/model/526bd0e15c5cf2d3853fd5826b721961/Cuboctahedron?hl=en)

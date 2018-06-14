@@ -19,13 +19,18 @@ const monet_disc = preload("res://scenes/monet disc.tscn");
 
 var gravity = -30;
 var levitates = false;
+var levitate_y = 0;
 
-onready var origin = transform.origin;
+var origin;
 
 func _ready():
 	if not added_signal:
 		connect("enemy_died", main, "enemy_died");
 		added_signal = true;
+		
+	if levitates:
+		transform.origin.y = levitate_y;
+	origin = transform.origin;
 	
 	add_to_group("enemies");
 	._ready();

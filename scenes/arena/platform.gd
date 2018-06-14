@@ -25,5 +25,9 @@ func _physics_process(delta):
 		# only after retracting
 		if direction == -1:
 			get_parent().get_parent().rotate_90();
+		
+		# only after extending
+		if direction == 1:
+			get_tree().get_root().get_node("Main").get_node("Player").unlock_movement();
 
 		direction = 0;
