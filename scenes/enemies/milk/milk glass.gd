@@ -4,18 +4,20 @@ func _ready():
 	max_health = 160;
 	
 	bullet = preload("res://scenes/enemies/milk/milk.tscn");
-	shoot_delay = 1;
+	shoot_delay = 0.1;
 	
-	shotgun_bullets = 1;
-	shotgun_angle = 1;
+	shotgun_bullets = 6;
+	shotgun_angle = 20;
 	
 	monet = 1;
 	
-	shoot_origin = "origin";
-	shoot_offset = Vector3(0, 1, 0);
 	shoot_towards = "outward";
 	
 	._ready();
 	
 func _move(delta):
 	rotation.y += PI * delta;
+	transform.origin = origin;
+	
+func _initial_angle():
+	return rotation.y - PI;

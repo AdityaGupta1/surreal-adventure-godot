@@ -5,7 +5,6 @@
 [ext_resource path="res://scenes/enemies/crab/space.jpg" type="Texture" id=3]
 [ext_resource path="res://scenes/enemies/crab/bullet.gd" type="Script" id=4]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
@@ -67,7 +66,7 @@ extents = Vector3( 1, 1, 1 )
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Crab" type="KinematicBody" index="0"]
+[node name="Crab" type="KinematicBody"]
 
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 input_ray_pickable = true

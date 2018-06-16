@@ -169,7 +169,7 @@ extents = Vector3( 1, 1, 1 )
 
 [node name="Conke Bottle" type="MeshInstance"]
 
-transform = Transform( -2.18557e-10, 0.005, 0, -0.005, -2.18557e-10, 0, 0, 0, 0.005, -0.000249863, -2.98023e-08, -0.000237525 )
+transform = Transform( -2.18557e-10, 0.005, 0, -0.005, -2.18557e-10, 0, 0, 0, 0.005, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1

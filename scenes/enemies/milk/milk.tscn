@@ -54,7 +54,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Metallic", "Parameters" ]
 
-[sub_resource type="SphereMesh" id=4]
+[sub_resource type="SphereMesh" id=2]
 
 material = SubResource( 1 )
 radius = 0.1
@@ -80,7 +80,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 script = ExtResource( 1 )

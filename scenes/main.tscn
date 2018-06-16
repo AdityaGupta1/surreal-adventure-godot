@@ -33,13 +33,13 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Resource", "Settings" ]
 
-[node name="Main" type="Spatial"]
+[node name="Main" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Player" parent="." index="0" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13, 21.8502, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13, 22, -8 )
 
 [node name="camera and light" type="Spatial" parent="." index="1"]
 
@@ -48,7 +48,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="camera" type="Camera" parent="camera and light" index="0"]
 
-transform = Transform( -1, 8.74228e-08, 6.13504e-15, -8.74228e-08, -1, -1.74845e-07, -7.64274e-15, -1.74845e-07, 1, 0, 0, 0 )
+transform = Transform( -1, -8.74228e-08, 0, -8.74228e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -66,6 +66,7 @@ _sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="light" type="DirectionalLight" parent="camera and light" index="1"]
 
+visible = false
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
@@ -89,7 +90,7 @@ directional_shadow_normal_bias = 0.8
 directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
-_sections_unfolded = [ "Light" ]
+_sections_unfolded = [ "Light", "Transform" ]
 
 [node name="monet label" type="Label" parent="." index="2"]
 

@@ -10,8 +10,6 @@ var total_time = 0;
 
 var bullet;
 var last_shot = 0;
-var shoot_origin = "origin"; # origin, offset
-var shoot_offset = Vector3();
 var shoot_towards = "player"; # player, outward
 
 var shotgun_bullets = 1;
@@ -49,20 +47,13 @@ func _shoot():
 	if shoot_towards == "player":
 		center_angle = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_camera().unproject_position(player.transform.origin));
 	elif shoot_towards == "outward":
-		center_angle = rotation.y - PI;
+		center_angle = _initial_angle();
 	
 	var initial_angle = center_angle - (((float(shotgun_bullets) / 2) - 0.5) * deg2rad(shotgun_angle));
 	
 	for i in range(0, shotgun_bullets):
 		var new_bullet = bullet.instance();
-		
-		var position = global_transform.origin;
-		if shoot_origin == "origin":
-			position += shoot_offset;
-		elif shoot_origin == "offset":
-			position += shoot_offset * Vector3(cos(rotation.y), 0, -sin(rotation.y));
-		
-		new_bullet.transform.origin = position;
+		new_bullet.transform.origin = get_node("bullet origin").global_transform.origin;
 		new_bullet.rotation.y = initial_angle + (i * deg2rad(shotgun_angle));
 		main.add_child(new_bullet);
 		
@@ -103,3 +94,7 @@ func _die():
 	emit_signal("enemy_died");
 	
 	._die();
+	
+#should only be used if shoot_towards isn't "player"
+func _initial_angle():
+	pass;
