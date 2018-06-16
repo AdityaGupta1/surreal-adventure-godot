@@ -1,4 +1,4 @@
-extends "res://scripts/bullet.gd"
+extends "res://scenes/bullet.gd"
 
 func _ready():
 	lifespan = 3;

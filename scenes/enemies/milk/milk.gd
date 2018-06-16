@@ -1,6 +1,6 @@
 extends "res://scenes/enemies/enemy bullet.gd"
 
 func _ready():
-	lifespan = -2;
-	speed = 0;
-	damage = 20;
+	lifespan = 3;
+	speed = 100;
+	damage = 7;

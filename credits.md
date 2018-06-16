@@ -39,3 +39,7 @@ Meme Man dialogue, sound effects, etc.
 ### Thingiverse (https://www.thingiverse.com/)
 
 [isopod](https://www.thingiverse.com/thing:1810023)
+
+### Archive3D (https://archive3d.net/)
+
+[milk glass](https://archive3d.net/?a=download&id=20e8b13a)

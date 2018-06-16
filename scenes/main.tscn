@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/monet label.gd" type="Script" id=4]
 [ext_resource path="res://fonts/images/monet disc.png" type="Texture" id=5]
-[ext_resource path="res://scenes/enemies/conke can/conke can.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/enemies/cube/cube.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/arena/arena.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/enemies/crab/crab.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/health bar.gd" type="Script" id=10]
+[ext_resource path="res://scenes/arena/arena.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/health bar.gd" type="Script" id=7]
+[ext_resource path="res://scenes/enemies/conke can/conke can.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/enemies/cube/cube.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/enemies/crab/crab.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/enemies/milk/milk glass.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 
@@ -40,12 +41,12 @@ script = ExtResource( 1 )
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13, 21.8502, 0 )
 
-[node name="camrea and light" type="Spatial" parent="." index="1"]
+[node name="camera and light" type="Spatial" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="camera" type="Camera" parent="camrea and light" index="0"]
+[node name="camera" type="Camera" parent="camera and light" index="0"]
 
 transform = Transform( -1, 8.74228e-08, 6.13504e-15, -8.74228e-08, -1, -1.74845e-07, -7.64274e-15, -1.74845e-07, 1, 0, 0, 0 )
 keep_aspect = 1
@@ -63,7 +64,7 @@ far = 100.0
 script = SubResource( 1 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
-[node name="light" type="DirectionalLight" parent="camrea and light" index="1"]
+[node name="light" type="DirectionalLight" parent="camera and light" index="1"]
 
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
@@ -88,6 +89,7 @@ directional_shadow_normal_bias = 0.8
 directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
+_sections_unfolded = [ "Light" ]
 
 [node name="monet label" type="Label" parent="." index="2"]
 
@@ -135,22 +137,9 @@ texture = ExtResource( 5 )
 stretch_mode = 0
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility" ]
 
-[node name="Conke Can" parent="." index="4" instance=ExtResource( 6 )]
+[node name="Arena" parent="." index="4" instance=ExtResource( 6 )]
 
-transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 12.2894, 20.3965, 3.25554 )
-
-[node name="Cube" parent="." index="5" instance=ExtResource( 7 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5636, 13.7501 )
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="Arena" parent="." index="6" instance=ExtResource( 8 )]
-
-[node name="Crab" parent="." index="7" instance=ExtResource( 9 )]
-
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 20.971, -10.6531 )
-
-[node name="health bar" type="Control" parent="." index="8"]
+[node name="health bar" type="Control" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -202,7 +191,26 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.54902, 0.0980392, 0.0980392, 1 )
-script = ExtResource( 10 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
+
+[node name="enemies" type="Spatial" parent="." index="6"]
+
+[node name="Conke Can" parent="enemies" index="0" instance=ExtResource( 8 )]
+
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 12.2894, 20.3965, 3.25554 )
+
+[node name="Cube" parent="enemies" index="1" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5636, 13.7501 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Crab" parent="enemies" index="2" instance=ExtResource( 10 )]
+
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 20.971, -10.6531 )
+
+[node name="Milk Glass" parent="enemies" index="3" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94653, 21.4848, 6.6175 )
 
 

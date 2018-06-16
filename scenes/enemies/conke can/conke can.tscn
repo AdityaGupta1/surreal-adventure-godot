@@ -219,7 +219,6 @@ extents = Vector3( 1, 1, 1 )
 
 [node name="Conke Can" type="KinematicBody"]
 
-transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 32
@@ -236,7 +235,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.00487852, 0.00821304, 0.0113583 )
+transform = Transform( 0.018, 0, 0, 0, 0.018, 0, 0, 0, 0.018, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -256,7 +255,7 @@ _sections_unfolded = [ "Transform", "Visibility", "material" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1, 0, 1.83598, 0 )
 shape = SubResource( 5 )
 disabled = false
 _sections_unfolded = [ "Transform" ]

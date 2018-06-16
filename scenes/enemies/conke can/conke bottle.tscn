@@ -167,7 +167,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Conke Bottle" type="MeshInstance" index="0"]
+[node name="Conke Bottle" type="MeshInstance"]
 
 transform = Transform( -2.18557e-10, 0.005, 0, -0.005, -2.18557e-10, 0, 0, 0, 0.005, -0.000249863, -2.98023e-08, -0.000237525 )
 layers = 1

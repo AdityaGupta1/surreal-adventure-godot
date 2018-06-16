@@ -1,4 +1,4 @@
-extends "res://scripts/character.gd"
+extends "res://scenes/character.gd"
 
 const e = 2.71828182846;
 
