@@ -5,6 +5,7 @@ var added_signal = false;
 
 onready var main = get_tree().get_root().get_node("Main");
 onready var player = main.get_node("Player");
+onready var enemies = main.get_node("enemies");
 
 var total_time = 0;
 

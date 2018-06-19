@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/enemies/cube/cube.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/enemies/crab/crab.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/enemies/milk/milk glass.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/enemies/stick/stick.tscn" type="PackedScene" id=12]
 
 [sub_resource type="GDScript" id=1]
 
@@ -212,5 +213,9 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 20.971, -10.6531 )
 [node name="Milk Glass" parent="enemies" index="3" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94653, 21.4848, 6.6175 )
+
+[node name="Infinite Stick" parent="." index="7" instance=ExtResource( 12 )]
+
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.54618, 22.2732, 8.69363 )
 
 

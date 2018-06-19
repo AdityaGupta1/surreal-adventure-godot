@@ -19,7 +19,7 @@ var next_gun = 1;
 
 var monet = 0;
 
-var vulnerable = 0;
+var vulnerable = true;
 
 onready var sounds = get_node("sounds");
 

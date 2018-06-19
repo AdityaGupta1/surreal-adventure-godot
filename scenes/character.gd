@@ -19,6 +19,9 @@ func _physics_process(delta):
 		_die();
 
 func damage(damage):
+	if invulnerable:
+		return;
+	
 	if _dead:
 		return;
 	
