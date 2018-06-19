@@ -57,8 +57,6 @@ func _shoot():
 		new_bullet.transform.origin = get_node("bullet origin").global_transform.origin;
 		new_bullet.rotation.y = initial_angle + (i * deg2rad(shotgun_angle));
 		main.add_child(new_bullet);
-		
-	last_shot = total_time;
 
 func _physics_process(delta):
 	_move(delta);
@@ -70,6 +68,7 @@ func _physics_process(delta):
 	
 	if total_time - last_shot >= shoot_delay: 
 		_shoot();
+		last_shot = total_time;
 	
 func _random_vector(bound):
 	return Vector3(rand_range(-bound, bound), rand_range(-bound, bound), rand_range(-bound, bound));

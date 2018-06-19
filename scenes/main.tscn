@@ -214,8 +214,8 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 20.971, -10.6531 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94653, 21.4848, 6.6175 )
 
-[node name="Infinite Stick" parent="." index="7" instance=ExtResource( 12 )]
+[node name="Unlimited Stick" parent="enemies" index="4" instance=ExtResource( 12 )]
 
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.54618, 22.2732, 8.69363 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.6723, 21.6318, 11.0318 )
 
 

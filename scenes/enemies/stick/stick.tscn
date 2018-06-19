@@ -61,7 +61,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[node name="Infinite Stick" type="KinematicBody" index="0"]
+[node name="Unlimited Stick" type="KinematicBody"]
 
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 input_ray_pickable = true
@@ -101,5 +101,10 @@ mesh = ExtResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 3 )
 _sections_unfolded = [ "Transform", "material" ]
+
+[node name="bullet origin" type="Spatial" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+_sections_unfolded = [ "Transform" ]
 
 
