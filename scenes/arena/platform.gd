@@ -29,5 +29,6 @@ func _physics_process(delta):
 		# only after extending
 		if direction == 1:
 			get_tree().get_root().get_node("Main").get_node("Player").unlock_movement();
+			get_parent().get_parent().get_parent().done_extending();
 
 		direction = 0;

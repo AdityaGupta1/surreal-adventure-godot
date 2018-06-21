@@ -25,7 +25,7 @@ onready var sounds = get_node("sounds");
 
 func _ready():
 	max_health = 200;
-#	invulnerable = true;
+	invulnerable = true;
 	shoot_delay = get_node("guns/gun 1").get_shoot_delay();
 	._ready();
 	
