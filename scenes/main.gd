@@ -2,9 +2,7 @@ extends Spatial
 
 signal retract;
 
-func _ready():			
-	randomize();
-	
+func _ready():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 20);
 	
 	for half in ["Right", "Left"]:

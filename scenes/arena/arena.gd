@@ -13,12 +13,14 @@ var spawns = [
 	[[enemies["conke can"], 80, 2], [enemies["cube"], 40, 3], [enemies["cosmic crab"], 20, 6]],
 	[[enemies["conke can"], 90, 2], [enemies["cube"], 60, 4], [enemies["cosmic crab"], 50, 3]]
 ];
-onready var safezone = get_node("Safezone");
-onready var enemy_spawn = get_node("Enemy Spawn");
 
 var spawn_positions = [];
 
 var confirmations = 0;
+
+func _ready():
+	randomize();
+	_spawn_enemies();
 
 func done_extending():
 	confirmations += 1;
@@ -35,7 +37,31 @@ func _spawn_enemies():
 	for enemy_chances in enemies:
 		for i in range(enemy_chances[1]):
 			if rand_range(0, 100) < enemy_chances[2]:
-				var position = _find_eligible_safe_location();
+				var enemy = enemy_chances[0].instance();
+				enemy.transform.origin = _find_eligible_spawn_location();
+				get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
+				
+func _generate_random_coordinate():
+	return (((randi() % 2) * 2) - 1) * rand_range(6, 16);
+	
+func _is_eligible_spawn_location(x, z):
+	for position in spawn_positions:
+		if Vector2(position[0], position[1]).distance_to(Vector2(x, z)) <= 1:
+			return false;
+			
+	return true;
 				
 func _find_eligible_spawn_location():
+	var x;
+	var z;
+	
+	while true:
+		x = _generate_random_coordinate();
+		z = _generate_random_coordinate();
+		
+		if _is_eligible_spawn_location(x, z):
+			break;
+	
+	spawn_positions.append([x, z]);
+	return Vector3(x, 22.5, z);
 	

@@ -186,69 +186,6 @@ shape = SubResource( 3 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Safezone" type="Area" parent="." index="4"]
-
-input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape" type="CollisionShape" parent="Safezone" index="0"]
-
-transform = Transform( 4, 0, 0, 0, 100, 0, 0, 0, 4, 0, 0, 0 )
-shape = SubResource( 3 )
-disabled = false
-_sections_unfolded = [ "Transform" ]
-
-[node name="Enemy Spawn" type="Area" parent="." index="5"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, 0 )
-input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape" type="CollisionShape" parent="Enemy Spawn" index="0"]
-
-transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, -1, 0 )
-shape = SubResource( 3 )
-disabled = false
-_sections_unfolded = [ "Transform" ]
-
 
 [editable path="Left"]
 [editable path="Left/Top"]
