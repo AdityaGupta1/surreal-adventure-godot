@@ -24,5 +24,5 @@ func _process(delta):
 					body.lock_movement();
 
 func enemy_died():
-	if get_tree().get_nodes_in_group("enemies").size() == 1:
+	if get_node("enemies").get_children().size() == 1:
 		awaiting_player_centered = true;

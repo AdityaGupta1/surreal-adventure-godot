@@ -10,8 +10,9 @@ var enemies = {
 var wave = 0;
 # [enemy, spawn chance, spawn tries]
 var spawns = [
-	[[enemies["conke can"], 80, 2], [enemies["cube"], 40, 3], [enemies["cosmic crab"], 20, 6]],
-	[[enemies["conke can"], 90, 2], [enemies["cube"], 60, 4], [enemies["cosmic crab"], 50, 3]]
+	[[enemies["conke can"], 80, 2], [enemies["cube"], 60, 2], [enemies["cosmic crab"], 75, 2]],
+	[[enemies["conke can"], 90, 2], [enemies["cube"], 60, 3], [enemies["cosmic crab"], 85, 2]],
+	[[enemies["conke can"], 100, 2], [enemies["cube"], 80, 3], [enemies["cosmic crab"], 100, 1], [enemies["milk glass"], 75, 2]]
 ];
 
 var spawn_positions = [];
@@ -46,7 +47,8 @@ func _generate_random_coordinate():
 	
 func _is_eligible_spawn_location(x, z):
 	for position in spawn_positions:
-		if Vector2(position[0], position[1]).distance_to(Vector2(x, z)) <= 1:
+		print(position);
+		if Vector2(position[0], position[1]).distance_to(Vector2(x, z)) <= 2:
 			return false;
 			
 	return true;
