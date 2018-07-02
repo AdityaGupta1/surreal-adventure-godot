@@ -15,7 +15,7 @@ func _physics_process(delta):
 	
 	var collider = _get_collider();
 	if collider != null:
-		collider.damage(damage);
+		_damage_collider(collider);
 		if lifespan != -2:
 			queue_free();
 	
@@ -23,6 +23,11 @@ func _physics_process(delta):
 		var multiplier = speed * delta / 20;
 		transform.origin.x += cos(rotation.y) * multiplier;
 		transform.origin.z += -sin(rotation.y) * multiplier;
+		
+# can be overwritten to do something extra when player collides with bullets
+# for example, smol sticks saying "scronch", "scromble", etc. when colliding with player
+func _damage_collider(collider):
+	collider.damage(damage);
 				
 func _get_collider():
 	pass;
