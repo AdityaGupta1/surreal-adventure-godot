@@ -9,12 +9,11 @@ var enemies = {
 };
 var wave = 0;
 # [enemy, spawn chance, spawn tries]
-var spawns = [[[enemies["unlimited stick"], 100, 5]]];
-#var spawns = [
-#	[[enemies["conke can"], 80, 2], [enemies["cube"], 60, 2], [enemies["cosmic crab"], 75, 2]],
-#	[[enemies["conke can"], 90, 2], [enemies["cube"], 60, 3], [enemies["cosmic crab"], 85, 2]],
-#	[[enemies["conke can"], 100, 2], [enemies["cube"], 80, 3], [enemies["cosmic crab"], 100, 1], [enemies["milk glass"], 75, 2]]
-#];
+var spawns = [
+	[[enemies["conke can"], 80, 2], [enemies["cube"], 60, 2], [enemies["cosmic crab"], 75, 2]],
+	[[enemies["conke can"], 90, 2], [enemies["cube"], 60, 3], [enemies["cosmic crab"], 85, 2]],
+	[[enemies["conke can"], 100, 2], [enemies["cube"], 80, 3], [enemies["cosmic crab"], 100, 1], [enemies["milk glass"], 75, 2]]
+];
 
 var spawn_positions = [];
 
