@@ -19,23 +19,25 @@ Meme Man dialogue, sound effects, etc.
 
 ### BackgroundCheckAll (http://backgroundcheckall.com/)
 
-[space (for cosmic crab)](http://backgroundcheckall.com/repeating-space-background-9/)
+[blue space background (cosmic crab, below arena)](http://backgroundcheckall.com/repeating-space-background-9/)
 
 ### Wallup (https://wallup.net/)
 
-[green space background](https://wallup.net/green-space-artwork-tylercreatesworlds-nebula/)
+[green space background (title screen)](https://wallup.net/green-space-artwork-tylercreatesworlds-nebula/)
 
 ### Pinterest (https://www.pinterest.com/)
 
-[purple space background](https://www.pinterest.com/pin/330592428880149388/)
+[purple space background (title screen)](https://www.pinterest.com/pin/330592428880149388/)
+
+### DeviantArt (https://www.deviantart.com/)
+
+[blue space background (title screen)](https://www.deviantart.com/heatstroke99/art/Blue-Space-Scape-186499366)
 
 ## Fonts
 
 ### FontSpace (http://www.fontspace.com/)
 
 [title font (Hell Underwater)](http://www.fontspace.com/chequered-ink/hell-underwater)
-
-### Forbes
 
 ## 3D models
 

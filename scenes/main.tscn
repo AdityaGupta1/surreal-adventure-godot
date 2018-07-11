@@ -1,14 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://scenes/monet label.gd" type="Script" id=4]
-[ext_resource path="res://fonts/images/monet disc.png" type="Texture" id=5]
-[ext_resource path="res://scenes/arena/arena.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/health bar.gd" type="Script" id=7]
-[ext_resource path="res://scenes/space.jpg" type="Texture" id=8]
-[ext_resource path="res://scenes/space background.gd" type="Script" id=9]
+[ext_resource path="res://scenes/arena/arena.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/space.jpg" type="Texture" id=4]
+[ext_resource path="res://scenes/space background.gd" type="Script" id=5]
+[ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://scenes/monet label.gd" type="Script" id=7]
+[ext_resource path="res://fonts/images/monet disc.png" type="Texture" id=8]
+[ext_resource path="res://scenes/health bar.gd" type="Script" id=9]
+[ext_resource path="res://images/title.png" type="Texture" id=10]
+[ext_resource path="res://images/enter.png" type="Texture" id=11]
 
 [sub_resource type="GDScript" id=1]
 
@@ -22,14 +24,6 @@ var initial_rotation;
 #func _process(delta):
 #	rotation = initial_rotation;
 "
-
-[sub_resource type="DynamicFont" id=2]
-
-size = 24
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 3 )
-_sections_unfolded = [ "Extra Spacing", "Resource", "Settings" ]
 
 [sub_resource type="CubeMesh" id=3]
 
@@ -62,7 +56,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = ExtResource( 8 )
+albedo_texture = ExtResource( 4 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -90,6 +84,14 @@ uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Proximity Fade", "UV1", "UV2" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Extra Spacing", "Resource", "Settings" ]
 
 [node name="Main" type="Spatial" index="0"]
 
@@ -149,7 +151,45 @@ directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 _sections_unfolded = [ "Light", "Transform" ]
 
-[node name="monet label" type="Label" parent="." index="2"]
+[node name="Arena" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="enemies" type="Spatial" parent="." index="3"]
+
+[node name="space background" type="MeshInstance" parent="." index="4"]
+
+transform = Transform( 120, 0, 0, 0, 0.1, 0, 0, 0, 120, 0, -40, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="HUD" type="Control" parent="." index="5"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="monet label" type="Label" parent="HUD" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -171,10 +211,10 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 4 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="monet image" type="TextureRect" parent="." index="3"]
+[node name="monet image" type="TextureRect" parent="HUD" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -191,13 +231,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 stretch_mode = 0
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility" ]
 
-[node name="Arena" parent="." index="4" instance=ExtResource( 6 )]
-
-[node name="health bar" type="Control" parent="." index="5"]
+[node name="health bar" type="Control" parent="HUD" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -215,7 +253,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="back" type="ColorRect" parent="health bar" index="0"]
+[node name="back" type="ColorRect" parent="HUD/health bar" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -233,7 +271,7 @@ size_flags_vertical = 1
 color = Color( 0.254902, 0.254902, 0.254902, 1 )
 _sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
 
-[node name="front" type="ColorRect" parent="health bar" index="1"]
+[node name="front" type="ColorRect" parent="HUD/health bar" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -249,27 +287,63 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.54902, 0.0980392, 0.0980392, 1 )
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
 
-[node name="enemies" type="Spatial" parent="." index="6"]
+[node name="title screen" type="Control" parent="." index="6"]
 
-[node name="space background" type="MeshInstance" parent="." index="7"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
-transform = Transform( 120, 0, 0, 0, 0.1, 0, 0, 0, 120, 0, -40, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 3 )
-skeleton = NodePath("..")
-material/0 = SubResource( 4 )
-script = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "material" ]
+[node name="title" type="TextureRect" parent="title screen" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 242.0
+margin_top = 60.0
+margin_right = 782.0
+margin_bottom = 300.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="enter" type="TextureRect" parent="title screen" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 362.0
+margin_top = 360.0
+margin_right = 762.0
+margin_bottom = 560.0
+rect_scale = Vector2( 0.75, 0.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 
