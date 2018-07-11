@@ -8,7 +8,7 @@ nobody except me yet xd
 
 ### freesound (https://sketchfab.com/)
 
-[blaster sound](https://freesound.org/people/tutarap/sounds/341956/)
+[blaster sound](https://freesound.org/people/tutarap/sounds/341956/)  
 [monet disc collection sound](https://freesound.org/people/fins/sounds/146723/)
 
 ### text2speech.org (https://www.text2speech.org/)
@@ -19,7 +19,23 @@ Meme Man dialogue, sound effects, etc.
 
 ### BackgroundCheckAll (http://backgroundcheckall.com/)
 
-[space (for cosmic crab)]http://backgroundcheckall.com/repeating-space-background-9/
+[space (for cosmic crab)](http://backgroundcheckall.com/repeating-space-background-9/)
+
+### Wallup (https://wallup.net/)
+
+[green space background](https://wallup.net/green-space-artwork-tylercreatesworlds-nebula/)
+
+### Pinterest (https://www.pinterest.com/)
+
+[purple space background](https://www.pinterest.com/pin/330592428880149388/)
+
+## Fonts
+
+### FontSpace (http://www.fontspace.com/)
+
+[title font (Hell Underwater)](http://www.fontspace.com/chequered-ink/hell-underwater)
+
+### Forbes
 
 ## 3D models
 
@@ -29,8 +45,8 @@ Meme Man dialogue, sound effects, etc.
 
 ### Sketchfab (https://sketchfab.com/)
 
-[Meme Man](https://sketchfab.com/models/3d1f49bc7e6e446fb0d97e98cd40e749)
-[crab](https://sketchfab.com/models/ba482cf822e84d11950924b79ea8ed5b)
+[Meme Man](https://sketchfab.com/models/3d1f49bc7e6e446fb0d97e98cd40e749)  
+[crab](https://sketchfab.com/models/ba482cf822e84d11950924b79ea8ed5b)  
 [infinite stick](https://sketchfab.com/models/ea5ad74839744adeb7126b6d324cfb45)
 
 ### model+model (https://www.modelplusmodel.com/)
