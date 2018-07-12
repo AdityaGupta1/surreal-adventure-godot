@@ -9,10 +9,7 @@ path="res://.import/meme man.obj-20b659939a94788b41294986fee5a62f.mesh"
 files=[ "res://.import/meme man.obj-20b659939a94788b41294986fee5a62f.mesh" ]
 
 source_file="res://models/player/meme man.obj"
-source_md5="7532fab4743a777978e53481860e945d"
-
 dest_files=[ "res://.import/meme man.obj-20b659939a94788b41294986fee5a62f.mesh", "res://.import/meme man.obj-20b659939a94788b41294986fee5a62f.mesh" ]
-dest_md5="4d2115c155e51fb657d5f6bad1c9d43a"
 
 [params]
 
