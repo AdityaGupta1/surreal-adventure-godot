@@ -19,8 +19,7 @@ var spawn_positions = [];
 
 var confirmations = 0;
 
-func _ready():
-	randomize();
+func start():
 	_spawn_enemies();
 
 func done_extending():

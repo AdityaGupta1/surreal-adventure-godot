@@ -1,6 +1,9 @@
 extends ColorRect
 
-onready var player = get_tree().get_root().get_node("Main").get_node("Player");
+onready var main = get_tree().get_root().get_node("Main");
 
 func _process(delta):
-	rect_size.y = 400.0 * player.health / player.max_health;
+	if main.has_node("Player"):
+		var player = main.get_node("Player");
+		rect_size.y = 400.0 * player.health / player.max_health;
+	
