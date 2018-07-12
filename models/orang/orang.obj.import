@@ -9,10 +9,7 @@ path="res://.import/orang.obj-45a5e81b8e1eb6c8b4be9e47e124c00c.mesh"
 files=[ "res://.import/orang.obj-45a5e81b8e1eb6c8b4be9e47e124c00c.mesh" ]
 
 source_file="res://models/orang/orang.obj"
-source_md5="74cd352967209bbab1faf2caf8ec60a8"
-
 dest_files=[ "res://.import/orang.obj-45a5e81b8e1eb6c8b4be9e47e124c00c.mesh", "res://.import/orang.obj-45a5e81b8e1eb6c8b4be9e47e124c00c.mesh" ]
-dest_md5="f0f2ebd3deab0592299fdbd357d49938"
 
 [params]
 
