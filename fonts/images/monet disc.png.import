@@ -8,10 +8,7 @@ path.etc2="res://.import/monet disc.png-8f295352d6c2d7f6815a0e02a6c49df4.etc2.st
 [deps]
 
 source_file="res://fonts/images/monet disc.png"
-source_md5="7b49bcf991a9bc8122376442103462ec"
-
 dest_files=[ "res://.import/monet disc.png-8f295352d6c2d7f6815a0e02a6c49df4.s3tc.stex", "res://.import/monet disc.png-8f295352d6c2d7f6815a0e02a6c49df4.etc2.stex" ]
-dest_md5="bbb62fec9afde891460a74940a5c4c7a"
 
 [params]
 

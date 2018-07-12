@@ -8,10 +8,7 @@ path.etc2="res://.import/label.jpg-9984d9be9e358889372555db87c0ad35.etc2.stex"
 [deps]
 
 source_file="res://models/coke/coke bottle/label.jpg"
-source_md5="ce431aaf6283869407a45464ff4db2c2"
-
 dest_files=[ "res://.import/label.jpg-9984d9be9e358889372555db87c0ad35.s3tc.stex", "res://.import/label.jpg-9984d9be9e358889372555db87c0ad35.etc2.stex" ]
-dest_md5="0da121ad3c03849207fc9359650f7874"
 
 [params]
 
