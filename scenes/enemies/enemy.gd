@@ -39,6 +39,9 @@ func _ready():
 	
 func _move(delta):
 	pass;
+	
+func _has_player():
+	return main.has_node("Player");
 
 func _shoot():
 	if bullet == null:
@@ -59,6 +62,9 @@ func _shoot():
 		main.add_child(new_bullet);
 
 func _physics_process(delta):
+	if !_has_player():
+		return;
+	
 	_move(delta);
 	
 	if not levitates:
