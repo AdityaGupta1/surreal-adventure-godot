@@ -8,10 +8,7 @@ path.etc2="res://.import/stick.jpg-ca288c493c5737495fcda9abafce0d92.etc2.stex"
 [deps]
 
 source_file="res://models/stick/stick.jpg"
-source_md5="97e214afbd24de4f600917bd86ea1bf8"
-
 dest_files=[ "res://.import/stick.jpg-ca288c493c5737495fcda9abafce0d92.s3tc.stex", "res://.import/stick.jpg-ca288c493c5737495fcda9abafce0d92.etc2.stex" ]
-dest_md5="ed24cdf8f63efa58349dfb4097296d70"
 
 [params]
 
