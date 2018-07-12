@@ -9,10 +9,7 @@ path="res://.import/stick.obj-ba5ecafda48152d7104486a05bdd1b7a.mesh"
 files=[ "res://.import/stick.obj-ba5ecafda48152d7104486a05bdd1b7a.mesh" ]
 
 source_file="res://models/stick/stick.obj"
-source_md5="d9f1f9e4d1b98f99c3115d3ac55f83cd"
-
 dest_files=[ "res://.import/stick.obj-ba5ecafda48152d7104486a05bdd1b7a.mesh", "res://.import/stick.obj-ba5ecafda48152d7104486a05bdd1b7a.mesh" ]
-dest_md5="83e56433a0f385fb96d7a450e10ee0a1"
 
 [params]
 
