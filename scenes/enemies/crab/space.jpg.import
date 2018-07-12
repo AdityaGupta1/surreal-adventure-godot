@@ -8,7 +8,10 @@ path.etc2="res://.import/space.jpg-a09faca3e643a63415ff97cace853f2d.etc2.stex"
 [deps]
 
 source_file="res://scenes/enemies/crab/space.jpg"
+source_md5="1f4bdf88a4d1a01b5cdacf8645cc66cb"
+
 dest_files=[ "res://.import/space.jpg-a09faca3e643a63415ff97cace853f2d.s3tc.stex", "res://.import/space.jpg-a09faca3e643a63415ff97cace853f2d.etc2.stex" ]
+dest_md5="69ce068fc10fa5457102b9098f8ee2c4"
 
 [params]
 

@@ -8,7 +8,10 @@ path.etc2="res://.import/main surface.jpg-d8792e7787b175c2de3969da0afcd4e9.etc2.
 [deps]
 
 source_file="res://models/coke/coke can/main surface.jpg"
+source_md5="abe948bda76efaf148c8c629eb2b068a"
+
 dest_files=[ "res://.import/main surface.jpg-d8792e7787b175c2de3969da0afcd4e9.s3tc.stex", "res://.import/main surface.jpg-d8792e7787b175c2de3969da0afcd4e9.etc2.stex" ]
+dest_md5="b5ce0c0c9c1b03e2a756e3096cfdb12b"
 
 [params]
 

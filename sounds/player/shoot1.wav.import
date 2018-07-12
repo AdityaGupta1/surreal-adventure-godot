@@ -7,7 +7,10 @@ path="res://.import/shoot1.wav-0d803719d0da5a372d1620f9dd322ae5.sample"
 [deps]
 
 source_file="res://sounds/player/shoot1.wav"
+source_md5="10c5c21867b3eebb31d8e7a30fdce24e"
+
 dest_files=[ "res://.import/shoot1.wav-0d803719d0da5a372d1620f9dd322ae5.sample" ]
+dest_md5="66c5359672cf822a41d8808c192762d8"
 
 [params]
 

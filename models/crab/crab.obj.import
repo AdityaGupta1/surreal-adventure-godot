@@ -9,7 +9,10 @@ path="res://.import/crab.obj-131cd35d077d911c046c32455d7c6325.mesh"
 files=[ "res://.import/crab.obj-131cd35d077d911c046c32455d7c6325.mesh" ]
 
 source_file="res://models/crab/crab.obj"
+source_md5="c5edf1d21707a5c535929c82dfb7aa18"
+
 dest_files=[ "res://.import/crab.obj-131cd35d077d911c046c32455d7c6325.mesh", "res://.import/crab.obj-131cd35d077d911c046c32455d7c6325.mesh" ]
+dest_md5="d8d73e4aa1e1fbd5d7a5a5d899f46d31"
 
 [params]
 

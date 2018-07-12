@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=1]
 [ext_resource path="res://models/player/meme man.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://scenes/player/gun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sounds/player/collect monet disc.wav" type="AudioStream" id=4]
-[ext_resource path="res://sounds/player/hurt1.wav" type="AudioStream" id=5]
-[ext_resource path="res://sounds/player/hurt2.wav" type="AudioStream" id=6]
-[ext_resource path="res://sounds/player/hurt3.wav" type="AudioStream" id=7]
-
+[ext_resource path="res://scenes/player/eye.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/player/gun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/player/collect monet disc.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/player/hurt1.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/player/hurt2.wav" type="AudioStream" id=7]
+[ext_resource path="res://sounds/player/hurt3.wav" type="AudioStream" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -61,175 +61,10 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="SpatialMaterial" id=2]
-
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 0, 0.588235, 1, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-_sections_unfolded = [ "Albedo" ]
-
-[sub_resource type="SpatialMaterial" id=3]
-
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 0, 0.588235, 1, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-_sections_unfolded = [ "Albedo" ]
-
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="CapsuleShape" id=2]
 
 radius = 1.0
 height = 0.25
-
-[sub_resource type="SpatialMaterial" id=5]
-
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 0, 0, 0, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-_sections_unfolded = [ "Albedo" ]
-
-[sub_resource type="SphereMesh" id=6]
-
-material = SubResource( 5 )
-radius = 1.0
-height = 2.0
-radial_segments = 64
-rings = 32
-is_hemisphere = false
 
 [node name="Player" type="KinematicBody" index="0"]
 
@@ -250,7 +85,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="meme man" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 0.667049, 7.9167e-15, 0.745014, -0.745014, -4.37114e-08, 0.667049, 3.25656e-08, -1, -2.91576e-08, 0, 4.37114e-08, 1 )
+transform = Transform( 0.0854456, -2.88619e-10, 0.0519524, -0.0519524, -1.94901e-09, 0.0854456, 7.65946e-10, -0.1, -1.81529e-09, 3.48705, 0.641357, -0.482824 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -263,66 +98,38 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 1 )
-material/1 = SubResource( 2 )
-material/2 = SubResource( 3 )
-_sections_unfolded = [ "material" ]
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="eye 1" parent="meme man" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 0.356693, -0.181026, 1.89303e-09, -1.89303e-09, -7.9129e-09, -0.4, 0.181026, 0.356693, -7.9129e-09, -19.3637, 4.43204, -16.6852 )
+
+[node name="eye 2" parent="meme man" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 0.356693, -0.181026, 1.89303e-09, -1.89303e-09, -7.9129e-09, -0.4, 0.181026, 0.356693, -7.9129e-09, -16.781, 4.4468, -21.2502 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
 transform = Transform( 1.16461, 0, 0, 0, 1, -2.87186e-08, 0, 1.97736e-08, 1.45237, 0.399665, -0.0275242, -0.444348 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="guns" type="Spatial" parent="." index="2"]
 
-[node name="gun 1" parent="guns" index="0" instance=ExtResource( 3 )]
+[node name="gun 1" parent="guns" index="0" instance=ExtResource( 4 )]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.8, -3.49691e-08 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.8, 0 )
 
-[node name="gun 2" parent="guns" index="1" instance=ExtResource( 3 )]
+[node name="gun 2" parent="guns" index="1" instance=ExtResource( 4 )]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, 3.93402e-08 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.8, 0 )
 
-[node name="eye 1" type="MeshInstance" parent="." index="3"]
-
-transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 1.26677, 0.230302, -0.918489 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform" ]
-
-[node name="eye 2" type="MeshInstance" parent="." index="4"]
-
-transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 1.26903, -0.253111, -0.918489 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform" ]
-
-[node name="sounds" type="Node" parent="." index="5"]
+[node name="sounds" type="Node" parent="." index="3"]
 
 [node name="collect monet disc" type="AudioStreamPlayer3D" parent="sounds" index="0"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 attenuation_model = 0
 unit_db = 0.0
 unit_size = 1.0
@@ -343,7 +150,8 @@ doppler_tracking = 0
 
 [node name="hurt1" type="AudioStreamPlayer3D" parent="sounds/hurt" index="0"]
 
-stream = ExtResource( 5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00488019, -0.00482535, 0.0237041 )
+stream = ExtResource( 6 )
 attenuation_model = 0
 unit_db = 0.0
 unit_size = 1.0
@@ -362,7 +170,7 @@ doppler_tracking = 0
 
 [node name="hurt2" type="AudioStreamPlayer3D" parent="sounds/hurt" index="1"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 attenuation_model = 0
 unit_db = 0.0
 unit_size = 1.0
@@ -381,7 +189,7 @@ doppler_tracking = 0
 
 [node name="hurt3" type="AudioStreamPlayer3D" parent="sounds/hurt" index="2"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 8 )
 attenuation_model = 0
 unit_db = 0.0
 unit_size = 1.0

@@ -9,7 +9,10 @@ path="res://.import/milk.obj-88cb8d9497adcb44561ac038280a56e6.mesh"
 files=[ "res://.import/milk.obj-88cb8d9497adcb44561ac038280a56e6.mesh" ]
 
 source_file="res://models/milk/milk.obj"
+source_md5="eb8f36ce44c8d266c5772ff079a60b10"
+
 dest_files=[ "res://.import/milk.obj-88cb8d9497adcb44561ac038280a56e6.mesh", "res://.import/milk.obj-88cb8d9497adcb44561ac038280a56e6.mesh" ]
+dest_md5="41d5efa92b3cb6ef4d6a02ed27e256ed"
 
 [params]
 

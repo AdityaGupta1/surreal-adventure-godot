@@ -8,7 +8,10 @@ path.etc2="res://.import/bottle cap.jpg-19ce4a55204fa61ab4ad6a19e4fb8ada.etc2.st
 [deps]
 
 source_file="res://models/coke/coke bottle/bottle cap.jpg"
+source_md5="a67796d56e2112502c9def92858d3482"
+
 dest_files=[ "res://.import/bottle cap.jpg-19ce4a55204fa61ab4ad6a19e4fb8ada.s3tc.stex", "res://.import/bottle cap.jpg-19ce4a55204fa61ab4ad6a19e4fb8ada.etc2.stex" ]
+dest_md5="d00df07f55c8bcdcedc4f30307280a54"
 
 [params]
 

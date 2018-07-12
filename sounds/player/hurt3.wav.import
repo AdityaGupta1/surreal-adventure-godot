@@ -7,7 +7,10 @@ path="res://.import/hurt3.wav-c480dfdc1ff0509e4e6540f70933c0f8.sample"
 [deps]
 
 source_file="res://sounds/player/hurt3.wav"
+source_md5="f42b62685ec1a48e68c6fd0861b53c25"
+
 dest_files=[ "res://.import/hurt3.wav-c480dfdc1ff0509e4e6540f70933c0f8.sample" ]
+dest_md5="222d39479f1098a54086801b76dc935f"
 
 [params]
 

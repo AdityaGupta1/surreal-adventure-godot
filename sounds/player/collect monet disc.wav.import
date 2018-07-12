@@ -7,7 +7,10 @@ path="res://.import/collect monet disc.wav-2a883afddfad37fae1a03bcb3f809df6.samp
 [deps]
 
 source_file="res://sounds/player/collect monet disc.wav"
+source_md5="2bcb8c427c5bdb920e081bdf495fd12c"
+
 dest_files=[ "res://.import/collect monet disc.wav-2a883afddfad37fae1a03bcb3f809df6.sample" ]
+dest_md5="2b09b10955c5a7ed458530a3225fccb1"
 
 [params]
 
