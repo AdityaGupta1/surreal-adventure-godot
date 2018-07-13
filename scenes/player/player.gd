@@ -70,6 +70,12 @@ func _physics_process(delta):
 		get_node("guns/gun " + str(next_gun)).shoot();
 		next_gun = 2 if next_gun == 1 else 1;
 		shoot_delay = get_node("guns/gun " + str(next_gun)).get_shoot_delay();
+		
+	# update eyes with health
+	var damage_amount = (max_health - health) / float(max_health)
+	var eye_scale = 0.4 * (1 - damage_amount)
+	get_node("meme man/eye 1").scale = Vector3(eye_scale, eye_scale, eye_scale)
+	get_node("meme man/eye 2").scale = Vector3(eye_scale, eye_scale, eye_scale)
 
 func add_monet(new_monet):
 	monet += new_monet;
