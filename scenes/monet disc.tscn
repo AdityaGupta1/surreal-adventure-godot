@@ -9,6 +9,7 @@ extents = Vector3( 1, 1, 1 )
 
 [sub_resource type="CylinderMesh" id=2]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 top_radius = 1.0
 bottom_radius = 1.0
 height = 2.0
@@ -70,6 +71,7 @@ _sections_unfolded = [ "Albedo", "Ambient Occlusion", "Anisotropy", "Clearcoat",
 
 [sub_resource type="CylinderMesh" id=4]
 
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 top_radius = 1.0
 bottom_radius = 1.0
 height = 2.0
