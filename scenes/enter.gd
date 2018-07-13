@@ -8,6 +8,9 @@ const player = preload("res://scenes/player/player.tscn");
 
 var time = 0;
 
+func _ready():
+	main.get_node("title screen/AnimationPlayer").play("void_enters")
+
 func _physics_process(delta):
 	time += delta;
 
