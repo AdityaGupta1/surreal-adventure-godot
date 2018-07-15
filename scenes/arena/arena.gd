@@ -10,9 +10,9 @@ var enemies = {
 var wave = 0;
 # [enemy, spawn chance, spawn tries]
 var spawns = [
-	[[enemies["conke can"], 80, 2], [enemies["cube"], 60, 2], [enemies["cosmic crab"], 75, 2]],
-	[[enemies["conke can"], 90, 2], [enemies["cube"], 60, 3], [enemies["cosmic crab"], 85, 2]],
-	[[enemies["conke can"], 100, 2], [enemies["cube"], 80, 3], [enemies["cosmic crab"], 100, 1], [enemies["milk glass"], 75, 2]]
+	[[enemies["conke can"], 100, 1, 80, 1], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 90, 1]],
+	[[enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 80, 1], [enemies["cosmic crab"], 100, 1, 40, 1]],
+	[[enemies["conke can"], 100, 2, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 80, 2], [enemies["milk glass"], 100, 1]]
 ];
 
 var spawn_positions = [];
@@ -35,11 +35,12 @@ func _spawn_enemies():
 	
 	var enemies = spawns[wave];
 	for enemy_chances in enemies:
-		for i in range(enemy_chances[2]):
-			if rand_range(0, 100) < enemy_chances[1]:
-				var enemy = enemy_chances[0].instance();
-				enemy.transform.origin = _find_eligible_spawn_location();
-				get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
+		for i in range(1, enemy_chances.size(), 2):
+			for j in range(enemy_chances[i + 1]):
+				if rand_range(0, 100) < enemy_chances[i]:
+					var enemy = enemy_chances[0].instance();
+					enemy.transform.origin = _find_eligible_spawn_location();
+					get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
 				
 func _generate_random_coordinate():
 	return (((randi() % 2) * 2) - 1) * rand_range(6, 16);

@@ -3,7 +3,6 @@
 [ext_resource path="res://scenes/player/gun.gd" type="Script" id=1]
 [ext_resource path="res://sounds/player/shoot1.wav" type="AudioStream" id=2]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
@@ -59,6 +58,7 @@ _sections_unfolded = [ "Albedo" ]
 [sub_resource type="CubeMesh" id=2]
 
 material = SubResource( 1 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -119,6 +119,7 @@ _sections_unfolded = [ "Albedo" ]
 [sub_resource type="CubeMesh" id=4]
 
 material = SubResource( 3 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -179,13 +180,14 @@ _sections_unfolded = [ "Albedo" ]
 [sub_resource type="SphereMesh" id=6]
 
 material = SubResource( 5 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 1.0
 height = 2.0
 radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="Gun" type="Spatial"]
+[node name="Gun" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -266,6 +268,7 @@ attenuation_model = 0
 unit_db = 0.0
 unit_size = 1.0
 max_db = 3.0
+pitch_scale = 1.0
 autoplay = false
 max_distance = 0.0
 out_of_range_mode = 0
