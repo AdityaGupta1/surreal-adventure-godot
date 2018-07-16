@@ -8,6 +8,9 @@ var enemies = {
 	"unlimited stick": preload("res://scenes/enemies/stick/stick.tscn")
 };
 var wave = 0;
+const healing_items = [
+	preload("res://scenes/player/healing/bepis can.tscn")
+]
 # [enemy, spawn chance, spawn tries]
 var spawns = [
 	[[enemies["conke can"], 100, 1, 80, 1], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 90, 1]],
@@ -41,17 +44,39 @@ func _spawn_enemies():
 					var enemy = enemy_chances[0].instance();
 					enemy.transform.origin = _find_eligible_spawn_location();
 					get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
-				
+
+func _random_vector(bound):
+	return Vector3(rand_range(-bound, bound), rand_range(0, bound), rand_range(-bound, bound));
+
+func spawn_healing_items():
+	for i in range(5 + (wave * 2)):
+		var new_healing_item = healing_items[randi() % healing_items.size()].instance();
+		
+		var position = global_transform.origin;
+		position.y = 22.5;
+		new_healing_item.transform.origin = position;
+		
+		new_healing_item.apply_impulse(position, _random_vector(6));
+		
+		new_healing_item.rotation.x = rand_range(0, 2 * PI);
+		new_healing_item.rotation.y = rand_range(0, 2 * PI);
+		new_healing_item.rotation.z = rand_range(0, 2 * PI);
+		
+		var spatial = Spatial.new();
+		
+		get_parent().add_child(spatial);
+		spatial.add_child(new_healing_item);
+
 func _generate_random_coordinate():
 	return (((randi() % 2) * 2) - 1) * rand_range(6, 16);
-	
+
 func _is_eligible_spawn_location(x, z):
 	for position in spawn_positions:
 		if Vector2(position[0], position[1]).distance_to(Vector2(x, z)) <= 2:
 			return false;
 			
 	return true;
-				
+
 func _find_eligible_spawn_location():
 	var x;
 	var z;

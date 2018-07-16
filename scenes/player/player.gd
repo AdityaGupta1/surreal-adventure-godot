@@ -38,6 +38,9 @@ func damage(damage):
 	.damage(damage);
 
 	vulnerable = total_time + 0.5;
+	
+func heal(health_restored):
+	health = min(health + health_restored, max_health);
 
 func _physics_process(delta):
 	total_time += delta;

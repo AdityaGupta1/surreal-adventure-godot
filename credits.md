@@ -1,6 +1,6 @@
 # People
 
-nobody except me yet xd
+[0xFireball](https://github.com/0xFireball)
 
 # Resources
 
@@ -29,9 +29,9 @@ Meme Man dialogue, sound effects, etc.
 
 [purple space background (title screen)](https://www.pinterest.com/pin/330592428880149388/)
 
-### DeviantArt (https://www.deviantart.com/)
+### Free Design Template (https://equalvoice4all.us/)
 
-[blue space background (title screen)](https://www.deviantart.com/heatstroke99/art/Blue-Space-Scape-186499366)
+[Pepsi can](https://equalvoice4all.us/nutrition-labels-template/nutrition-labels-template-stylish-pepsi-can-nutrition-label/)
 
 ## Fonts
 

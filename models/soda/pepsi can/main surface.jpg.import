@@ -1,0 +1,30 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/main surface.jpg-5b332a20d7107294b19d01265f75bd45.s3tc.stex"
+path.etc2="res://.import/main surface.jpg-5b332a20d7107294b19d01265f75bd45.etc2.stex"
+
+[deps]
+
+source_file="res://models/soda/pepsi can/main surface.jpg"
+dest_files=[ "res://.import/main surface.jpg-5b332a20d7107294b19d01265f75bd45.s3tc.stex", "res://.import/main surface.jpg-5b332a20d7107294b19d01265f75bd45.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

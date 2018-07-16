@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/can.obj-12867d5e5fe4ef8efa167efdea042a17.mesh"
+
+[deps]
+
+files=[ "res://.import/can.obj-12867d5e5fe4ef8efa167efdea042a17.mesh" ]
+
+source_file="res://models/soda/can.obj"
+dest_files=[ "res://.import/can.obj-12867d5e5fe4ef8efa167efdea042a17.mesh", "res://.import/can.obj-12867d5e5fe4ef8efa167efdea042a17.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

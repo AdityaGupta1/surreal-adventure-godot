@@ -1,9 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://models/coke/coke bottle/coke bottle.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://models/coke/coke bottle/bottle cap.jpg" type="Texture" id=2]
-[ext_resource path="res://models/coke/coke bottle/label.jpg" type="Texture" id=3]
+[ext_resource path="res://models/soda/coke bottle/coke bottle.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://models/soda/coke bottle/bottle cap.jpg" type="Texture" id=2]
+[ext_resource path="res://models/soda/coke bottle/label.jpg" type="Texture" id=3]
 [ext_resource path="res://scenes/enemies/conke can/conke bottle.gd" type="Script" id=4]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 

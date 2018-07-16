@@ -250,6 +250,6 @@ shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="body_entered" from="Area" to="." method="_body_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
 
 
