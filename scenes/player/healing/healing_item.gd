@@ -1,7 +1,8 @@
 extends Node
 
 var health_restored = {
-	"bepis can": 15
+	"bepis can": 15,
+	"earth": 25
 };
 
 func _ready():

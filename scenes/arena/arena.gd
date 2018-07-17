@@ -8,14 +8,11 @@ var enemies = {
 	"unlimited stick": preload("res://scenes/enemies/stick/stick.tscn")
 };
 var wave = 0;
-const healing_items = [
-	preload("res://scenes/player/healing/bepis can.tscn")
-]
-# [enemy, spawn chance, spawn tries]
+# [[healing items], [enemy, spawn chance, spawn tries], [..., ..., ..., ...], ...]
 var spawns = [
-	[[enemies["conke can"], 100, 1, 80, 1], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 90, 1]],
-	[[enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 80, 1], [enemies["cosmic crab"], 100, 1, 40, 1]],
-	[[enemies["conke can"], 100, 2, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 80, 2], [enemies["milk glass"], 100, 1]]
+	[["bepis can"], [enemies["conke can"], 100, 1, 80, 1], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 90, 1]],
+	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 80, 1], [enemies["cosmic crab"], 100, 1, 40, 1]],
+	[["bepis can", "earth"], [enemies["conke can"], 100, 2, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 80, 2], [enemies["milk glass"], 100, 1]]
 ];
 
 var spawn_positions = [];
@@ -37,10 +34,11 @@ func _spawn_enemies():
 	spawn_positions = [];
 	
 	var enemies = spawns[wave];
-	for enemy_chances in enemies:
-		for i in range(1, enemy_chances.size(), 2):
-			for j in range(enemy_chances[i + 1]):
-				if rand_range(0, 100) < enemy_chances[i]:
+	for i in range(1, enemies.size()): # all elements of enemies except the first (healing items)
+		var enemy_chances = enemies[i];
+		for j in range(1, enemy_chances.size(), 2): # all elements of enemy_chances except the first (enemy name)
+			for k in range(enemy_chances[j + 1]): # spawn tries
+				if rand_range(0, 100) < enemy_chances[j]: # spawn chance
 					var enemy = enemy_chances[0].instance();
 					enemy.transform.origin = _find_eligible_spawn_location();
 					get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
@@ -50,13 +48,14 @@ func _random_vector(bound):
 
 func spawn_healing_items():
 	for i in range(5 + (wave * 2)):
-		var new_healing_item = healing_items[randi() % healing_items.size()].instance();
+		var healing_items = spawns[wave][0];
+		var new_healing_item = load("res://scenes/player/healing/" + healing_items[randi() % healing_items.size()] + ".tscn").instance();
 		
 		var position = global_transform.origin;
 		position.y = 22.5;
 		new_healing_item.transform.origin = position;
 		
-		new_healing_item.apply_impulse(position, _random_vector(6));
+		new_healing_item.apply_impulse(position, _random_vector(4));
 		
 		new_healing_item.rotation.x = rand_range(0, 2 * PI);
 		new_healing_item.rotation.y = rand_range(0, 2 * PI);
