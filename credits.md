@@ -38,6 +38,7 @@ Meme Man dialogue, sound effects, etc.
 ### FontSpace (http://www.fontspace.com/)
 
 [title font (Hell Underwater)](http://www.fontspace.com/chequered-ink/hell-underwater)
+[Earth](https://free3d.com/3d-model/realistic-earth-93942.html)
 
 ## 3D models
 
