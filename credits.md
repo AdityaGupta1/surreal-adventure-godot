@@ -4,7 +4,7 @@
 
 # Resources
 
-## Sounds
+## Sound Effects
 
 ### freesound (https://sketchfab.com/)
 
@@ -14,6 +14,13 @@
 ### text2speech.org (https://www.text2speech.org/)
 
 Meme Man dialogue, sound effects, etc.
+
+## Music
+
+### Audionautix
+
+[ambient music - Atlantis](http://audionautix.com/Music/Atlantis.mp3)
+[ambient music - Deep Space](http://audionautix.com/Music/DeepSpace.mp3)
 
 ## 2D images
 

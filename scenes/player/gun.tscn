@@ -187,7 +187,7 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="Gun" type="Spatial" index="0"]
+[node name="Gun" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -265,7 +265,7 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.4, 0 )
 stream = ExtResource( 2 )
 attenuation_model = 0
-unit_db = 0.0
+unit_db = 2.0
 unit_size = 1.0
 max_db = 3.0
 pitch_scale = 1.0

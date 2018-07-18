@@ -110,10 +110,10 @@ transform = Transform( 0.356693, -0.181026, 1.89303e-09, -1.89303e-09, -7.91289e
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 1.16461, 0, 0, 0, 1, -2.87186e-08, 0, 1.97736e-08, 1.45237, 0.399665, -0.0275242, -0.444348 )
+transform = Transform( 1, 0, 0, 0, 1, -2.57057e-08, 0, 1.97736e-08, 1.3, 0.245708, -0.0275242, -0.250211 )
 shape = SubResource( 2 )
 disabled = false
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="guns" type="Spatial" parent="." index="2"]
 
@@ -154,7 +154,7 @@ doppler_tracking = 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00488019, -0.00482535, 0.0237041 )
 stream = ExtResource( 6 )
 attenuation_model = 0
-unit_db = 0.0
+unit_db = 15.0
 unit_size = 1.0
 max_db = 3.0
 pitch_scale = 1.0
@@ -174,7 +174,7 @@ doppler_tracking = 0
 
 stream = ExtResource( 7 )
 attenuation_model = 0
-unit_db = 0.0
+unit_db = 15.0
 unit_size = 1.0
 max_db = 3.0
 pitch_scale = 1.0
@@ -194,7 +194,7 @@ doppler_tracking = 0
 
 stream = ExtResource( 8 )
 attenuation_model = 0
-unit_db = 0.0
+unit_db = 15.0
 unit_size = 1.0
 max_db = 3.0
 pitch_scale = 1.0
