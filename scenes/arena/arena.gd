@@ -18,9 +18,19 @@ var spawns = [
 var spawn_positions = [];
 
 var confirmations = 0;
+	
+var time = 0;
+var start_time = 0;
 
 func start():
-	_spawn_enemies();
+	start_time = time + 2;
+	
+func _physics_process(delta):
+	time += delta;
+	
+	if time > start_time && start_time != 0:
+		_spawn_enemies();
+		start_time = 0;
 
 func done_extending():
 	confirmations += 1;

@@ -14,7 +14,7 @@ var velocity = Vector3();
 
 var up = Vector3(0, 1, 0);
 
-var last_shot = 0;
+var last_shot = 0.92;
 var next_gun = 1;
 
 var monet = 0;
