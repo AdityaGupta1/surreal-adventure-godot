@@ -30,11 +30,15 @@ Meme Man dialogue, sound effects, etc.
 
 ### Wallup (https://wallup.net/)
 
-[green space background (title screen)](https://wallup.net/green-space-artwork-tylercreatesworlds-nebula/)
+[green space background (title menu)](https://wallup.net/green-space-artwork-tylercreatesworlds-nebula/)
 
 ### Pinterest (https://www.pinterest.com/)
 
-[purple space background (title screen)](https://www.pinterest.com/pin/330592428880149388/)
+[purple space background (title menu)](https://www.pinterest.com/pin/330592428880149388/)
+
+### DeviantArt (https://www.deviantart.com/)
+
+[blue space background (title/pause menus)](https://www.deviantart.com/heatstroke99/art/Blue-Space-Scape-186499366)
 
 ### Free Design Template (https://equalvoice4all.us/)
 

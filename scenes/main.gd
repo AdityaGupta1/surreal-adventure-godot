@@ -2,6 +2,8 @@ extends Spatial
 
 signal retract;
 
+var paused = false;
+
 func _ready():
 	for half in ["Right", "Left"]:
 		for side in ["Top", "Right", "Bottom", "Left"]:
@@ -12,10 +14,6 @@ func _ready():
 var awaiting_player_centered = false;
 
 func _process(delta):
-	# for debug purposes only
-	if Input.is_action_just_pressed("ui_accept"):
-		get_tree().reload_current_scene();
-
 	if awaiting_player_centered:
 		for body in get_node("arena/Center").get_overlapping_bodies():
 				if body.get_name() == "Player":

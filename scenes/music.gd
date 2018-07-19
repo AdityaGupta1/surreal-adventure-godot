@@ -17,7 +17,6 @@ func _play_music():
 	
 	while random_track == now_playing:
 		random_track = randi() % max_ambient_track;
-		print(random_track);
 	
 	set_stream(ambient_tracks[random_track]);
 	play();

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/music.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://images/title.png" type="Texture" id=10]
 [ext_resource path="res://images/enter.png" type="Texture" id=11]
 [ext_resource path="res://scenes/enter.gd" type="Script" id=12]
+[ext_resource path="res://scenes/pause.gd" type="Script" id=13]
+[ext_resource path="res://images/paused.png" type="Texture" id=14]
 
 [sub_resource type="GDScript" id=1]
 
@@ -114,14 +116,16 @@ tracks/0/keys = {
 "values": [ Color( 0.199219, 0.199219, 0.199219, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Main" type="Spatial"]
+[node name="Main" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="camera, light, music" type="Spatial" parent="." index="0"]
 
+pause_mode = 2
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="camera" type="Camera" parent="camera, light, music" index="0"]
 
@@ -192,11 +196,16 @@ script = ExtResource( 2 )
 
 [node name="arena" parent="." index="1" instance=ExtResource( 3 )]
 
+_sections_unfolded = [ "Pause", "Transform" ]
+
 [node name="enemies" type="Spatial" parent="." index="2"]
+
+_sections_unfolded = [ "Pause" ]
 
 [node name="space background" type="MeshInstance" parent="." index="3"]
 
-transform = Transform( 120, 0, 0, 0, 0.1, 0, 0, 0, 120, 0, -40, 0 )
+pause_mode = 2
+transform = Transform( 150, 0, 0, 0, 0.1, 0, 0, 0, 150, 0, -40, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -210,7 +219,7 @@ mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 3 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform", "material" ]
+_sections_unfolded = [ "Pause", "Transform", "material" ]
 
 [node name="HUD" type="Control" parent="." index="4"]
 
@@ -227,6 +236,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Pause" ]
 
 [node name="monet label" type="Label" parent="HUD" index="0"]
 
@@ -343,6 +353,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Pause" ]
 
 [node name="title" type="TextureRect" parent="title screen" index="0"]
 
@@ -396,6 +407,45 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/void_enters = SubResource( 5 )
 blend_times = [  ]
+
+[node name="pause screen" type="Control" parent="." index="6"]
+
+pause_mode = 2
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 13 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="paused" type="TextureRect" parent="pause screen" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 352.0
+margin_top = 200.0
+margin_right = 672.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 14 )
+stretch_mode = 0
+_sections_unfolded = [ "Hint", "Rect" ]
 
 [connection signal="finished" from="camera, light, music/music" to="camera, light, music/music" method="_play_music"]
 
