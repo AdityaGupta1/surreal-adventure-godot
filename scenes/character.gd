@@ -15,7 +15,7 @@ func _physics_process(delta):
 	if _dead:
 		return;
 	
-	if transform.origin.y < 10:
+	if global_transform.origin.y < 0:
 		_die();
 
 func damage(damage):

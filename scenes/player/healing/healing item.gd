@@ -1,4 +1,4 @@
-extends Node
+extends RigidBody
 
 var health_restored = {
 	"bepis can": 15,
@@ -13,3 +13,7 @@ func _on_body_entered(body):
 	if body.get_name() == "Player":
 		get_tree().get_root().get_node("Main").get_node("Player").heal(health_restored[self.get_name()]);
 		queue_free();
+	
+func _physics_process(delta):
+	if global_transform.origin.y < 0:
+		get_parent().queue_free(); # because each healing item is encased in a Spatial to preserve name

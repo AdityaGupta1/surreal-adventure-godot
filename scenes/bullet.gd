@@ -10,7 +10,7 @@ onready var area = get_node("Area");
 func _physics_process(delta):
 	time_existed += delta;
 	
-	if time_existed > lifespan and lifespan > 0:
+	if (time_existed > lifespan and lifespan > 0) or (lifespan <= 0 and time_existed > 100): # hardcoded value of 100 to ensure persistent bullets don't last forever
 		queue_free();
 	
 	var collider = _get_collider();

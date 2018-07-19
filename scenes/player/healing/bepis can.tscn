@@ -1,8 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/player/healing/healing_item.gd" type="Script" id=1]
+[ext_resource path="res://scenes/player/healing/healing item.gd" type="Script" id=1]
 [ext_resource path="res://models/soda/can.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://models/soda/pepsi can/main surface.jpg" type="Texture" id=3]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 
