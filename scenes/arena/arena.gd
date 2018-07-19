@@ -57,8 +57,12 @@ func _random_vector(bound):
 	return Vector3(rand_range(-bound, bound), rand_range(0, bound), rand_range(-bound, bound));
 
 func spawn_healing_items():
+	var healing_items = spawns[wave][0];
+	
+	if not healing_items: # return if healing_items is empty
+		return;
+	
 	for i in range(5 + (wave * 2)):
-		var healing_items = spawns[wave][0];
 		var new_healing_item = load("res://scenes/player/healing/" + healing_items[randi() % healing_items.size()] + ".tscn").instance();
 		
 		var position = global_transform.origin;

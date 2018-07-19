@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/enemies/milk/milk.gd" type="Script" id=1]
+[ext_resource path="res://models/milk/splosh.png" type="Texture" id=2]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="PlaneShape" id=1]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="SpatialMaterial" id=2]
 
 render_priority = 0
-flags_transparent = false
+flags_transparent = true
 flags_unshaded = false
 flags_vertex_lighting = false
 flags_no_depth_test = false
@@ -25,7 +30,8 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.956863, 0.960784, 0.941176, 1 )
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 2 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -43,7 +49,7 @@ transmission_enabled = false
 refraction_enabled = false
 detail_enabled = false
 uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
+uv1_offset = Vector3( 0.04, 0.01, 0 )
 uv1_triplanar = false
 uv1_triplanar_sharpness = 1.0
 uv2_scale = Vector3( 1, 1, 1 )
@@ -52,43 +58,24 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Metallic", "Parameters" ]
+_sections_unfolded = [ "Albedo", "Flags", "UV1" ]
 
-[sub_resource type="SphereMesh" id=2]
+[sub_resource type="PlaneMesh" id=3]
 
-material = SubResource( 1 )
-radius = 0.1
-height = 0.2
-radial_segments = 64
-rings = 32
-is_hemisphere = false
+material = SubResource( 2 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 2, 2 )
+subdivide_width = 0
+subdivide_depth = 0
 
-[sub_resource type="CapsuleShape" id=3]
+[node name="Milk" type="Spatial" index="0"]
 
-radius = 1.0
-height = 0.01
-
-[node name="Milk" type="MeshInstance" index="0"]
-
-transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
-skeleton = NodePath("..")
-material/0 = null
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area" type="Area" parent="." index="0"]
 
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.00251632, -0.000476551, 0.000118732 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -113,9 +100,26 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
 
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
-shape = SubResource( 3 )
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
+shape = SubResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="splosh" type="MeshInstance" parent="." index="1"]
+
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
 _sections_unfolded = [ "Transform" ]
 
 
