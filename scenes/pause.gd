@@ -11,6 +11,9 @@ func _notification(event):
 		set_paused(true);
 
 func set_paused(new_paused):
+	if get_parent().has_node("title screen"):
+		return;
+	
 	_paused = new_paused;
 	
 	get_tree().paused = _paused;
