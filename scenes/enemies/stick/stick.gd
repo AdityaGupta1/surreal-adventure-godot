@@ -11,6 +11,8 @@ func _ready():
 	levitates = true;
 	levitate_y = 22.25;
 	
+	no_spawn_radius = 5;
+	
 	._ready();
 	
 func _move(delta):

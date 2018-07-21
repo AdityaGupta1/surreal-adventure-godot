@@ -9,9 +9,11 @@ func _ready():
 	shotgun_bullets = 6;
 	shotgun_angle = 20;
 	
-	monet = 1;
+	monet = 3;
 	
 	shoot_towards = "outward";
+	
+	no_spawn_radius = 4;
 	
 	._ready();
 	

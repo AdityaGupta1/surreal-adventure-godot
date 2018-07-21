@@ -1,6 +1,7 @@
 extends "res://scenes/enemies/enemy.gd"
 
 var extended = false;
+const extend_distance = 3;
 var return_time = 0;
 
 func _ready():
@@ -17,12 +18,14 @@ func _ready():
 	levitates = true;
 	levitate_y = 22.5;
 	
+	no_spawn_radius = 3 * extend_distance * sqrt(2);
+	
 	._ready();
 
 func _move(delta):
 	if not extended:
-		if rand_range(0, 10) < 0.05:
-			transform.origin = origin + 3 * Vector3(1 - (randi() % 3), 0, 1 - (randi() % 3));
+		if rand_range(0, 10) < 0.1:
+			transform.origin = origin + extend_distance * Vector3(1 - (randi() % 3), 0, 1 - (randi() % 3));
 			extended = true;
 			return_time = total_time + 0.5 + rand_range(0, 0.5);
 			

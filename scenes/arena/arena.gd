@@ -10,9 +10,10 @@ var enemies = {
 var wave = 0;
 # [[healing items], [enemy, spawn chance, spawn tries], [..., ..., ..., ...], ...]
 var spawns = [
-	[["bepis can"], [enemies["conke can"], 100, 1, 80, 1], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 90, 1]],
-	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 80, 1], [enemies["cosmic crab"], 100, 1, 40, 1]],
-	[["bepis can", "earth"], [enemies["conke can"], 100, 2, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 80, 2], [enemies["milk glass"], 100, 1]]
+	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1]],
+	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 60, 1], [enemies["cosmic crab"], 100, 1, 60, 1]],
+	[["bepis can"], [enemies["conke can"], 100, 1, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 1, 90, 1]],
+	[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]]
 ];
 
 var spawn_positions = [];
@@ -50,7 +51,7 @@ func _spawn_enemies():
 			for k in range(enemy_chances[j + 1]): # spawn tries
 				if rand_range(0, 100) < enemy_chances[j]: # spawn chance
 					var enemy = enemy_chances[0].instance();
-					enemy.transform.origin = _find_eligible_spawn_location();
+					enemy.transform.origin = _find_eligible_spawn_location(enemy.no_spawn_radius);
 					get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
 
 func _random_vector(bound):
@@ -85,12 +86,12 @@ func _generate_random_coordinate():
 
 func _is_eligible_spawn_location(x, z):
 	for position in spawn_positions:
-		if Vector2(position[0], position[1]).distance_to(Vector2(x, z)) <= 2:
+		if Vector2(position[0], position[1]).distance_to(Vector2(x, z)) <= position[2]:
 			return false;
 			
 	return true;
 
-func _find_eligible_spawn_location():
+func _find_eligible_spawn_location(no_spawn_radius):
 	var x;
 	var z;
 	
@@ -101,6 +102,6 @@ func _find_eligible_spawn_location():
 		if _is_eligible_spawn_location(x, z):
 			break;
 	
-	spawn_positions.append([x, z]);
+	spawn_positions.append([x, z, no_spawn_radius]);
 	return Vector3(x, 22.5, z);
 	

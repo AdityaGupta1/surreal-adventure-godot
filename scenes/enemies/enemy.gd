@@ -24,6 +24,7 @@ var levitates = false;
 var levitate_y = 0;
 
 var origin;
+var no_spawn_radius = 3;
 
 func _ready():
 	if not added_signal:

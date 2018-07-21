@@ -111,7 +111,7 @@ _sections_unfolded = [ "Albedo", "Metallic", "Parameters" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Milk Glass" type="KinematicBody"]
+[node name="Milk Glass" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -147,7 +147,7 @@ _sections_unfolded = [ "Transform", "Visibility", "material" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 1.7, 0, 0, 0, 1.4, 0, 0, 0, 0.7, -1.584, 1, 0 )
+transform = Transform( 1.7, 0, 0, 0, 2.8, 0, 0, 0, 0.7, -1.584, -0.7, 0 )
 shape = SubResource( 3 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
