@@ -23,6 +23,9 @@ var confirmations = 0;
 var time = 0;
 var start_time = 0;
 
+# randomized to either -1 or 1 each time
+var direction = 0;
+
 func start():
 	start_time = time + 2;
 	
@@ -105,3 +108,6 @@ func _find_eligible_spawn_location(no_spawn_radius):
 	spawn_positions.append([x, z, no_spawn_radius]);
 	return Vector3(x, 22.5, z);
 	
+func randomize_direction():
+	randomize();
+	direction = [-1, 1][randi() % 2];

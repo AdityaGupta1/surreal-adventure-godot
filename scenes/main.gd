@@ -25,3 +25,4 @@ func enemy_died():
 	if get_node("enemies").get_children().size() == 1:
 		awaiting_player_centered = true;
 		get_node("arena").spawn_healing_items();
+		get_node("arena").randomize_direction();
