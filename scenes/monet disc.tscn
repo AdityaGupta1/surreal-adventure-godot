@@ -130,7 +130,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Metallic" ]
 
-[node name="Monet Disc" type="RigidBody" index="0"]
+[node name="Monet Disc" type="RigidBody"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000744283, -0.000608847, 5.87106e-05 )
 input_ray_pickable = true
