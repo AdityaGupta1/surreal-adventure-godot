@@ -24,7 +24,8 @@ var vulnerable = 0;
 onready var sounds = get_node("sounds");
 
 func _ready():
-	max_health = 500;
+#	max_health = 500;
+	max_health = 1;
 	shoot_delay = get_node("guns/gun 1").get_shoot_delay();
 	._ready();
 
@@ -43,6 +44,9 @@ func heal(health_restored):
 	health = min(health + health_restored, max_health);
 
 func _physics_process(delta):
+	if _dead:
+		return;
+	
 	total_time += delta;
 
 	direction = Vector3();
@@ -73,12 +77,6 @@ func _physics_process(delta):
 		get_node("guns/gun " + str(next_gun)).shoot();
 		next_gun = 2 if next_gun == 1 else 1;
 		shoot_delay = get_node("guns/gun " + str(next_gun)).get_shoot_delay();
-		
-	# update eyes with health
-	var damage_amount = (max_health - health) / float(max_health)
-	var eye_scale = 0.4 * (1 - damage_amount)
-	get_node("meme man/eye 1").scale = Vector3(eye_scale, eye_scale, eye_scale)
-	get_node("meme man/eye 2").scale = Vector3(eye_scale, eye_scale, eye_scale)
 
 func add_monet(new_monet):
 	monet += new_monet;
@@ -90,3 +88,15 @@ func lock_movement():
 
 func unlock_movement():
 	can_move = true;
+	
+func _set_eye_scale(scale):
+	for i in range(2):
+		get_node("meme man/eye " + str(i + 1)).scale = Vector3(scale, scale, scale)
+	
+func _die():
+	_dead = true;
+	_set_eye_scale(1.4);
+	rotation.x -= PI / 2;
+	rotation.z += PI / 2;
+	get_viewport().get_camera().death_zoom(get_node("meme man/eye " + str((randi() % 2) + 1)).global_transform.origin);
+	
