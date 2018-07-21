@@ -58,7 +58,7 @@ func _spawn_enemies():
 					get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
 
 func _random_vector(bound):
-	return Vector3(rand_range(-bound, bound), rand_range(0, bound), rand_range(-bound, bound));
+	return Vector3(rand_range(-bound, bound), rand_range(-bound, bound), rand_range(-bound, bound));
 
 func spawn_healing_items():
 	var healing_items = spawns[wave][0];
@@ -70,11 +70,13 @@ func spawn_healing_items():
 		var new_healing_item = load("res://scenes/player/healing/" + healing_items[randi() % healing_items.size()] + ".tscn").instance();
 		
 		var position = global_transform.origin;
+		position.x += rand_range(-1, 1);
 		position.y = 22.5;
+		position.z += rand_range(-1, 1);
 		new_healing_item.transform.origin = position;
 		
-		new_healing_item.apply_impulse(position, _random_vector(4));
-		
+		new_healing_item.apply_impulse(_random_vector(0.2), _random_vector(8));
+#
 		new_healing_item.rotation.x = rand_range(0, 2 * PI);
 		new_healing_item.rotation.y = rand_range(0, 2 * PI);
 		new_healing_item.rotation.z = rand_range(0, 2 * PI);

@@ -104,7 +104,7 @@ tracks/0/keys = {
 "values": [ Color( 0.199219, 0.199219, 0.199219, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Main" type="Spatial" index="0"]
+[node name="Main" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]

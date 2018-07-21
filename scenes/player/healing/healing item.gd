@@ -6,8 +6,8 @@ var health_restored = {
 };
 
 func _ready():
-	set_collision_layer(33); # player and enemies
-	set_collision_mask(0);
+	set_collision_layer(0);
+	set_collision_mask(33); # player and enemies
 	
 func _on_body_entered(body):
 	if body.get_name() == "Player":
@@ -16,4 +16,4 @@ func _on_body_entered(body):
 	
 func _physics_process(delta):
 	if global_transform.origin.y < 0:
-		get_parent().queue_free(); # because each healing item is encased in a Spatial to preserve name
+		get_parent().queue_free(); # because each healing item is encased in a Spatial to preserve its name

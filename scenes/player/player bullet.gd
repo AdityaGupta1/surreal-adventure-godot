@@ -3,7 +3,8 @@ extends "res://scenes/bullet.gd"
 func _ready():
 	lifespan = 3;
 	
-	var ez_mode = false;
+	# for testing only
+	var ez_mode = true;
 	
 	if ez_mode:
 		speed = 1000;

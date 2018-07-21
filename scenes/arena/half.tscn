@@ -58,6 +58,7 @@ _sections_unfolded = [ "Albedo", "Depth", "Metallic" ]
 [sub_resource type="CubeMesh" id=2]
 
 material = SubResource( 1 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
