@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/arena/arena.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/enemies/crab/space.jpg" type="Texture" id=6]
 [ext_resource path="res://scenes/space background.gd" type="Script" id=7]
-[ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://fonts/hell underwater.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://scenes/monet label.gd" type="Script" id=9]
 [ext_resource path="res://fonts/images/monet disc.png" type="Texture" id=10]
 [ext_resource path="res://scenes/health bar.gd" type="Script" id=11]
@@ -84,7 +84,7 @@ size = 24
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 8 )
-_sections_unfolded = [ "Extra Spacing", "Resource", "Settings" ]
+_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=4]
 
@@ -213,7 +213,6 @@ _sections_unfolded = [ "Pause", "Transform", "material" ]
 
 [node name="HUD" type="Control" parent="." index="4"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -251,7 +250,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 9 )
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Rect", "custom_fonts", "custom_styles" ]
 
 [node name="monet image" type="TextureRect" parent="HUD" index="1"]
 
