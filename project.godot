@@ -14,6 +14,11 @@ config/name="surreal-adventure"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "add_primitives" )
