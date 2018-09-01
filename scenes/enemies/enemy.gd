@@ -7,8 +7,6 @@ onready var main = get_tree().get_root().get_node("Main");
 onready var player = main.get_node("Player");
 onready var enemies = main.get_node("enemies");
 
-var total_time = 0;
-
 var bullet;
 var last_shot = 0;
 var shoot_towards = "player"; # player, outward

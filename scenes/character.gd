@@ -1,5 +1,7 @@
 extends KinematicBody
 
+var total_time = 0;
+
 var max_health = 100;
 var health;
 var invulnerable = false;

@@ -2,8 +2,6 @@ extends "res://scenes/character.gd"
 
 const e = 2.71828182846;
 
-var total_time = 0;
-
 var speed = 600;
 var jump_velocity = 15;
 var can_move = true;

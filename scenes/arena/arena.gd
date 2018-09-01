@@ -1,19 +1,21 @@
 extends Spatial
 
 var enemies = {
-	"conke can": preload("res://scenes/enemies/conke can/conke can.tscn"),
+		"conke can": preload("res://scenes/enemies/conke can/conke can.tscn"),
 	"cube": preload("res://scenes/enemies/cube/cube.tscn"),
 	"cosmic crab": preload("res://scenes/enemies/crab/crab.tscn"),
 	"milk glass": preload("res://scenes/enemies/milk/milk glass.tscn"),
-	"unlimited stick": preload("res://scenes/enemies/stick/stick.tscn")
+	"unlimited stick": preload("res://scenes/enemies/stick/stick.tscn"),
+	"foot": preload("res://scenes/enemies/foot/foot.tscn")
 };
 var wave = 0;
 # [[healing items], [enemy, spawn chance, spawn tries], [..., ..., ..., ...], ...]
 var spawns = [
-	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1]],
-	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 60, 1], [enemies["cosmic crab"], 100, 1, 60, 1]],
-	[["bepis can"], [enemies["conke can"], 100, 1, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 1, 90, 1]],
-	[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]]
+	[[], [enemies["foot"], 100, 1]]
+#	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1]],
+#	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 60, 1], [enemies["cosmic crab"], 100, 1, 60, 1]],
+#	[["bepis can"], [enemies["conke can"], 100, 1, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 1, 90, 1]],
+#	[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]]
 ];
 
 var spawn_positions = [];
