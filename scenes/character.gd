@@ -6,7 +6,7 @@ var max_health = 100;
 var health;
 var invulnerable = false;
 
-var shoot_delay = 0;
+var shoot_delay = 1;
 
 var _dead = false;
 

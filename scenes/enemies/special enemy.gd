@@ -18,7 +18,7 @@ func _physics_process(delta):
 		return;
 	
 	for node in get_children():
-		if node.get_class() == "bullet factory":
+		if node.is_in_group("bullet factories"):
 			node.enemy_process(delta, phase);
 	
 # should be extended because different enemies might have different rotations

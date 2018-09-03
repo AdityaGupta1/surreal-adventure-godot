@@ -9,7 +9,8 @@ onready var enemies = main.get_node("enemies");
 
 var bullet;
 var last_shot = 0;
-var shoot_towards = "player"; # player, outward
+var shoot_towards = "player"; # absolute, player, outward
+var shoot_angle = 0;
 
 var shotgun_bullets = 1;
 var shotgun_angle = 0;
@@ -46,18 +47,22 @@ func _shoot():
 	if bullet == null:
 		return;
 	
-	var center_angle;
-	if shoot_towards == "player":
+	var center_angle = 0;
+	if shoot_towards == "absolute":
+		pass;
+	elif shoot_towards == "player":
 		center_angle = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_camera().unproject_position(player.transform.origin));
 	elif shoot_towards == "outward":
 		center_angle = _initial_angle();
+		
+	center_angle += shoot_angle;
 	
 	var initial_angle = center_angle - (((float(shotgun_bullets) / 2) - 0.5) * deg2rad(shotgun_angle));
 	
 	for i in range(0, shotgun_bullets):
 		var new_bullet = bullet.instance();
 		new_bullet.transform.origin = get_node("bullet origin").global_transform.origin;
-		new_bullet.rotation.y = initial_angle + (i * deg2rad(shotgun_angle));
+		new_bullet.rotation.y += initial_angle + (i * deg2rad(shotgun_angle));
 		main.add_child(new_bullet);
 
 func _physics_process(delta):

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/enemies/foot/foot.gd" type="Script" id=1]
-[ext_resource path="res://models/foot/foot.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://scenes/enemies/foot/banana factory.gd" type="Script" id=3]
+[ext_resource path="res://scenes/enemies/foot/banana.gd" type="Script" id=1]
+[ext_resource path="res://models/foot/banana.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://models/foot/banana.jpg" type="Texture" id=3]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=3]
 
 render_priority = 0
 flags_transparent = false
@@ -27,7 +27,8 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.220079, 0.660156, 0.216614, 1 )
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 3 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -60,26 +61,15 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Foot" type="KinematicBody"]
+[node name="Banana" type="Spatial" index="0"]
 
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.270759 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 32
-collision_mask = 3
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-collision/safe_margin = 0.001
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Transform", "material" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 181.418, 0, 129.04 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -91,25 +81,39 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
 skeleton = NodePath("..")
-material/0 = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility", "material" ]
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+[node name="Area" type="Area" parent="." index="1"]
 
-transform = Transform( 0.727721, 0, 0, 0, 0.486371, 0, 0, 0, 0.250188, 0.11279, 0.271923, 0.0854236 )
+transform = Transform( -1.49739e-007, 0, 1.16331, 0, 0.29317, 0, -3.42563, 0, -5.085e-008, -7.66518, 0, -11.3119 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 64
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+
+transform = Transform( 33, 0, 0, 0, 100, 0, 0, 0, 33, 0, 94.1564, 0 )
 shape = SubResource( 2 )
 disabled = false
-_sections_unfolded = [ "Transform" ]
-
-[node name="bullet origin" type="Spatial" parent="." index="2"]
-
-transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="banana factory" type="Spatial" parent="." index="3"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0676897 )
-script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 
