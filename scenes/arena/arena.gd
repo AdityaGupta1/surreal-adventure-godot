@@ -1,22 +1,17 @@
 extends Spatial
 
-var enemies = {
-		"conke can": preload("res://scenes/enemies/conke can/conke can.tscn"),
-	"cube": preload("res://scenes/enemies/cube/cube.tscn"),
-	"cosmic crab": preload("res://scenes/enemies/crab/crab.tscn"),
-	"milk glass": preload("res://scenes/enemies/milk/milk glass.tscn"),
-	"unlimited stick": preload("res://scenes/enemies/stick/stick.tscn"),
-	"foot": preload("res://scenes/enemies/foot/foot.tscn")
-};
+var enemy_scenes = {
+	"conke can": "conke can/conke can.tscn",
+	"cube": "cube/cube.tscn",
+	"cosmic crab": "crab/crab.tscn",
+	"milk glass": "milk/milk glass.tscn",
+	"unlimited stick": "stick/stick.tscn",
+	"foot": "foot/foot.tscn"
+}
+var enemies = {};
 var wave = 0;
 # [[healing items], [enemy, spawn chance, spawn tries], [..., ..., ..., ...], ...]
-var spawns = [
-	[[], [enemies["foot"], 100, 1]]
-#	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1]],
-#	[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 60, 1], [enemies["cosmic crab"], 100, 1, 60, 1]],
-#	[["bepis can"], [enemies["conke can"], 100, 1, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 1, 90, 1]],
-#	[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]]
-];
+var spawns = [];
 
 var spawn_positions = [];
 
@@ -27,6 +22,17 @@ var start_time = 0;
 
 # randomized to either -1 or 1 each time
 var direction = 0;
+
+func _ready():
+	for key in enemy_scenes:
+		enemies[key] = load("res://scenes/enemies/" + enemy_scenes[key]);
+		
+	spawns = [
+		[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1]],
+		[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 60, 1], [enemies["cosmic crab"], 100, 1, 60, 1]],
+		[["bepis can"], [enemies["conke can"], 100, 1, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 1, 90, 1]],
+		[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]]
+	];
 
 func start():
 	start_time = time + 2;
