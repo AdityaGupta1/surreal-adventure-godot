@@ -2,7 +2,8 @@ extends RigidBody
 
 var health_restored = {
 	"bepis can": 15,
-	"earth": 25
+	"earth": 25,
+	"corb": 30
 };
 
 func _ready():
