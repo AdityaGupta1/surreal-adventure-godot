@@ -44,6 +44,14 @@ Meme Man dialogue, sound effects, etc.
 
 [Pepsi can](https://equalvoice4all.us/nutrition-labels-template/nutrition-labels-template-stylish-pepsi-can-nutrition-label/)
 
+### pngimg.com (http://pngimg.com/)
+
+[eye](http://pngimg.com/download/35680)
+
+### miscellaneous
+
+[skin texture](https://www.lsprints.co.uk/stock-designs---human-skin-texture-35062-p.asp)
+
 ## Fonts
 
 ### FontSpace (http://www.fontspace.com/)
@@ -74,3 +82,8 @@ Meme Man dialogue, sound effects, etc.
 ### Archive3D (https://archive3d.net/)
 
 [milk glass](https://archive3d.net/?a=download&id=20e8b13a)
+
+### TurboSquid (https://www.turbosquid.com/)
+
+[banana](https://www.turbosquid.com/3d-models/banana-fruit-c4d-free/458771)
+[skateboard](https://www.turbosquid.com/FullPreview/Index.cfm/ID/1209971)

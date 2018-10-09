@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hand.obj-990a0d4d9c34090d823427b42d9974e6.mesh"
+
+[deps]
+
+files=[ "res://.import/hand.obj-990a0d4d9c34090d823427b42d9974e6.mesh" ]
+
+source_file="res://models/eyebowler/hand.obj"
+dest_files=[ "res://.import/hand.obj-990a0d4d9c34090d823427b42d9974e6.mesh", "res://.import/hand.obj-990a0d4d9c34090d823427b42d9974e6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -3,7 +3,7 @@ extends Node
 onready var main = get_tree().get_root().get_node("Main");
 onready var player = main.get_node("Player");
 
-var shoot_towards = "outward"; # absolute, player, outward
+var shoot_towards; # absolute, player, outward
 var shoot_angle = 0;
 
 var total_time = 0;
@@ -17,6 +17,8 @@ var shotgun_angle = 0;
 
 func _ready():
 	add_to_group("bullet factories");
+	
+	shoot_angle = deg2rad(shoot_angle);
 
 # should be extended and changed to work with phases
 func enemy_process(delta, phase):
@@ -37,6 +39,8 @@ func _shoot():
 		center_angle = -get_viewport().get_camera().unproject_position(self.global_transform.origin).angle_to_point(get_viewport().get_camera().unproject_position(player.transform.origin));
 	elif shoot_towards == "outward":
 		center_angle = _initial_angle();
+	else:
+		print("shoot machine broke: " + self.name);
 		
 	center_angle += shoot_angle;
 	
@@ -47,3 +51,8 @@ func _shoot():
 		new_bullet.transform.origin = self.global_transform.origin;
 		new_bullet.rotation.y += initial_angle + (i * deg2rad(shotgun_angle));
 		main.add_child(new_bullet);
+		
+# meant to be overridden by subclasses - returns the parent enemy's angle
+# delegated to subclass because not all bullet factories are direct children of their parent enemy
+func _initial_angle():
+	pass;

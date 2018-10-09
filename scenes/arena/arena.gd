@@ -28,10 +28,12 @@ func _ready():
 		enemies[key] = load("res://scenes/enemies/" + enemy_scenes[key]);
 		
 	spawns = [
+		[[], [enemies["foot"], 100, 1]],
 		[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1]],
 		[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 60, 1], [enemies["cosmic crab"], 100, 1, 60, 1]],
 		[["bepis can"], [enemies["conke can"], 100, 1, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 1, 90, 1]],
-		[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]]
+		[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]],
+		[["earth"], [enemies["foot"], 100, 1]]
 	];
 
 func start():

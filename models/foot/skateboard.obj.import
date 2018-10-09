@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/skateboard.obj-c795f2f1222e7fb481dc1e445b856597.mesh"
+
+[deps]
+
+files=[ "res://.import/skateboard.obj-c795f2f1222e7fb481dc1e445b856597.mesh" ]
+
+source_file="res://models/foot/skateboard.obj"
+dest_files=[ "res://.import/skateboard.obj-c795f2f1222e7fb481dc1e445b856597.mesh", "res://.import/skateboard.obj-c795f2f1222e7fb481dc1e445b856597.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

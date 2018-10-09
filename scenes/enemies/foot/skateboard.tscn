@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/enemies/foot/foot.gd" type="Script" id=1]
-[ext_resource path="res://models/foot/foot.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://models/foot/skin.jpg" type="Texture" id=3]
-[ext_resource path="res://scenes/enemies/foot/banana factory.gd" type="Script" id=4]
-[ext_resource path="res://scenes/enemies/foot/skateboard factory.gd" type="Script" id=5]
+[ext_resource path="res://scenes/enemies/foot/banana.gd" type="Script" id=1]
+[ext_resource path="res://models/foot/skateboard.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://models/foot/skateboard.jpg" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -47,7 +45,7 @@ subsurf_scatter_enabled = false
 transmission_enabled = false
 refraction_enabled = false
 detail_enabled = false
-uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_scale = Vector3( 1, 1, 1 )
 uv1_offset = Vector3( 0, 0, 0 )
 uv1_triplanar = false
 uv1_triplanar_sharpness = 1.0
@@ -57,32 +55,21 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "UV1" ]
+_sections_unfolded = [ "Albedo" ]
 
 [sub_resource type="BoxShape" id=2]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Foot" type="KinematicBody" index="0"]
+[node name="Skateboard" type="Spatial"]
 
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.270759 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 32
-collision_mask = 3
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-collision/safe_margin = 0.001
+transform = Transform( -8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, -0.00253248, -9.53674e-07, -0.00973845 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Transform", "material" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -95,30 +82,38 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility", "material" ]
+_sections_unfolded = [ "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+[node name="Area" type="Area" parent="." index="1"]
 
-transform = Transform( 0.727721, 0, 0, 0, 0.486371, 0, 0, 0, 0.250188, 0.11279, 0.271923, 0.0854236 )
+transform = Transform( 4.4, 0, 0, 0, 0.3, 0, 0, 0, 1.4, 0.0768661, -0.159597, 0.148642 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 64
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+
+transform = Transform( 33, 0, 0, 0, 100, 0, 0, 0, 33, 0, 94.1564, 0 )
 shape = SubResource( 2 )
 disabled = false
-_sections_unfolded = [ "Transform" ]
-
-[node name="bullet origin" type="Spatial" parent="." index="2"]
-
-transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="banana factory" type="Spatial" parent="." index="3"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0676897 )
-script = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="skateboard factory" type="Spatial" parent="." index="4"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.067 )
-script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 
