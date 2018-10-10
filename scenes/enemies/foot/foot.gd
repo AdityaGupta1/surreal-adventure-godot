@@ -3,7 +3,7 @@ extends "res://scenes/enemies/special enemy.gd"
 var offset;
 
 func _ready():
-	max_health = 500;
+	max_health = 600;
 	shoot_delay = 1;
 	
 	monet = 25;

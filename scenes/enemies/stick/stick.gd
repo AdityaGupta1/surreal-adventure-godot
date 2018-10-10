@@ -1,7 +1,7 @@
 extends "res://scenes/enemies/enemy.gd"
 
 func _ready():
-	max_health = 500;
+	max_health = 250;
 	
 	bullet = preload("res://scenes/enemies/stick/smol stick.tscn");
 	shoot_delay = 2;
@@ -11,9 +11,10 @@ func _ready():
 	levitates = true;
 	levitate_y = 22.25;
 	
-	no_spawn_radius = 5;
-	
 	._ready();
 	
 func _move(delta):
 	rotation.y += 4 * PI * delta;
+	
+func get_no_spawn_radius():
+	return 7;

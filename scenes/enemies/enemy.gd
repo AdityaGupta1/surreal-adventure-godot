@@ -23,9 +23,10 @@ var levitates = false;
 var levitate_y = 0;
 
 var origin;
-var no_spawn_radius = 3;
 
 func _ready():
+	add_to_group("enemies");
+	
 	if not added_signal:
 		connect("enemy_died", main, "enemy_died");
 		added_signal = true;
@@ -34,7 +35,6 @@ func _ready():
 		transform.origin.y = levitate_y;
 	origin = transform.origin;
 	
-	add_to_group("enemies");
 	._ready();
 	
 func _move(delta):
@@ -108,3 +108,6 @@ func _die():
 #should only be used if shoot_towards isn't "player"
 func _initial_angle():
 	pass;
+	
+func get_no_spawn_radius():
+	return 3;

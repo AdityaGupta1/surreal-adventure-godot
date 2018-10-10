@@ -5,11 +5,11 @@ var enemy_scenes = {
 	"cube": "cube/cube.tscn",
 	"cosmic crab": "crab/crab.tscn",
 	"milk glass": "milk/milk glass.tscn",
-	"unlimited stick": "stick/stick.tscn",
-	"foot": "foot/foot.tscn"
+	"foot": "foot/foot.tscn",
+	"unlimited stick": "stick/stick.tscn"
 }
 var enemies = {};
-var wave = 0;
+var wave = 5;
 # [[healing items], [enemy, spawn chance, spawn tries], [..., ..., ..., ...], ...]
 var spawns = [];
 
@@ -26,13 +26,15 @@ var direction = 0;
 func _ready():
 	for key in enemy_scenes:
 		enemies[key] = load("res://scenes/enemies/" + enemy_scenes[key]);
+		print(enemies[key].instance().get_no_spawn_radius());
 		
 	spawns = [
 		[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1]],
 		[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 60, 1], [enemies["cosmic crab"], 100, 1, 60, 1]],
 		[["bepis can"], [enemies["conke can"], 100, 1, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 1, 90, 1]],
 		[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]],
-		[["earth"], [enemies["foot"], 100, 1]]
+		[["earth"], [enemies["foot"], 100, 1]],
+		[["earth", "corb"], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1], [enemies["milk glass"], 100, 1], [enemies["unlimited stick"], 100, 1]]
 	];
 
 func start():
@@ -63,7 +65,7 @@ func _spawn_enemies():
 			for k in range(enemy_chances[j + 1]): # spawn tries
 				if rand_range(0, 100) < enemy_chances[j]: # spawn chance
 					var enemy = enemy_chances[0].instance();
-					enemy.transform.origin = _find_eligible_spawn_location(enemy.no_spawn_radius);
+					enemy.transform.origin = _find_eligible_spawn_location(enemy.get_no_spawn_radius());
 					get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
 
 func _random_vector(bound):
@@ -96,11 +98,11 @@ func spawn_healing_items():
 		spatial.add_child(new_healing_item);
 
 func _generate_random_coordinate():
-	return (((randi() % 2) * 2) - 1) * rand_range(6, 16);
+	return [-1, 1][randi() % 2] * rand_range(6, 16);
 
-func _is_eligible_spawn_location(x, z):
+func _is_eligible_spawn_location(x, z, no_spawn_radius):
 	for position in spawn_positions:
-		if Vector2(position[0], position[1]).distance_to(Vector2(x, z)) <= position[2]:
+		if Vector2(position[0], position[1]).distance_to(Vector2(x, z)) <= max(no_spawn_radius, position[2]):
 			return false;
 			
 	return true;
@@ -113,7 +115,7 @@ func _find_eligible_spawn_location(no_spawn_radius):
 		x = _generate_random_coordinate();
 		z = _generate_random_coordinate();
 		
-		if _is_eligible_spawn_location(x, z):
+		if _is_eligible_spawn_location(x, z, no_spawn_radius):
 			break;
 	
 	spawn_positions.append([x, z, no_spawn_radius]);

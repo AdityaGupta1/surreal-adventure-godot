@@ -13,8 +13,6 @@ func _ready():
 	
 	shoot_towards = "outward";
 	
-	no_spawn_radius = 4;
-	
 	._ready();
 	
 func _move(delta):
@@ -23,3 +21,6 @@ func _move(delta):
 	
 func _initial_angle():
 	return rotation.y - PI;
+
+func get_no_spawn_radius():
+	return 4;

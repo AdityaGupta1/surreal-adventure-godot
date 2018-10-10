@@ -18,8 +18,6 @@ func _ready():
 	levitates = true;
 	levitate_y = 22.5;
 	
-	no_spawn_radius = 3 * extend_distance * sqrt(2);
-	
 	._ready();
 
 func _move(delta):
@@ -33,3 +31,6 @@ func _move(delta):
 		if total_time >= return_time:
 			transform.origin = origin;
 			extended = false;
+			
+func get_no_spawn_radius():
+	return 2 + extend_distance * sqrt(2);
