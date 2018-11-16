@@ -9,8 +9,7 @@ var enemy_scenes = {
 	"unlimited stick": "stick/stick.tscn"
 }
 var enemies = {};
-var wave = 5;
-# [[healing items], [enemy, spawn chance, spawn tries], [..., ..., ..., ...], ...]
+var wave = 0;
 var spawns = [];
 
 var spawn_positions = [];
@@ -26,15 +25,15 @@ var direction = 0;
 func _ready():
 	for key in enemy_scenes:
 		enemies[key] = load("res://scenes/enemies/" + enemy_scenes[key]);
-		print(enemies[key].instance().get_no_spawn_radius());
 		
+	# [[healing items], [enemy, spawn chance, spawn tries], [..., ..., ..., ...], ...]
 	spawns = [
 		[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1]],
 		[["bepis can"], [enemies["conke can"], 100, 2], [enemies["cube"], 100, 1, 60, 1], [enemies["cosmic crab"], 100, 1, 60, 1]],
 		[["bepis can"], [enemies["conke can"], 100, 1, 50, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 1, 90, 1]],
 		[["bepis can", "earth"], [enemies["conke can"], 100, 1], [enemies["cube"], 100, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 50, 1]],
 		[["earth"], [enemies["foot"], 100, 1]],
-		[["earth", "corb"], [enemies["cube"], 100, 1], [enemies["cosmic crab"], 100, 1], [enemies["milk glass"], 100, 1], [enemies["unlimited stick"], 100, 1]]
+		[["earth", "corb"], [enemies["cube"], 90, 2], [enemies["cosmic crab"], 100, 2], [enemies["milk glass"], 100, 1], [enemies["unlimited stick"], 100, 1]]
 	];
 
 func start():

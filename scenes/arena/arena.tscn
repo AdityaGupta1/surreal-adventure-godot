@@ -75,7 +75,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Left" parent="." index="0" instance=ExtResource( 2 )]
 
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 12 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 12 )
 
 [node name="Right" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -121,7 +121,7 @@ disabled = false
 
 [node name="Horizontal" type="MeshInstance" parent="Cross" index="1"]
 
-transform = Transform( -1.74846e-07, -20.4, 3.49691e-07, -4, 8.91712e-07, -1.52855e-14, 0, -1.78342e-06, -4, 0, 0, 0 )
+transform = Transform( -1.74846e-007, -20.4, 3.49691e-007, -4, 8.91712e-007, -1.52855e-014, 0, -1.78342e-006, -4, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1

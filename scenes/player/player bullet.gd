@@ -4,7 +4,7 @@ func _ready():
 	lifespan = 3;
 	
 	# for testing only
-	var ez_mode = true;
+	var ez_mode = false;
 	
 	if ez_mode:
 		speed = 1000;
