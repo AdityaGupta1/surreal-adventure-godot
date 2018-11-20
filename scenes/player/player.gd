@@ -23,7 +23,8 @@ onready var sounds = get_node("sounds");
 
 func _ready():
 	max_health = 500;
-	shoot_delay = get_node("guns/gun 1").get_shoot_delay();
+	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
+	_equip("hat", "test hat");
 	._ready();
 
 func damage(damage):
@@ -71,9 +72,9 @@ func _physics_process(delta):
 
 	if total_time - last_shot >= shoot_delay and Input.is_mouse_button_pressed(1):
 		last_shot = total_time;
-		get_node("guns/gun " + str(next_gun)).shoot();
+		get_node("shape/guns/gun " + str(next_gun)).shoot();
 		next_gun = 2 if next_gun == 1 else 1;
-		shoot_delay = get_node("guns/gun " + str(next_gun)).get_shoot_delay();
+		shoot_delay = get_node("shape/guns/gun " + str(next_gun)).get_shoot_delay();
 
 func add_monet(new_monet):
 	monet += new_monet;
@@ -88,7 +89,7 @@ func unlock_movement():
 	
 func _set_eye_scale(scale):
 	for i in range(2):
-		get_node("meme man/eye " + str(i + 1)).scale = Vector3(scale, scale, scale)
+		get_node("shape/meme man/eye " + str(i + 1)).scale = Vector3(scale, scale, scale)
 	
 func _die():
 	_dead = true;
@@ -97,3 +98,14 @@ func _die():
 	rotation.z += PI / 2;
 	get_viewport().get_camera().death_zoom(get_node("meme man/eye " + str((randi() % 2) + 1)).global_transform.origin);
 	
+onready var equipment_manager = preload("res://scenes/player/equipment/equipment manager.gd").new();
+	
+func _equip(item_type, item_name):
+	var item = equipment_manager.get_equipment(item_type, item_name).instance();
+	item.translation = item.get_node("equip point").translation;
+	
+	var equipment_node = get_node("equipment").get_node(item_type);
+	for i in range(0, equipment_node.get_child_count()):
+	    equipment_node.get_child(i).queue_free()
+	equipment_node.add_child(item);
+	add_child(item);
