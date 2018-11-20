@@ -48,6 +48,11 @@ Meme Man dialogue, sound effects, etc.
 
 [eye](http://pngimg.com/download/35680)
 
+### Wikimedia Commons (https://commons.wikimedia.org/wiki/Main_Page)
+
+[unmuted icon](https://commons.wikimedia.org/wiki/File:Speaker_Icon.svg)
+[muted icon](https://commons.wikimedia.org/wiki/File:Mute_Icon.svg)
+
 ### miscellaneous
 
 [skin texture](https://www.lsprints.co.uk/stock-designs---human-skin-texture-35062-p.asp)

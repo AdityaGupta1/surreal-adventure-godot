@@ -6,14 +6,10 @@ onready var main = get_parent().get_parent();
 
 const player = preload("res://scenes/player/player.tscn");
 
-var time = 0;
-
 func _ready():
 	main.get_node("title screen/AnimationPlayer").play("void_enters")
 
 func _physics_process(delta):
-	time += delta;
-
 	if Input.is_mouse_button_pressed(1) and get_rect().has_point(get_viewport().get_mouse_position()):
 		if not clicked:
 			clicked = true;
