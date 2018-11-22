@@ -75,6 +75,7 @@ Meme Man dialogue, sound effects, etc.
 [Meme Man](https://sketchfab.com/models/3d1f49bc7e6e446fb0d97e98cd40e749) - decimated by @0xFireball
 [crab](https://sketchfab.com/models/ba482cf822e84d11950924b79ea8ed5b)  
 [infinite stick](https://sketchfab.com/models/ea5ad74839744adeb7126b6d324cfb45)
+[fedora](https://sketchfab.com/models/17bc158dc66a46adb36c7f90b744ee6c)
 
 ### model+model (https://www.modelplusmodel.com/)
 
