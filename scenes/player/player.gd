@@ -24,7 +24,10 @@ onready var sounds = get_node("sounds");
 func _ready():
 	max_health = 500;
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
-	_equip("hat", "fedora");
+	var fedora = load("res://scenes/player/equipment/equipment.gd").new();
+	fedora.item_type = "hat";
+	fedora.item_name = "fedor";
+	_equip(fedora);
 	._ready();
 
 func damage(damage):
@@ -100,11 +103,11 @@ func _die():
 	
 onready var equipment_manager = preload("res://scenes/player/equipment/equipment manager.gd").new();
 	
-func _equip(item_type, item_name):
-	var item = equipment_manager.get_equipment(item_type, item_name).instance();
+func _equip(equipment):
+	var item = equipment.get_equipment().instance();
 	item.translation = -item.get_node("equip point").translation;
 	
-	var equipment_node = get_node("equipment").get_node(item_type);
+	var equipment_node = get_node("equipment").get_node(equipment.item_type);
 	for i in range(0, equipment_node.get_child_count()):
 	    equipment_node.get_child(i).queue_free()
 	equipment_node.add_child(item);
