@@ -26,7 +26,7 @@ func _ready():
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
 	var fedora = load("res://scenes/player/equipment/equipment.gd").new();
 	fedora.item_type = "hat";
-	fedora.item_name = "fedor";
+	fedora.item_name = "fedora";
 	_equip(fedora);
 	._ready();
 
@@ -104,6 +104,14 @@ func _die():
 onready var equipment_manager = preload("res://scenes/player/equipment/equipment manager.gd").new();
 	
 func _equip(equipment):
+	if equipment == null:
+		print("null equipment");
+		return;
+	
+	if equipment.get_equipment() == null:
+		print("null equipment scene");
+		return;
+	
 	var item = equipment.get_equipment().instance();
 	item.translation = -item.get_node("equip point").translation;
 	

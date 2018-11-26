@@ -54,13 +54,13 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[node name="fedora" type="Spatial"]
+[node name="fedora" type="Spatial" index="0"]
 
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0.423684, 0.299111, -0.10851 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.423684, 0.299111, -0.10851 )
 layers = 1
 material_override = null
 cast_shadow = 1

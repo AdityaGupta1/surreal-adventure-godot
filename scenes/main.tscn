@@ -108,7 +108,7 @@ tracks/0/keys = {
 "values": [ Color( 0.199219, 0.199219, 0.199219, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Main" type="Spatial" index="0"]
+[node name="Main" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -121,7 +121,7 @@ _sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="camera" type="Camera" parent="camera, light, music" index="0"]
 
-transform = Transform( -1, 1.50996e-007, 0, 6.60024e-015, 4.37114e-008, 1, 1.50996e-007, 1, -4.37114e-008, 0, 0, 0 )
+transform = Transform( -1, 1.50996e-07, 0, 6.60024e-15, 4.37114e-08, 1, 1.50996e-07, 1, -4.37114e-08, 0, 0, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -139,7 +139,7 @@ _sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="light" type="DirectionalLight" parent="camera, light, music" index="1"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
