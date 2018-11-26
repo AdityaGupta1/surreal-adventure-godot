@@ -21,13 +21,17 @@ var vulnerable = 0;
 
 onready var sounds = get_node("sounds");
 
+onready var equipment_manager = preload("res://scenes/player/equipment/equipment manager.gd").new();
+
 func _ready():
 	max_health = 500;
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
 	var fedora = load("res://scenes/player/equipment/equipment.gd").new();
 	fedora.item_type = "hat";
 	fedora.item_name = "fedora";
+	equipment_manager.randomize_stats(fedora);
 	_equip(fedora);
+	print(fedora.stats);
 	._ready();
 
 func damage(damage):
@@ -100,8 +104,6 @@ func _die():
 	rotation.x -= PI / 2;
 	rotation.z += PI / 2;
 	get_viewport().get_camera().death_zoom(get_node("meme man/eye " + str((randi() % 2) + 1)).global_transform.origin);
-	
-onready var equipment_manager = preload("res://scenes/player/equipment/equipment manager.gd").new();
 	
 func _equip(equipment):
 	if equipment == null:
