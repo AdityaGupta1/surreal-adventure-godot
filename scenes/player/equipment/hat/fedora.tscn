@@ -54,7 +54,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[node name="fedora" type="Spatial" index="0"]
+[node name="fedora" type="Spatial"]
 
 _sections_unfolded = [ "Transform", "Visibility" ]
 

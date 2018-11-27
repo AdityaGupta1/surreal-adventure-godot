@@ -26,12 +26,11 @@ onready var equipment_manager = preload("res://scenes/player/equipment/equipment
 func _ready():
 	max_health = 500;
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
-	var fedora = load("res://scenes/player/equipment/equipment.gd").new();
-	fedora.item_type = "hat";
-	fedora.item_name = "fedora";
-	equipment_manager.randomize_stats(fedora);
-	_equip(fedora);
-	print(fedora.stats);
+	var hat = load("res://scenes/player/equipment/equipment.gd").new();
+	hat.item_type = "hat";
+	hat.item_name = "bottlecap";
+	equipment_manager.randomize_stats(hat);
+	_equip(hat);
 	._ready();
 
 func damage(damage):
@@ -103,7 +102,7 @@ func _die():
 	_set_eye_scale(1.4);
 	rotation.x -= PI / 2;
 	rotation.z += PI / 2;
-	get_viewport().get_camera().death_zoom(get_node("meme man/eye " + str((randi() % 2) + 1)).global_transform.origin);
+	get_viewport().get_camera().death_zoom(get_node("shape/meme man/eye " + str((randi() % 2) + 1)).global_transform.origin);
 	
 func _equip(equipment):
 	if equipment == null:

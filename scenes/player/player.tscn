@@ -9,12 +9,12 @@
 [ext_resource path="res://sounds/player/hurt2.wav" type="AudioStream" id=7]
 [ext_resource path="res://sounds/player/hurt3.wav" type="AudioStream" id=8]
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=1]
 
 radius = 1.0
 height = 0.25
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=2]
 
 render_priority = 0
 flags_transparent = false
@@ -66,9 +66,9 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -86,13 +86,13 @@ _sections_unfolded = [ "Collision", "Pause", "Transform" ]
 [node name="shape" type="CollisionShape" parent="." index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.2061, 0.245708, -0.0275242, -0.315179 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="meme man" type="MeshInstance" parent="shape" index="0"]
 
-transform = Transform( 0.0854456, -2.88619e-010, 0.0519524, -0.0519524, -1.94901e-009, 0.0854456, 6.35062e-010, -0.0829121, -1.5051e-009, 3.24134, 0.668881, -0.138998 )
+transform = Transform( 0.0854456, -2.88619e-10, 0.0519524, -0.0519524, -1.94901e-09, 0.0854456, 6.35062e-10, -0.0829121, -1.5051e-09, 3.24134, 0.668881, -0.138998 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -104,16 +104,16 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
 skeleton = NodePath("..")
-material/0 = SubResource( 1 )
+material/0 = SubResource( 2 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="eye 1" parent="shape/meme man" index="0" instance=ExtResource( 3 )]
 
-transform = Transform( 0.356693, -0.181026, 1.89303e-009, -1.89303e-009, -7.91289e-009, -0.4, 0.181026, 0.356693, -7.9129e-009, -19.3136, 4.43204, -16.7676 )
+transform = Transform( 0.356693, -0.181026, 1.89303e-09, -1.89303e-09, -7.91289e-09, -0.4, 0.181026, 0.356693, -7.9129e-09, -19.3136, 4.43204, -16.7676 )
 
 [node name="eye 2" parent="shape/meme man" index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 0.356693, -0.181026, 1.89303e-009, -1.89303e-009, -7.91289e-009, -0.4, 0.181026, 0.356693, -7.9129e-009, -16.8213, 4.4468, -21.184 )
+transform = Transform( 0.356693, -0.181026, 1.89303e-09, -1.89303e-09, -7.91289e-09, -0.4, 0.181026, 0.356693, -7.9129e-09, -16.8213, 4.4468, -21.184 )
 
 [node name="guns" type="Spatial" parent="shape" index="1"]
 
@@ -121,11 +121,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.829121, -0.245708, 0.0275242, 0
 
 [node name="gun 1" parent="shape/guns" index="0" instance=ExtResource( 4 )]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.761283, 1.69238e-009 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.761283, 1.69238e-09 )
 
 [node name="gun 2" parent="shape/guns" index="1" instance=ExtResource( 4 )]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -0.8, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.8, 0 )
 
 [node name="sounds" type="Node" parent="." index="1"]
 
@@ -214,7 +214,7 @@ doppler_tracking = 0
 
 [node name="equipment" type="Spatial" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="hat" type="Spatial" parent="equipment" index="0"]

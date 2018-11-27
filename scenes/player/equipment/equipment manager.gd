@@ -1,7 +1,7 @@
 extends Node
 
 var equipment = {
-	"hat": ["fedora"]
+	"hat": ["fedora", "bottlecap"]
 };
 
 var stats = {
