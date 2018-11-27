@@ -93,3 +93,4 @@ Meme Man dialogue, sound effects, etc.
 
 [banana](https://www.turbosquid.com/3d-models/banana-fruit-c4d-free/458771)
 [skateboard](https://www.turbosquid.com/FullPreview/Index.cfm/ID/1209971)
+[bottlecap](https://www.turbosquid.com/3d-models/free-3ds-model-bottle-cap/629730)
