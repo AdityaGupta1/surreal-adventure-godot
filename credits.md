@@ -56,6 +56,7 @@ Meme Man dialogue, sound effects, etc.
 ### miscellaneous
 
 [skin texture](https://www.lsprints.co.uk/stock-designs---human-skin-texture-35062-p.asp)
+[Pepsi logo](https://1000logos.net/pepsi-logo/)
 
 ## Fonts
 

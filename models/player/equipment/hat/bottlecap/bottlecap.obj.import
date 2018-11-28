@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bottlecap.obj-32d53403865b164275c2dc2319c8fbe9.mesh"
+
+[deps]
+
+files=[ "res://.import/bottlecap.obj-32d53403865b164275c2dc2319c8fbe9.mesh" ]
+
+source_file="res://models/player/equipment/hat/bottlecap/bottlecap.obj"
+dest_files=[ "res://.import/bottlecap.obj-32d53403865b164275c2dc2319c8fbe9.mesh", "res://.import/bottlecap.obj-32d53403865b164275c2dc2319c8fbe9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

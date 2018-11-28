@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/fedora.obj-23d71f8edb2064e00c196efd30cb47d2.mesh"
+
+[deps]
+
+files=[ "res://.import/fedora.obj-23d71f8edb2064e00c196efd30cb47d2.mesh" ]
+
+source_file="res://models/player/equipment/hat/fedora/fedora.obj"
+dest_files=[ "res://.import/fedora.obj-23d71f8edb2064e00c196efd30cb47d2.mesh", "res://.import/fedora.obj-23d71f8edb2064e00c196efd30cb47d2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
