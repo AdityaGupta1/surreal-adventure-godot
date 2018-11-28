@@ -120,4 +120,3 @@ func _equip(equipment):
 	for i in range(0, equipment_node.get_child_count()):
 	    equipment_node.get_child(i).queue_free()
 	equipment_node.add_child(item);
-	add_child(item);
