@@ -26,10 +26,7 @@ onready var equipment_manager = preload("res://scenes/player/equipment/equipment
 func _ready():
 	max_health = 500;
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
-	var hat = load("res://scenes/player/equipment/equipment.gd").new();
-	hat.item_type = "hat";
-	hat.item_name = "bottlecap";
-	equipment_manager.randomize_stats(hat);
+	var hat = equipment_manager.get_equipment("hat", "bottlecap");
 	_equip(hat);
 	._ready();
 
@@ -46,6 +43,8 @@ func damage(damage):
 	
 func heal(health_restored):
 	health = min(health + health_restored, max_health);
+	
+var in_shop = false;
 
 func _physics_process(delta):
 	if _dead:
@@ -81,6 +80,13 @@ func _physics_process(delta):
 		get_node("shape/guns/gun " + str(next_gun)).shoot();
 		next_gun = 2 if next_gun == 1 else 1;
 		shoot_delay = get_node("shape/guns/gun " + str(next_gun)).get_shoot_delay();
+		
+	if global_transform.origin.z > 20 and not in_shop:
+		get_viewport().get_camera().zoom_point("shop start", 2);
+		in_shop = true;
+	elif global_transform.origin.z < 20 and in_shop:
+		get_viewport().get_camera().zoom_point("origin", 2);
+		in_shop = false;
 
 func add_monet(new_monet):
 	monet += new_monet;
@@ -93,26 +99,13 @@ func lock_movement():
 func unlock_movement():
 	can_move = true;
 	
-func _set_eye_scale(scale):
-	for i in range(2):
-		get_node("shape/meme man/eye " + str(i + 1)).scale = Vector3(scale, scale, scale)
-	
 func _die():
 	_dead = true;
-	_set_eye_scale(1.4);
 	rotation.x -= PI / 2;
 	rotation.z += PI / 2;
-	get_viewport().get_camera().death_zoom(get_node("shape/meme man/eye " + str((randi() % 2) + 1)).global_transform.origin);
+	get_viewport().get_camera().zoom_pose(get_node("shape/meme man/eye " + str((randi() % 2) + 1)).global_transform.origin, 2);
 	
 func _equip(equipment):
-	if equipment == null:
-		print("null equipment");
-		return;
-	
-	if equipment.get_equipment() == null:
-		print("null equipment scene");
-		return;
-	
 	var item = equipment.get_equipment().instance();
 	item.translation = -item.get_node("equip point").translation;
 	
@@ -120,3 +113,7 @@ func _equip(equipment):
 	for i in range(0, equipment_node.get_child_count()):
 	    equipment_node.get_child(i).queue_free()
 	equipment_node.add_child(item);
+	
+func finished_zoom():
+	if _dead:
+		get_tree().reload_current_scene();

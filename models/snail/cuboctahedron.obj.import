@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cuboctahedron.obj-3ffdae98a89945ce3c6ef7bfb6f86526.mesh"
+
+[deps]
+
+files=[ "res://.import/cuboctahedron.obj-3ffdae98a89945ce3c6ef7bfb6f86526.mesh" ]
+
+source_file="res://models/snail/cuboctahedron.obj"
+dest_files=[ "res://.import/cuboctahedron.obj-3ffdae98a89945ce3c6ef7bfb6f86526.mesh", "res://.import/cuboctahedron.obj-3ffdae98a89945ce3c6ef7bfb6f86526.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -7,17 +7,17 @@ var equipment = {
 var stats = {
 	"hat": {"attack": [-1, 5], "defense": [-1, 3], "coolness": [-2, 10]}
 };
-	
+
 func get_equipment(item_type, item_name):
-	if not equipment.has(item_type):
-		print("invalid item type: " + item_type);
-		return null;
-		
-	if not equipment[item_type].has(item_name):
-		print("invalid item name: " + item_type + ", " + item_name);
-		return null;
+	var equipment = load("res://scenes/player/equipment/equipment.gd").new();
+	equipment.item_type = item_type;
+	equipment.item_name = item_name;
+	randomize_stats(equipment);
+	return equipment;
 	
-	return load("res://scenes/player/equipment/" + item_type + "/" + item_name + ".tscn");
+func get_random_equipment_of_type(item_type):
+	var equipment_of_type = equipment[item_type];
+	return get_equipment(item_type, equipment_of_type[randi() % equipment_of_type.size()]);
 	
 func randomize_stats(equipment):
 	var possible_stats = stats[equipment.item_type];
@@ -25,3 +25,5 @@ func randomize_stats(equipment):
 	for key in possible_stats.keys():
 		var stat_range = possible_stats[key];
 		equipment.stats[key] = floor(rand_range(stat_range[0], stat_range[1] + 1));
+		
+	return equipment;
