@@ -29,6 +29,20 @@ func zoom_position(to_position, zoom_time):
 func zoom_point(point, zoom_time):
 	zoom_pose(points[point][0], points[point][1], zoom_time);
 	
+func go_pose(to_position, to_rotation):
+	global_transform.origin = to_position;
+	rotate = _fix_vector(to_rotation - actual_rotation) * PI / 180;
+	rotate_x(rotate.x);
+	rotate_y(rotate.y);
+	rotate_z(rotate.z);
+	actual_rotation = to_rotation;
+	
+func go_position(to_position):
+	go_pose(to_position, actual_rotation);
+	
+func go_point(point):
+	go_pose(points[point][0], points[point][1]);
+	
 # makes sure no rotation is greater than 180 degrees
 func _fix_vector(vector):
 	var values = [vector.x, vector.y, vector.z];

@@ -82,10 +82,10 @@ func _physics_process(delta):
 		shoot_delay = get_node("shape/guns/gun " + str(next_gun)).get_shoot_delay();
 		
 	if global_transform.origin.z > 20 and not in_shop:
-		get_viewport().get_camera().zoom_point("shop start", 2);
+		get_viewport().get_camera().go_point("shop start");
 		in_shop = true;
 	elif global_transform.origin.z < 20 and in_shop:
-		get_viewport().get_camera().zoom_point("origin", 2);
+		get_viewport().get_camera().go_point("origin");
 		in_shop = false;
 
 func add_monet(new_monet):

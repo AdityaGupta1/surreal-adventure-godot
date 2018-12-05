@@ -114,15 +114,9 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="camera, light, music" type="Spatial" parent="." index="0"]
+[node name="camera" type="Camera" parent="." index="0"]
 
-pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
-_sections_unfolded = [ "Pause", "Transform" ]
-
-[node name="camera" type="Camera" parent="camera, light, music" index="0"]
-
-transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0, 0 )
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 50, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -138,7 +132,13 @@ far = 100.0
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
-[node name="light" type="DirectionalLight" parent="camera, light, music" index="1"]
+[node name="light and music" type="Spatial" parent="." index="1"]
+
+pause_mode = 2
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="light" type="DirectionalLight" parent="light and music" index="0"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 layers = 1
@@ -166,7 +166,7 @@ directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 _sections_unfolded = [ "Light", "Transform" ]
 
-[node name="music" type="AudioStreamPlayer3D" parent="camera, light, music" index="2"]
+[node name="music" type="AudioStreamPlayer3D" parent="light and music" index="1"]
 
 transform = Transform( 0.982203, 0, 0, 0, 0.982203, 0, 0, 0, 0.982203, 0, 0, 0 )
 stream = ExtResource( 3 )
@@ -189,15 +189,15 @@ doppler_tracking = 0
 script = ExtResource( 4 )
 _sections_unfolded = [ "Doppler" ]
 
-[node name="arena" parent="." index="1" instance=ExtResource( 5 )]
+[node name="arena" parent="." index="2" instance=ExtResource( 5 )]
 
 _sections_unfolded = [ "Pause", "Transform" ]
 
-[node name="enemies" type="Spatial" parent="." index="2"]
+[node name="enemies" type="Spatial" parent="." index="3"]
 
 _sections_unfolded = [ "Pause" ]
 
-[node name="space background" type="MeshInstance" parent="." index="3"]
+[node name="space background" type="MeshInstance" parent="." index="4"]
 
 pause_mode = 2
 transform = Transform( 150, 0, 0, 0, 0.1, 0, 0, 0, 150, 0, -40, 0 )
@@ -216,7 +216,7 @@ material/0 = SubResource( 2 )
 script = ExtResource( 7 )
 _sections_unfolded = [ "Pause", "Transform", "material" ]
 
-[node name="HUD" type="Control" parent="." index="4"]
+[node name="HUD" type="Control" parent="." index="5"]
 
 visible = false
 anchor_left = 0.0
@@ -334,7 +334,7 @@ color = Color( 0.54902, 0.0980392, 0.0980392, 1 )
 script = ExtResource( 11 )
 _sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
 
-[node name="title screen" type="Control" parent="." index="5"]
+[node name="title screen" type="Control" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -403,7 +403,7 @@ playback_speed = 1.0
 anims/void_enters = SubResource( 4 )
 blend_times = [  ]
 
-[node name="pause screen" type="Control" parent="." index="6"]
+[node name="pause screen" type="Control" parent="." index="7"]
 
 pause_mode = 2
 visible = false
@@ -486,11 +486,11 @@ texture = ExtResource( 19 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="path" parent="." index="7" instance=ExtResource( 20 )]
+[node name="path" parent="." index="8" instance=ExtResource( 20 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.9, 25.9974 )
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="finished" from="camera, light, music/music" to="camera, light, music/music" method="_play_music"]
+[connection signal="finished" from="light and music/music" to="light and music/music" method="_play_music"]
 
 
