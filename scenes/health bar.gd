@@ -1,6 +1,6 @@
 extends ColorRect
 
-onready var main = get_tree().get_root().get_node("Main");
+onready var main = get_tree().get_root().get_node("main");
 
 func _process(delta):
 	if main.has_node("Player"):

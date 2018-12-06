@@ -3,7 +3,7 @@ extends "res://scenes/character.gd"
 signal enemy_died;
 var added_signal = false;
 
-onready var main = get_tree().get_root().get_node("Main");
+onready var main = get_tree().get_root().get_node("main");
 onready var player = main.get_node("Player");
 onready var enemies = main.get_node("enemies");
 

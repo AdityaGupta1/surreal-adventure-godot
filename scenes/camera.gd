@@ -64,7 +64,7 @@ func _physics_process(delta):
 	
 	if zooming:
 		if time > zoom_end and zoom_end != 0:
-			get_tree().get_root().get_node("Main").get_node("Player").finished_zoom();	
+			get_tree().get_root().get_node("main").get_node("Player").finished_zoom();	
 			zooming = false;
 			
 		var delta_translate = (delta / zoom_time) * translate;

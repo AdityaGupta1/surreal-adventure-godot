@@ -9,6 +9,9 @@ var equipment_manager;
 
 onready var points = get_node("points");
 
+func _ready():
+	randomize_shop();
+
 func randomize_shop():
 	if shop_manager == null:
 		shop_manager = load("res://scenes/npcs/shopkeepers/shop manager.gd").new();
@@ -24,16 +27,17 @@ func randomize_shop():
 		equipment.append(equipment_manager.get_random_equipment_of_type(item_type));
 				
 	for i in range(0, points.get_child_count()):
-		var point = point.get_child(i);
+		var point = points.get_child(i);
 		
 		for j in range(0, point.get_child_count()):
 			point.get_child(j).queue_free();
 			
-		var item = equipment[i].get_equipment().instance();
-		item.translation = -item.get_node("equip point").translation;
-		point.add_child(item);
+		if point.name.find("equipment") != -1:
+			var item = equipment[i].get_equipment().instance();
+			item.translation = -item.get_node("equip point").translation;
+			point.add_child(item);
 		
-	var shopkeeper = shop_manager.get_random_shopkeeper();
+	var shopkeeper = shop_manager.get_random_shopkeeper().instance();
 	
 	var shopkeeper_node = points.get_node("shopkeeper");
 	for i in range(0, shopkeeper_node.get_child_count()):

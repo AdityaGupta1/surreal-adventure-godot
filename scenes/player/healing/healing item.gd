@@ -15,7 +15,7 @@ func _ready():
 	
 func _on_body_entered(body):
 	if body.get_name() == "Player" and time > pickup_delay:
-		get_tree().get_root().get_node("Main").get_node("Player").heal(health_restored[self.get_name()]);
+		get_tree().get_root().get_node("main").get_node("Player").heal(health_restored[self.get_name()]);
 		queue_free();
 	
 func _physics_process(delta):

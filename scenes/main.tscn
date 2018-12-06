@@ -109,7 +109,7 @@ tracks/0/keys = {
 "values": [ Color( 0.199219, 0.199219, 0.199219, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Main" type="Spatial" index="0"]
+[node name="main" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -146,7 +146,7 @@ light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
-light_specular = 0.5
+light_specular = 0.0
 light_bake_mode = 1
 light_cull_mask = -1
 shadow_enabled = false

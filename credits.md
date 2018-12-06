@@ -57,6 +57,8 @@ Meme Man dialogue, sound effects, etc.
 
 [skin texture](https://www.lsprints.co.uk/stock-designs---human-skin-texture-35062-p.asp)
 [Pepsi logo](https://1000logos.net/pepsi-logo/)
+[concrete](http://seamless-pixels.blogspot.com/p/free-seamless-concrete-textures.html)
+[asphalt](https://creativemarket.com/grasycho/56485-Seamless-Asphalt-Texture)
 
 ## Fonts
 

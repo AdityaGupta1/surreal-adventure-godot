@@ -44,6 +44,13 @@ func damage(damage):
 func heal(health_restored):
 	health = min(health + health_restored, max_health);
 	
+# offset by which movement is rotated (used when changing camera angles)
+# set in degrees by using set_movement_offset
+var movement_offset = 0; 
+
+func set_movement_offset(offset):
+	movement_offset = deg2rad(offset);
+	
 var in_shop = false;
 
 func _physics_process(delta):
@@ -52,16 +59,17 @@ func _physics_process(delta):
 	
 	total_time += delta;
 
-	direction = Vector3();
-	direction.z += (1 if Input.is_key_pressed(KEY_W) else 0) - (1 if Input.is_key_pressed(KEY_S) else 0);
+	direction = Vector2();
+	direction.y += (1 if Input.is_key_pressed(KEY_W) else 0) - (1 if Input.is_key_pressed(KEY_S) else 0);
 	direction.x += (1 if Input.is_key_pressed(KEY_A) else 0) - (1 if Input.is_key_pressed(KEY_D) else 0);
+	direction = direction.rotated(movement_offset);
 
 	direction = direction.normalized() * speed * delta;
-	direction *= 1 if is_on_floor() else 0.8;
+	direction *= 1 if is_on_floor() else 0.8; # slower movement in the air
 
 	velocity.y += gravity * delta;
 	velocity.x = direction.x;
-	velocity.z = direction.z;
+	velocity.z = direction.y;
 
 	if is_on_floor() and Input.is_key_pressed(KEY_SPACE) and can_move:
 		velocity.y += jump_velocity;
@@ -91,7 +99,7 @@ func _physics_process(delta):
 func add_monet(new_monet):
 	monet += new_monet;
 	sounds.get_node("collect monet disc").play();
-	get_tree().get_root().get_node("Main").get_node("HUD").get_node("monet label").update();
+	get_tree().get_root().get_node("main").get_node("HUD").get_node("monet label").update();
 
 func lock_movement():
 	can_move = false;
@@ -103,7 +111,7 @@ func _die():
 	_dead = true;
 	rotation.x -= PI / 2;
 	rotation.z += PI / 2;
-	get_viewport().get_camera().zoom_pose(get_node("shape/meme man/eye " + str((randi() % 2) + 1)).global_transform.origin, 2);
+	get_viewport().get_camera().zoom_position(get_node("shape/meme man/eye " + str((randi() % 2) + 1)).global_transform.origin, 2);
 	
 func _equip(equipment):
 	var item = equipment.get_equipment().instance();

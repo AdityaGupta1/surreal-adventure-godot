@@ -14,8 +14,8 @@ func get_shoot_delay():
 func shoot():
 	var new_bullet = bullet.instance();
 	new_bullet.transform.origin = get_node("barrel").global_transform.origin;
-	new_bullet.rotation.y = get_tree().get_root().get_node("Main").get_node("Player").rotation.y;
-	get_tree().get_root().get_node("Main").add_child(new_bullet);
+	new_bullet.rotation.y = get_tree().get_root().get_node("main").get_node("Player").rotation.y;
+	get_tree().get_root().get_node("main").add_child(new_bullet);
 	time = 0;
 	
 	get_node("sound").play(0);

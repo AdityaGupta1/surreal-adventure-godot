@@ -65,7 +65,7 @@ func _spawn_enemies():
 				if rand_range(0, 100) < enemy_chances[j]: # spawn chance
 					var enemy = enemy_chances[0].instance();
 					enemy.transform.origin = _find_eligible_spawn_location(enemy.get_no_spawn_radius());
-					get_tree().get_root().get_node("Main").get_node("enemies").add_child(enemy);
+					get_tree().get_root().get_node("main").get_node("enemies").add_child(enemy);
 
 func _random_vector(bound):
 	return Vector3(rand_range(-bound, bound), rand_range(-bound, bound), rand_range(-bound, bound));
