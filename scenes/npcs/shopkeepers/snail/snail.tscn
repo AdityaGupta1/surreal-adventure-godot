@@ -107,12 +107,18 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[node name="snail" type="Spatial" index="0"]
+[node name="snail" type="Spatial"]
 
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="snail" type="MeshInstance" parent="." index="0"]
+[node name="attach point" type="Spatial" parent="." index="0"]
+
+[node name="snail" type="Spatial" parent="." index="1"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="snail" type="MeshInstance" parent="snail" index="0"]
 
 transform = Transform( 300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 0, 0 )
 layers = 1
@@ -129,9 +135,9 @@ skeleton = NodePath("..")
 material/0 = SubResource( 1 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="cuboctahedron" type="MeshInstance" parent="." index="1"]
+[node name="cuboctahedron" type="MeshInstance" parent="snail" index="1"]
 
-transform = Transform( 0.8, 0, 0, 0, 0.273616, -0.751754, 0, 0.751754, 0.273616, -0.000464201, 1.4265, -0.964889 )
+transform = Transform( 0.580675, 0.471412, -0.283879, -0.428706, 0.128797, -0.66304, -0.345003, 0.63339, 0.346108, -0.150313, 1.57074, -0.538984 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -145,7 +151,5 @@ mesh = ExtResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "material" ]
-
-[node name="attach point" type="Spatial" parent="." index="2"]
 
 

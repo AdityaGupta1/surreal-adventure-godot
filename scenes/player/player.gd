@@ -12,6 +12,7 @@ var velocity = Vector3();
 
 var up = Vector3(0, 1, 0);
 
+var can_shoot = true;
 var last_shot = 0.92;
 var next_gun = 1;
 
@@ -51,6 +52,10 @@ var movement_offset = 0;
 func set_movement_offset(offset):
 	movement_offset = deg2rad(offset);
 	
+# mouse, with heading
+var rotation_mode = "mouse";
+var last_rotation = 0;
+	
 var in_shop = false;
 
 func _physics_process(delta):
@@ -80,10 +85,17 @@ func _physics_process(delta):
 
 	velocity = move_and_slide(velocity, up);
 
-	# point toward mouse
-	rotation.y = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_mouse_position());
+	if rotation_mode == "mouse":
+		rotation.y = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_mouse_position());
+	elif rotation_mode == "with heading":
+		if direction.length() == 0:
+			rotation.y = last_rotation;
+		else:
+			rotation.y = -direction.angle();
+		
+	last_rotation = rotation.y;
 
-	if total_time - last_shot >= shoot_delay and Input.is_mouse_button_pressed(1):
+	if can_shoot and total_time - last_shot >= shoot_delay and Input.is_mouse_button_pressed(1):
 		last_shot = total_time;
 		get_node("shape/guns/gun " + str(next_gun)).shoot();
 		next_gun = 2 if next_gun == 1 else 1;
@@ -92,9 +104,13 @@ func _physics_process(delta):
 	if global_transform.origin.z > 20 and not in_shop:
 		get_viewport().get_camera().go_point("shop start");
 		in_shop = true;
+		rotation_mode = "with heading";
 	elif global_transform.origin.z < 20 and in_shop:
 		get_viewport().get_camera().go_point("origin");
 		in_shop = false;
+		rotation_mode = "mouse";
+	
+	can_shoot = !in_shop;
 
 func add_monet(new_monet):
 	monet += new_monet;
