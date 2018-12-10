@@ -47,16 +47,19 @@ func heal(health_restored):
 	
 # offset by which movement is rotated (used when changing camera angles)
 # set in degrees by using set_movement_offset
-var movement_offset = 0; 
+var _movement_offset = 0; 
+var _next_movement_offset = 0; # used so the movement offset doesn't change until a certain time after a change in camera angle
+var _change_movement_offset_time = 0;
 
 func set_movement_offset(offset):
-	movement_offset = deg2rad(offset);
+	_next_movement_offset = deg2rad(offset);
+	_change_movement_offset_time = total_time + 0.2;
 	
 # mouse, with heading
 var rotation_mode = "mouse";
 var last_rotation = 0;
 	
-var in_shop = false;
+var _in_shop = false;
 
 func _physics_process(delta):
 	if _dead:
@@ -67,7 +70,11 @@ func _physics_process(delta):
 	direction = Vector2();
 	direction.y += (1 if Input.is_key_pressed(KEY_W) else 0) - (1 if Input.is_key_pressed(KEY_S) else 0);
 	direction.x += (1 if Input.is_key_pressed(KEY_A) else 0) - (1 if Input.is_key_pressed(KEY_D) else 0);
-	direction = direction.rotated(movement_offset);
+	
+	if total_time > _change_movement_offset_time and _movement_offset != _next_movement_offset:
+		_movement_offset = _next_movement_offset;
+		
+	direction = direction.rotated(_movement_offset);
 
 	direction = direction.normalized() * speed * delta;
 	direction *= 1 if is_on_floor() else 0.8; # slower movement in the air
@@ -101,16 +108,16 @@ func _physics_process(delta):
 		next_gun = 2 if next_gun == 1 else 1;
 		shoot_delay = get_node("shape/guns/gun " + str(next_gun)).get_shoot_delay();
 		
-	if global_transform.origin.z > 20 and not in_shop:
+	if global_transform.origin.z > 20 and not _in_shop:
 		get_viewport().get_camera().go_point("shop start");
-		in_shop = true;
+		_in_shop = true;
 		rotation_mode = "with heading";
-	elif global_transform.origin.z < 20 and in_shop:
+	elif global_transform.origin.z < 20 and _in_shop:
 		get_viewport().get_camera().go_point("origin");
-		in_shop = false;
+		_in_shop = false;
 		rotation_mode = "mouse";
 	
-	can_shoot = !in_shop;
+	can_shoot = !_in_shop;
 
 func add_monet(new_monet):
 	monet += new_monet;

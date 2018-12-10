@@ -9,7 +9,7 @@ var enemy_scenes = {
 	"unlimited stick": "stick/stick.tscn"
 }
 var enemies = {};
-var wave = 0;
+var wave = -1; # set to any value below 0 to prevent enemies from spawning
 var spawns = [];
 
 var spawn_positions = [];
@@ -42,7 +42,7 @@ func start():
 func _physics_process(delta):
 	time += delta;
 	
-	if time > start_time && start_time != 0:
+	if time > start_time && start_time != 0 && wave >= 0:
 		_spawn_enemies();
 		start_time = 0;
 
@@ -51,6 +51,7 @@ func done_extending():
 	
 	if confirmations == 8:
 		confirmations = 0;
+		
 		wave += 1;
 		_spawn_enemies();
 		

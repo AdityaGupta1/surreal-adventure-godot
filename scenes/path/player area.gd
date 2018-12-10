@@ -1,6 +1,6 @@
 extends Area
 
-onready var camera = get_node("camera");
+onready var camera = get_parent().get_node("camera");
 onready var main_camera = get_tree().get_root().get_node("main").get_node("camera");
 
 func _on_body_entered(body):

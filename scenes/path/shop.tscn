@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/path/shop.gd" type="Script" id=1]
 [ext_resource path="res://models/path/concrete.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/path/player area.gd" type="Script" id=3]
+[ext_resource path="res://scenes/path/barrier.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -57,7 +58,7 @@ subsurf_scatter_enabled = false
 transmission_enabled = false
 refraction_enabled = false
 detail_enabled = false
-uv1_scale = Vector3( 0.5, 1.5, 1 )
+uv1_scale = Vector3( 1, 1.5, 1 )
 uv1_offset = Vector3( 0, 0, 0 )
 uv1_triplanar = false
 uv1_triplanar_sharpness = 1.0
@@ -82,7 +83,7 @@ subdivide_depth = 0
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="shop" type="Spatial"]
+[node name="shop" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -403,7 +404,7 @@ disabled = false
 
 [node name="Top" type="MeshInstance" parent="roof" index="1"]
 
-transform = Transform( -3.49691e-07, 0, 8, 0, 3, 0, -8, 0, -3.49691e-07, 0, 8, 0 )
+transform = Transform( -3.49691e-007, 0, 8, 0, 3, 0, -8, 0, -3.49691e-007, 0, 8, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -442,7 +443,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="player area" type="Area" parent="." index="6"]
 
-transform = Transform( 1, 0, 0, 0, 2.5, 0, 0, 0, 3, 5, 3, 0 )
+transform = Transform( 1, 0, 0, 0, 10, 0, 0, 0, 6, 5, 10.5, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -471,9 +472,9 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 5 )
 disabled = false
 
-[node name="camera" type="Camera" parent="player area" index="1"]
+[node name="camera" type="Camera" parent="." index="7"]
 
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.5, 0.55, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 11.5, 4.375, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -486,7 +487,31 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform" ]
+
+[node name="barriers" type="Spatial" parent="." index="8"]
+
+visible = false
+
+[node name="barrier 1" parent="barriers" index="0" instance=ExtResource( 4 )]
+
+transform = Transform( -1.74846e-007, 1, 0, -4, -4.37114e-008, 0, 0, 0, 4, 4, 4, 0 )
+
+[node name="barrier 2" parent="barriers" index="1" instance=ExtResource( 4 )]
+
+transform = Transform( 7.64274e-015, -1.74846e-007, -1, -4, -1.74846e-007, 0, -1.74846e-007, 4, -4.37114e-008, 5, 4, -3 )
+
+[node name="barrier 3" parent="barriers" index="2" instance=ExtResource( 4 )]
+
+transform = Transform( 7.64274e-015, -1.74846e-007, 1, -4, -1.74846e-007, 0, 1.74846e-007, -4, -4.37114e-008, 5, 4, 3 )
+
+[node name="barrier 4" parent="barriers" index="3" instance=ExtResource( 4 )]
+
+transform = Transform( -1.74846e-007, 1, 0, -4, -4.37114e-008, 0, 0, 0, 1.5, 6, 4, -4.5 )
+
+[node name="barrier 5" parent="barriers" index="4" instance=ExtResource( 4 )]
+
+transform = Transform( -1.74846e-007, 1, 0, -4, -4.37114e-008, 0, 0, 0, 1.5, 6, 4, 4.5 )
 
 [connection signal="body_entered" from="player area" to="player area" method="_on_body_entered"]
 
