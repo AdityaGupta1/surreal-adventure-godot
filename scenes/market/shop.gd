@@ -44,3 +44,8 @@ func randomize_shop():
 		shopkeeper_node.get_child(i).queue_free();
 	shopkeeper.translation = -shopkeeper.get_node("attach point").translation;
 	shopkeeper_node.add_child(shopkeeper);
+	
+	var roof = get_node("roof/Top");
+	var material = SpatialMaterial.new();
+	material.albedo_color = Color(randf(), randf(), randf());
+	roof.set_surface_material(0, material);

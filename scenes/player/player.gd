@@ -122,7 +122,7 @@ func _physics_process(delta):
 func add_monet(new_monet):
 	monet += new_monet;
 	sounds.get_node("collect monet disc").play();
-	get_tree().get_root().get_node("main").get_node("HUD").get_node("monet label").update();
+	get_tree().get_root().get_node("main/HUD/monet label").update();
 
 func lock_movement():
 	can_move = false;

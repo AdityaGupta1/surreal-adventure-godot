@@ -2,13 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/concrete.jpg-2f933b48803ca45c83b260908b2042f5.s3tc.stex"
-path.etc2="res://.import/concrete.jpg-2f933b48803ca45c83b260908b2042f5.etc2.stex"
+path.s3tc="res://.import/pillar wood.jpg-71c88387fbff67cbd285ce0ad400b4d3.s3tc.stex"
+path.etc2="res://.import/pillar wood.jpg-71c88387fbff67cbd285ce0ad400b4d3.etc2.stex"
 
 [deps]
 
-source_file="res://models/path/concrete.jpg"
-dest_files=[ "res://.import/concrete.jpg-2f933b48803ca45c83b260908b2042f5.s3tc.stex", "res://.import/concrete.jpg-2f933b48803ca45c83b260908b2042f5.etc2.stex" ]
+source_file="res://models/market/pillar wood.jpg"
+dest_files=[ "res://.import/pillar wood.jpg-71c88387fbff67cbd285ce0ad400b4d3.s3tc.stex", "res://.import/pillar wood.jpg-71c88387fbff67cbd285ce0ad400b4d3.etc2.stex" ]
 
 [params]
 
