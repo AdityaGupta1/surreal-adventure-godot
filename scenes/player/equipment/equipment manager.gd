@@ -27,3 +27,12 @@ func randomize_stats(equipment):
 		equipment.stats[key] = floor(rand_range(stat_range[0], stat_range[1] + 1));
 		
 	return equipment;
+	
+func get_price(equipment):
+	var price = 0;
+	var possible_stats = stats[equipment.item_type];
+	
+	for key in equipment.stats.keys():
+		price += equipment.stats[key] / (possible_stats[key][1] - possible_stats[key][0]);
+		
+	return round(price * 10);

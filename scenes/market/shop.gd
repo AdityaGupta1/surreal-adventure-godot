@@ -45,7 +45,18 @@ func randomize_shop():
 	shopkeeper.translation = -shopkeeper.get_node("attach point").translation;
 	shopkeeper_node.add_child(shopkeeper);
 	
-	var roof = get_node("roof/Top");
+	var roof = get_node("roof/top");
 	var material = SpatialMaterial.new();
 	material.albedo_color = Color(randf(), randf(), randf());
 	roof.set_surface_material(0, material);
+	
+func is_current():
+	return get_node("camera").current;
+	
+func _physics_process(delta):
+	if not is_current():
+		return;
+		
+	var offset = get_tree().get_root().get_node("main/player").translation.z - self.global_transform.origin.z;
+	var item = equipment[round(offset / 2) + 1];
+	print(str(equipment_manager.get_price(item)) + ": " + str(item.stats));

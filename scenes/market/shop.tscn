@@ -337,7 +337,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "UV1" ]
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=9]
 
 render_priority = 0
 flags_transparent = false
@@ -390,7 +390,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "UV1" ]
 
-[sub_resource type="PrismMesh" id=9]
+[sub_resource type="PrismMesh" id=10]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 left_to_right = 0.5
@@ -399,11 +399,11 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="ConvexPolygonShape" id=12]
+[sub_resource type="ConvexPolygonShape" id=11]
 
 points = PoolVector3Array( 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5 )
 
-[sub_resource type="BoxShape" id=10]
+[sub_resource type="BoxShape" id=12]
 
 extents = Vector3( 1, 1, 1 )
 
@@ -516,7 +516,7 @@ disabled = false
 
 [node name="front" type="Spatial" parent="." index="3"]
 
-[node name="Table" type="MeshInstance" parent="front" index="0"]
+[node name="table" type="MeshInstance" parent="front" index="0"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.25, 0, 0, 0, 3, 3, 1.5, 0 )
@@ -534,7 +534,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 6 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="StaticBody" type="StaticBody" parent="front/Table" index="0"]
+[node name="StaticBody" type="StaticBody" parent="front/table" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -545,12 +545,12 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="front/Table/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="front/table/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false
 
-[node name="Side 1" type="MeshInstance" parent="front" index="1"]
+[node name="side 1" type="MeshInstance" parent="front" index="1"]
 
 editor/display_folded = true
 transform = Transform( 3, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 1.5, 3.5 )
@@ -568,7 +568,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 7 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="StaticBody" type="StaticBody" parent="front/Side 1" index="0"]
+[node name="StaticBody" type="StaticBody" parent="front/side 1" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -579,12 +579,12 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="front/Side 1/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="front/side 1/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false
 
-[node name="Side 2" type="MeshInstance" parent="front" index="2"]
+[node name="side 2" type="MeshInstance" parent="front" index="2"]
 
 editor/display_folded = true
 transform = Transform( 3, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 1.5, -3.5 )
@@ -602,7 +602,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 7 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="StaticBody" type="StaticBody" parent="front/Side 2" index="0"]
+[node name="StaticBody" type="StaticBody" parent="front/side 2" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -613,12 +613,12 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="front/Side 2/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="front/side 2/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false
 
-[node name="Pillar 1" type="MeshInstance" parent="front" index="3"]
+[node name="pillar 1" type="MeshInstance" parent="front" index="3"]
 
 editor/display_folded = true
 transform = Transform( 0.5, 0, 0, 0, 2.5, 0, 0, 0, 0.5, 3.5, 3, 3.5 )
@@ -636,7 +636,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 8 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="StaticBody" type="StaticBody" parent="front/Pillar 1" index="0"]
+[node name="StaticBody" type="StaticBody" parent="front/pillar 1" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -647,12 +647,12 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="front/Pillar 1/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="front/pillar 1/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false
 
-[node name="Pillar 2" type="MeshInstance" parent="front" index="4"]
+[node name="pillar 2" type="MeshInstance" parent="front" index="4"]
 
 editor/display_folded = true
 transform = Transform( 0.5, 0, 0, 0, 2.5, 0, 0, 0, 0.5, 3.5, 3, -3.5 )
@@ -670,7 +670,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 8 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="StaticBody" type="StaticBody" parent="front/Pillar 2" index="0"]
+[node name="StaticBody" type="StaticBody" parent="front/pillar 2" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -681,14 +681,14 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="front/Pillar 2/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="front/pillar 2/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false
 
 [node name="roof" type="Spatial" parent="." index="4"]
 
-[node name="Bottom" type="MeshInstance" parent="roof" index="0"]
+[node name="bottom" type="MeshInstance" parent="roof" index="0"]
 
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 0.5, 0, 0, 0, 4, 0, 6, 0 )
@@ -703,10 +703,10 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 1 )
 skeleton = NodePath("..")
-material/0 = SubResource( 11 )
+material/0 = SubResource( 9 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="StaticBody" type="StaticBody" parent="roof/Bottom" index="0"]
+[node name="StaticBody" type="StaticBody" parent="roof/bottom" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -717,12 +717,12 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="roof/Bottom/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="roof/bottom/StaticBody" index="0"]
 
 shape = SubResource( 3 )
 disabled = false
 
-[node name="Top" type="MeshInstance" parent="roof" index="1"]
+[node name="top" type="MeshInstance" parent="roof" index="1"]
 
 transform = Transform( -3.49691e-07, 0, 8, 0, 3, 0, -8, 0, -3.49691e-07, 0, 8, 0 )
 layers = 1
@@ -734,12 +734,12 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody" type="StaticBody" parent="roof/Top" index="0"]
+[node name="StaticBody" type="StaticBody" parent="roof/top" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -750,9 +750,9 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="roof/Top/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="roof/top/StaticBody" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 disabled = false
 
 [node name="points" type="Spatial" parent="." index="5"]
@@ -805,7 +805,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="shape" type="CollisionShape" parent="player area" index="0"]
 
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 disabled = false
 
 [node name="camera" type="Camera" parent="." index="7"]
