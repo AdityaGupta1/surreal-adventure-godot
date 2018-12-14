@@ -35,4 +35,4 @@ func get_price(equipment):
 	for key in equipment.stats.keys():
 		price += equipment.stats[key] / (possible_stats[key][1] - possible_stats[key][0]);
 		
-	return round(price * 10);
+	return max(round(price * 10), 1);

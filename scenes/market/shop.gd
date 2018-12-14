@@ -9,6 +9,8 @@ var equipment_manager;
 
 onready var points = get_node("points");
 
+onready var side = sign(self.global_transform.origin.x); # 1 = left, -1 = right
+
 func _ready():
 	randomize_shop();
 
@@ -48,15 +50,22 @@ func randomize_shop():
 	var roof = get_node("roof/top");
 	var material = SpatialMaterial.new();
 	material.albedo_color = Color(randf(), randf(), randf());
+	material.metallic_specular = 0;
 	roof.set_surface_material(0, material);
 	
 func is_current():
 	return get_node("camera").current;
 	
 func _physics_process(delta):
+	var description = get_node("description");
 	if not is_current():
+		description.hide();
 		return;
 		
 	var offset = get_tree().get_root().get_node("main/player").translation.z - self.global_transform.origin.z;
-	var item = equipment[round(offset / 2) + 1];
-	print(str(equipment_manager.get_price(item)) + ": " + str(item.stats));
+	offset *= side;
+	var i = round(offset / 2) + 1;
+	var item = equipment[i];
+	
+	description.show();
+	description.translation = get_node("points/equipment " + str(i + 1)).translation + Vector3(1.1, 3.3, 0);
