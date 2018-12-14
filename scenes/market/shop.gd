@@ -69,3 +69,13 @@ func _physics_process(delta):
 	
 	description.show();
 	description.translation = get_node("points/equipment " + str(i + 1)).translation + Vector3(1.1, 3.3, 0);
+	
+	var viewport = description.get_node("viewport");
+	viewport.get_node("monet label").text = str(equipment_manager.get_price(item));
+	
+	var stats = viewport.get_node("stats");
+	stats.text = "";
+	for key in item.stats:
+		var number = item.stats[key];
+		if number == 0: continue;
+		stats.text += ("+" if number > 0 else "") + str(number) + " " + key + "\n";
