@@ -11,6 +11,10 @@ func _notification(event):
 		set_paused(true);
 
 func set_paused(new_paused):
+	if get_tree().paused and !_paused:
+		get_tree().get_root().get_node("main/inventory").escape();
+		return;
+	
 	if get_parent().has_node("title screen"):
 		return;
 	

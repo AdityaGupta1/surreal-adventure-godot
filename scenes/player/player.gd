@@ -1,5 +1,7 @@
 extends "res://scenes/character.gd"
 
+onready var main = get_tree().get_root().get_node("main");
+
 const e = 2.71828182846;
 
 var speed = 600;
@@ -30,12 +32,6 @@ var inventory = {};
 func _ready():
 	max_health = 500;
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
-	var hat = equipment_manager.get_equipment("hat", "bottlecap");
-	var fedora = equipment_manager.get_equipment("hat", "fedora");
-	_equip(hat);
-	_equip(fedora);
-	_equip(hat);
-	_equip(fedora);
 	._ready();
 
 func damage(damage):
@@ -129,7 +125,7 @@ func _physics_process(delta):
 func add_monet(new_monet):
 	monet += new_monet;
 	sounds.get_node("collect monet disc").play();
-	get_tree().get_root().get_node("main/HUD/monet label").update();
+	main.get_node("HUD/monet label").update();
 
 func lock_movement():
 	can_move = false;
