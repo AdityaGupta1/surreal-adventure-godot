@@ -65,6 +65,8 @@ func _physics_process(delta):
 	var offset = get_tree().get_root().get_node("main/player").translation.z - self.global_transform.origin.z;
 	offset *= side;
 	var i = round(offset / 2) + 1;
+	if i > 2:
+		return;
 	var item = equipment[i];
 	
 	description.show();
