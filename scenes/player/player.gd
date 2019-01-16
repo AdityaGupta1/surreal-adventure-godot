@@ -60,6 +60,11 @@ func set_movement_offset(offset):
 	_next_movement_offset = deg2rad(offset);
 	_change_movement_offset_time = total_time + 0.2;
 	
+var _is_on_display = false;
+
+func set_display():
+	_is_on_display = true;
+	
 # mouse, with heading
 var rotation_mode = "mouse";
 var last_rotation = 0;
@@ -68,6 +73,9 @@ var _in_shop = false;
 
 func _physics_process(delta):
 	if _dead:
+		return;
+		
+	if _is_on_display:
 		return;
 	
 	total_time += delta;
@@ -154,10 +162,7 @@ func _equip(equipment):
 		inventory[item_type] = [];
 	inventory[item_type].erase(equipment);
 	
-	print(current_equipment);
-	print(inventory);
-	
-	var equipment_node = get_node("equipment").get_node(equipment.item_type);
+	var equipment_node = get_node("shape/equipment").get_node(equipment.item_type);
 	for i in range(0, equipment_node.get_child_count()):
 	    equipment_node.get_child(i).queue_free()
 	equipment_node.add_child(item);
