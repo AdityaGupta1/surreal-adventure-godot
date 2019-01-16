@@ -461,21 +461,21 @@ points = PoolVector3Array( 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5,
 
 extents = Vector3( 1, 1, 1 )
 
-[sub_resource type="PlaneMesh" id=15]
+[sub_resource type="PlaneMesh" id=14]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 2, 2 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[sub_resource type="ViewportTexture" id=18]
+[sub_resource type="ViewportTexture" id=15]
 
 resource_local_to_scene = true
 flags = 0
 viewport_path = NodePath("description/viewport")
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="SpatialMaterial" id=17]
+[sub_resource type="SpatialMaterial" id=16]
 
 resource_local_to_scene = true
 render_priority = 0
@@ -500,7 +500,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = SubResource( 18 )
+albedo_texture = SubResource( 15 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -529,7 +529,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Flags", "Resource" ]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=17]
 
 size = 100
 use_mipmaps = false
@@ -537,7 +537,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="shop" type="Spatial" index="0"]
+[node name="shop" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -991,9 +991,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 15 )
+mesh = SubResource( 14 )
 skeleton = NodePath("..")
-material/0 = SubResource( 17 )
+material/0 = SubResource( 16 )
 _sections_unfolded = [ "Geometry", "Transform", "Visibility", "material" ]
 
 [node name="viewport" type="Viewport" parent="description" index="0"]
@@ -1076,7 +1076,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "MONEY"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1099,7 +1099,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "+1 attack
 +2 coolness
 "

@@ -1,6 +1,6 @@
 extends "res://scenes/character.gd"
 
-onready var main = get_tree().get_root().get_node("main");
+onready var main = get_parent();
 
 const e = 2.71828182846;
 
@@ -32,6 +32,8 @@ var inventory = {};
 func _ready():
 	max_health = 500;
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
+	_equip(equipment_manager.get_equipment("hat", "bottlecap"));
+	_equip(equipment_manager.get_equipment("hat", "fedora"));
 	._ready();
 
 func damage(damage):
