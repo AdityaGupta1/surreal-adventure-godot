@@ -8,7 +8,7 @@ resource_local_to_scene = true
 flags = 0
 viewport_path = NodePath("viewport")
 
-[node name="inventory" type="Spatial" index="0"]
+[node name="inventory" type="Spatial"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -140,7 +140,7 @@ h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
 projection = 0
-current = false
+current = true
 fov = 70.0
 size = 1.0
 near = 0.05

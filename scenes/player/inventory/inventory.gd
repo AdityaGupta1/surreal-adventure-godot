@@ -36,7 +36,7 @@ func _init_items():
 	for item_type in inventory.keys():
 		var control = Control.new();
 		var bar = load("res://scenes/player/inventory/inventory bar.tscn").instance();
-		bar.init(item_type, null);
+		bar.init(item_type, inventory[item_type]);
 		control.add_child(bar);
 		vbox.add_child(control);
 

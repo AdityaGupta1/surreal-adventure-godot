@@ -34,6 +34,8 @@ func _ready():
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
 	_equip(equipment_manager.get_equipment("hat", "bottlecap"));
 	_equip(equipment_manager.get_equipment("hat", "fedora"));
+	_equip(equipment_manager.get_equipment("hat", "bottlecap"));
+	_equip(equipment_manager.get_equipment("hat", "fedora"));
 	._ready();
 
 func damage(damage):
