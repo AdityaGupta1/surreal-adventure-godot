@@ -117,7 +117,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "UV1" ]
 
-[node name="bottlecap" type="Spatial" index="0"]
+[node name="bottlecap" type="Spatial"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -156,5 +156,8 @@ material/0 = SubResource( 3 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="equip point" type="Spatial" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+_sections_unfolded = [ "Transform" ]
 
 

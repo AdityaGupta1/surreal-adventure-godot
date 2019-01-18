@@ -399,7 +399,7 @@ stretch_mode = 0
 script = ExtResource( 15 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="title screen" index="2"]
+[node name="animation" type="AnimationPlayer" parent="title screen" index="2"]
 
 root_node = NodePath("..")
 autoplay = ""

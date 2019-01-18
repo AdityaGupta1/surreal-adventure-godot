@@ -32,10 +32,10 @@ var inventory = {};
 func _ready():
 	max_health = 500;
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
-	_equip(equipment_manager.get_equipment("hat", "bottlecap"));
-	_equip(equipment_manager.get_equipment("hat", "fedora"));
-	_equip(equipment_manager.get_equipment("hat", "bottlecap"));
-	_equip(equipment_manager.get_equipment("hat", "fedora"));
+	equip(equipment_manager.get_equipment("hat", "bottlecap"));
+	equip(equipment_manager.get_equipment("hat", "fedora"));
+	equip(equipment_manager.get_equipment("hat", "bottlecap"));
+	equip(equipment_manager.get_equipment("hat", "fedora"));
 	._ready();
 
 func damage(damage):
@@ -151,7 +151,7 @@ func _die():
 	rotation.z += PI / 2;
 	get_viewport().get_camera().zoom_position(get_node("shape/meme man/eye " + str((randi() % 2) + 1)).global_transform.origin, 2);
 	
-func _equip(equipment):
+func equip(equipment):
 	var item = equipment.get_equipment().instance();
 	item.translation = -item.get_node("equip point").translation;
 	
@@ -165,8 +165,8 @@ func _equip(equipment):
 	inventory[item_type].erase(equipment);
 	
 	var equipment_node = get_node("shape/equipment").get_node(equipment.item_type);
-	for i in range(0, equipment_node.get_child_count()):
-	    equipment_node.get_child(i).queue_free()
+	for child in equipment_node.get_children():
+		child.free();
 	equipment_node.add_child(item);
 	
 func finished_zoom():

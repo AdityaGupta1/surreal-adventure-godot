@@ -7,7 +7,7 @@ onready var main = get_parent().get_parent();
 const player = preload("res://scenes/player/player.tscn");
 
 func _ready():
-	main.get_node("title screen/AnimationPlayer").play("void_enters")
+	main.get_node("title screen/animation").play("void_enters");
 
 func _physics_process(delta):
 	if Input.is_mouse_button_pressed(1) and get_rect().has_point(get_viewport().get_mouse_position()):
