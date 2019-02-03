@@ -4,7 +4,7 @@ signal enemy_died;
 var added_signal = false;
 
 onready var main = get_tree().get_root().get_node("main");
-onready var player = main.get_node("Player");
+onready var player = main.get_node("player");
 onready var enemies = main.get_node("enemies");
 
 var bullet;
@@ -41,7 +41,7 @@ func _move(delta):
 	pass;
 	
 func _has_player():
-	return main.has_node("Player");
+	return main.has_node("player");
 
 func _shoot():
 	if bullet == null:

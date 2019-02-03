@@ -21,7 +21,7 @@ func _on_clicked():
 	main.get_node("HUD").show();
 	
 	var new_player = player.instance();
-	new_player.transform.origin.y = 49; # y values of 50 and above crash for some reason (see issue #46)
+	new_player.transform.origin.y = 50;
 	main.add_child(new_player);
 
 	main.get_node("arena").start();

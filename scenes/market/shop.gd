@@ -79,5 +79,6 @@ func _physics_process(delta):
 	stats.text = "";
 	for key in item.stats:
 		var number = item.stats[key];
-		if number == 0: continue;
+		if number == 0: 
+			continue;
 		stats.text += ("+" if number > 0 else "") + str(number) + " " + key + "\n";

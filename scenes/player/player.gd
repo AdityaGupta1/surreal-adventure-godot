@@ -36,6 +36,7 @@ func _ready():
 	equip(equipment_manager.get_equipment("hat", "fedora"));
 	equip(equipment_manager.get_equipment("hat", "bottlecap"));
 	equip(equipment_manager.get_equipment("hat", "fedora"));
+	print(stats());
 	._ready();
 
 func damage(damage):
@@ -44,8 +45,11 @@ func damage(damage):
 
 	var hurt_sounds = sounds.get_node("hurt");
 	hurt_sounds.get_children()[randi() % hurt_sounds.get_child_count()].play();
+	
+	var reduction = max(min(stats()["defense"] / 100, 0.80), 0);
+	print(reduction);
 
-	.damage(damage);
+	.damage(damage * (1 - reduction));
 
 	vulnerable = total_time + 0.5;
 	
@@ -168,6 +172,19 @@ func equip(equipment):
 	for child in equipment_node.get_children():
 		child.free();
 	equipment_node.add_child(item);
+	
+func stats():
+	var total_stats = {};
+	
+	for item_type in current_equipment:
+		var stats = current_equipment[item_type].stats;
+		for stat in stats:
+			if !total_stats.has(stat):
+				total_stats[stat] = 0;
+				
+			total_stats[stat] += stats[stat];
+			
+	return total_stats;
 	
 func finished_zoom():
 	if _dead:

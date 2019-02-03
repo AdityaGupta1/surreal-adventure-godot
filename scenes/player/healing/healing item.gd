@@ -14,8 +14,8 @@ func _ready():
 	set_collision_mask(33); # player and enemies
 	
 func _on_body_entered(body):
-	if body.get_name() == "Player" and time > pickup_delay:
-		get_tree().get_root().get_node("main").get_node("Player").heal(health_restored[self.get_name()]);
+	if body.get_name() == "player" and time > pickup_delay:
+		get_tree().get_root().get_node("main").get_node("player").heal(health_restored[self.get_name()]);
 		queue_free();
 	
 func _physics_process(delta):

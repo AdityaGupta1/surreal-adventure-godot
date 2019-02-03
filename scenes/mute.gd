@@ -4,7 +4,7 @@ var _clicked = false;
 var _muted = false;
 
 func _ready():
-	_set_muted(AudioServer.is_bus_mute(_get_bus("Master")));
+	_set_muted(get_tree().get_root().get_node("main").load_data["muted"]);
 
 func _physics_process(delta):
 	if not get_parent().is_visible():
@@ -36,3 +36,6 @@ func _set_muted(muted):
 
 func _on_clicked():
 	_set_muted(!_muted);
+	
+func is_muted():
+	return _muted;
