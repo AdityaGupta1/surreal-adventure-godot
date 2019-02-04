@@ -4,6 +4,9 @@ signal retract;
 
 var paused = false;
 var load_data;
+var _default_load_data = {
+	"muted": false
+}
 
 func _init():
 	load_data = _load();
@@ -54,7 +57,7 @@ func _load():
 	var file = File.new();
 	if not file.file_exists("user://options.save"):
 		print("no file saved");
-		return;
+		return _default_load_data;
 	
 	if file.open("user://options.save", File.READ) != 0:
 		print("error opening file");
