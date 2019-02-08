@@ -51,7 +51,6 @@ func _shoot():
 	if shoot_towards == "absolute":
 		pass;
 	elif shoot_towards == "player":
-		center_angle = -get_viewport().get_camera().unproject_position(transform.origin).angle_to_point(get_viewport().get_camera().unproject_position(player.transform.origin));
 		var self_pos = self.global_transform.origin;
 		var player_pos = player.global_transform.origin;
 		center_angle = PI - Vector2(self_pos.x, self_pos.z).angle_to_point(Vector2(player_pos.x, player_pos.z));
