@@ -13,6 +13,9 @@ func _ready():
 	
 	shoot_towards = "outward";
 	
+	levitates = true;
+	levitate_y = 21;
+	
 	._ready();
 	
 func _move(delta):
