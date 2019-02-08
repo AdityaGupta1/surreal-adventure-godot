@@ -1,7 +1,7 @@
 extends Node
 
 onready var main = get_tree().get_root().get_node("main");
-onready var player = main.get_node("Player");
+onready var player = main.get_node("player");
 
 var shoot_towards; # absolute, player, outward
 var shoot_angle = 0;

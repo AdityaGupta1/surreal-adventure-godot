@@ -9,7 +9,7 @@ func _ready():
 	monet = 25;
 	
 	levitates = true;
-	levitate_y = 22.5;
+	levitate_y = 21;
 	
 	offset = randf() * 2 * PI;
 	

@@ -9,7 +9,7 @@ var enemy_scenes = {
 	"unlimited stick": "stick/stick.tscn"
 }
 var enemies = {};
-var wave = 5; # set to any value below 0 to prevent enemies from spawning
+var wave = 0; # set to any value below 0 to prevent enemies from spawning
 var spawns = [];
 
 var spawn_positions = [];

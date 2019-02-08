@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/enemies/milk/milk.gd" type="Script" id=1]
 [ext_resource path="res://models/milk/splosh.png" type="Texture" id=2]
-
-[sub_resource type="PlaneShape" id=1]
-
 
 [sub_resource type="SpatialMaterial" id=2]
 
@@ -23,14 +20,6 @@ material = SubResource( 2 )
 [node name="milk" type="Spatial"]
 transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0 )
 script = ExtResource( 1 )
-
-[node name="ee" type="Area" parent="."]
-transform = Transform( 0.01, 0, 0, 0, 1, 0, 0, 0, 0.01, 0, 0, 0 )
-collision_layer = 64
-
-[node name="CollisionShape" type="CollisionShape" parent="ee"]
-visible = false
-shape = SubResource( 1 )
 
 [node name="splosh" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
