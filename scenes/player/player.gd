@@ -32,11 +32,6 @@ var inventory = {};
 func _ready():
 	max_health = 500;
 	shoot_delay = get_node("shape/guns/gun 1").get_shoot_delay();
-	equip(equipment_manager.get_equipment("hat", "bottlecap"));
-	equip(equipment_manager.get_equipment("hat", "fedora"));
-	equip(equipment_manager.get_equipment("hat", "bottlecap"));
-	equip(equipment_manager.get_equipment("hat", "fedora"));
-	print(stats());
 	._ready();
 
 func damage(damage):
@@ -46,8 +41,11 @@ func damage(damage):
 	var hurt_sounds = sounds.get_node("hurt");
 	hurt_sounds.get_children()[randi() % hurt_sounds.get_child_count()].play();
 	
-	var reduction = max(min(stats()["defense"] / 100, 0.80), 0);
-	print(reduction);
+	var reduction;
+	if stats().has("defense"):
+		reduction = max(min(stats()["defense"] / 100, 0.80), 0)
+	else:
+		reduction = 0;
 
 	.damage(damage * (1 - reduction));
 
